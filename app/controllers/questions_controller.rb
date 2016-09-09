@@ -25,6 +25,16 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def update
+    @question = Question.find(params[:id])
+
+    if @question.save
+      redirect_to @question
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @question = Question.find(params[:id])
     @question.destroy

@@ -7,6 +7,8 @@
 		<% @questions.each do |question| %>
 			<tr>
 				<td><strong><%= question.title %> (<%= question.count_votes %> votes)</strong></td>
+				<td><%= button_to 'Up', up_vote_question_path(question), method: :patch %></td>
+				<td><%= button_to 'Down', down_vote_question_path(question), method: :patch %></td>
 			</tr>
 			<tr>
 				<td><%= question.content %></td>

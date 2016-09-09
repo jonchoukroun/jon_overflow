@@ -10,12 +10,17 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
   end
-  
+
   def create
   	@question = Question.create(question_params)
 
     @question.save
     redirect_to @question
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
   end
 
   private

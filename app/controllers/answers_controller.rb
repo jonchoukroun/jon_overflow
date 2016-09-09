@@ -9,17 +9,19 @@ class AnswersController < ApplicationController
 	end
 
 	def up_vote
-		@answer = Answer.find(params[:id])
+		@question = Question.find(params[:question_id])
+		@answer = @question.answers.find(params[:id])
 		@answer.increment!(:up_votes)
 
-    redirect_to questions_path(@question)
+    redirect_to @question
   end
 
   def down_vote
-		@answer = Answer.find(params[:id])
+  	@question = Question.find(params[:question_id])
+		@answer = @question.answers.find(params[:id])
 		@answer.increment!(:down_votes, by = -1)
 
-		redirect_to questions_path(@question)
+		redirect_to @question
   end
 
 	private

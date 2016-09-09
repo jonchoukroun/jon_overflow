@@ -1,6 +1,12 @@
-<p>
-	<strong><%= answer.title %></strong>
-	(<%= answer.count_votes %> votes)
-</p>
+<table>
+		<tr>
+			<td><strong><%= answer.title %> (<%= answer.count_votes %> votes)</strong></td>
+			<td><%= button_to 'Up', up_vote_question_answer_path(@question, answer), method: :patch %></td>
+			<td><%= button_to 'Down', down_vote_question_answer_path(@question, answer), method: :patch %></td>
+		</tr>
 
-<p><%= answer.content %></p>
+		<tr>
+			<td><%= answer.content %></td>
+		</tr>
+
+</table>

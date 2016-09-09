@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   		patch 'down_vote'
   	end
   	
-    resources :answers
+    resources :answers do
 			member do
 	  		patch 'up_vote'
 				patch 'down_vote'
 	  	end
+    end
   end
   
   root 'questions#index'

@@ -3,7 +3,7 @@
 <% @questions.each do |question| %>
 	<div class="question">
 		<h3><%= question.title %></h3>
-		<article><%= question.content %></article>
+		<p><%= question.content.split.first %>...</p>
 		<p><%= link_to 'Show', question_path(question) %></p>
 	</div>
 <% end %>

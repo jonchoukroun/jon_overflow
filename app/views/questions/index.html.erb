@@ -4,5 +4,6 @@
 	<div class="question">
 		<h3><%= question.title %></h3>
 		<article><%= question.content %></article>
+		<p><%= link_to 'Show', question_path(question) %></p>
 	</div>
 <% end %>

@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 20160909180743) do
   create_table "answers", force: :cascade do |t|
     t.text     "title"
     t.text     "content"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "question_id"
-    t.integer  "up_votes"
-    t.integer  "down_votes"
+    t.integer  "up_votes",    default: 0, null: false
+    t.integer  "down_votes",  default: 0, null: false
   end
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 20160909180743) do
   create_table "questions", force: :cascade do |t|
     t.text     "title"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "up_votes"
-    t.integer  "down_votes"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "up_votes",   default: 0, null: false
+    t.integer  "down_votes", default: 0, null: false
   end
 
   add_foreign_key "answers", "questions"

@@ -6,9 +6,15 @@ class QuestionsController < ApplicationController
   def show
   	@question = Question.find(params[:id])
   end
+
+  def new
+  end
   
   def create
-  	@question = Question.find(question_params)
+  	@question = Question.create(question_params)
+
+    @question.save
+    redirect_to @question
   end
 
   private

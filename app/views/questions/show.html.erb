@@ -4,10 +4,7 @@
 
 <div class="answers">
 	<h2>Answers:</h2>
-	<% @question.answers.each do |answer| %>
-		<p><strong><%= answer.title %></strong></p>
-		<p><%= answer.content %></p>
-	<% end %>
+	<%= render @question.answers %>
 </div>
 
 <div class="new_answer">

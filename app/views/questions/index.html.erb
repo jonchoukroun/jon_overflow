@@ -6,7 +6,7 @@
 	<table>
 		<% @questions.each do |question| %>
 			<tr>
-				<td><strong><%= question.title %></strong></td>
+				<td><strong><%= question.title %> (<%= question.count_votes %> votes)</strong></td>
 			</tr>
 			<tr>
 				<td><%= question.content %></td>

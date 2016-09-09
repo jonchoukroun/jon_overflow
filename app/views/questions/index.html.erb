@@ -3,11 +3,17 @@
 <p><%= link_to 'New Question', new_question_path %></p>
 
 <div class="questions">
-	<% @questions.each do |question| %>
-		<div class="question">
-			<h3><%= question.title %></h3>
-			<p><%= question.content.split.first %>...</p>
-			<p><%= link_to 'Show', question_path(question) %></p>
-		</div>
-	<% end %>
+	<table>
+		<% @questions.each do |question| %>
+			<tr>
+				<td><strong><%= question.title %></strong></td>
+			</tr>
+			<tr>
+				<td><%= question.content %></td>
+			</tr>
+			<tr>
+				<td><%= link_to 'Show', question_path(question) %></td>
+			</tr>
+		<% end %>
+	</table>
 </div>

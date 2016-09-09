@@ -2,6 +2,8 @@
 
 <article><%= @question.content %></article>
 
+<p><%= link_to 'Edit', edit_question_path(@question) %></p>
+
 <div class="answers">
 	<h2>Answers:</h2>
 	<%= render @question.answers %>

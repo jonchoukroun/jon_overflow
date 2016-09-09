@@ -1,1 +1,8 @@
-<h1>Hey nong man</h1>
+<h1>Questions</h1>
+
+<% @questions.each do |question| %>
+	<div class="question">
+		<h3><%= question.title %></h3>
+		<article><%= question.content %></article>
+	</div>
+<% end %>

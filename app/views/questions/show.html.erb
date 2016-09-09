@@ -2,6 +2,13 @@
 
 <article><%= @question.content %></article>
 
+<div class="answers">
+	<h2>Answers:</h2>
+	<% @question.answers.each do |answer| %>
+		<p><strong><%= answer.title %></strong></p>
+		<p><%= answer.content %></p>
+	<% end %>
+</div>
 
 <div class="new_answer">
 	<h3>Add an answer:</h3>

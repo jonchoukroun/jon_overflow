@@ -2,7 +2,7 @@
 
 <p><%= link_to 'New Question', new_question_path %></p>
 
-<div class="questions">
+<div class="questions_table">
 	<table>
 		<% @questions.each do |question| %>
 			<tr>
@@ -13,6 +13,9 @@
 			</tr>
 			<tr>
 				<td><%= link_to 'Show', question_path(question) %></td>
+				<td><%= link_to 'Delete', question_path(question),
+				        method: :delete,
+				        data: { confirm: "Are you sure?" } %></td>
 			</tr>
 		<% end %>
 	</table>

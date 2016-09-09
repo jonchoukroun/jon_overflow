@@ -42,19 +42,19 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
 
-  # def up_vote
-  #   @question = Question.find(params[:id])
-  #   @question.increment!(:up_votes)
+  def up_vote
+    @question = Question.find(params[:id])
+    @question.increment!(:up_votes)
 
-  #   redirect_to questions_path
-  # end
+    redirect_to questions_path
+  end
 
-  # def down_vote
-  #   @question = Question.find(params[:id])
-  #   @question.increment!(:down_votes, by = -1)
+  def down_vote
+    @question = Question.find(params[:id])
+    @question.increment!(:down_votes, by = -1)
 
-  #   redirect_to questions_path
-  # end
+    redirect_to questions_path
+  end
 
   private
   	def question_params

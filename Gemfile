@@ -45,7 +45,7 @@ group :development, :test do
   gem 'rspec-rails'
 
   # Use dotenv to store environment variables
-  gem 'dotenv-rails'
+  gem 'dotenv'
 end
 
 group :development do

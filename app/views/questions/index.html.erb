@@ -1,5 +1,11 @@
 <h1>Questions</h1>
 
+<div class="quote">
+	<blockquote>
+		<%= QuoteAPI.get_quote %>
+	</blockquote>
+</div>
+
 <p><%= link_to 'New Question', new_question_path %></p>
 
 <div class="questions_table">

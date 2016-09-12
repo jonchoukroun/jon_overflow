@@ -1,6 +1,6 @@
-class QuoteAPI
-	require 'httparty'
+require 'httparty'
 
+module QuoteAPI
 	API_URL = "https://api.github.com/zen"
 
 	def self.get_quote

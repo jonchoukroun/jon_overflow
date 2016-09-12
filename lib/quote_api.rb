@@ -3,6 +3,10 @@ require 'httparty'
 module QuoteAPI
 	API_URL = "https://api.github.com/zen"
 
+	def self.authorization
+		{	username: ENV['GITHUB_USER'], password: ENV['GITHUB_PASS'] }
+	end
+
 	# Hard coded quote in case of rate limit
 	def self.standard_quote
 		return "Always shut the door on your way out."
@@ -10,7 +14,7 @@ module QuoteAPI
 
 	# Call github api for random quote
 	def self.api_quote
-		HTTParty.get(API_URL)
+		HTTParty.get(API_URL, authorization)
 	end
 
 	def self.get_quote

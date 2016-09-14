@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  helper FormsHelperr
+  helper QuestionsHelper
 
   def index
     @questions = Question.all

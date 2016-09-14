@@ -4,14 +4,11 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     @questions = @questions.sort_by { |q| q.count_votes }.reverse!
+    @question = Question.new
   end
 
   def show
   	@question = Question.find(params[:id])
-  end
-
-  def new
-    @question = Question.new
   end
 
   def edit
@@ -22,7 +19,7 @@ class QuestionsController < ApplicationController
   	@question = Question.create(question_params)
 
     if @question.save
-      redirect_to @question
+      redirect_to questions_path
     else
       render 'new'
     end

@@ -1,6 +1,9 @@
 class QuestionsController < ApplicationController
-  before_action :all_questions, only: [:index, :create]
-  # respond_to :html, :js   # extracted to respond gem
+
+  def index
+    @questions = Question.all
+    @questions = @questions.sort_by { |q| q.count_votes }.reverse!
+  end
 
   def show
   	@question = Question.find(params[:id])
@@ -56,11 +59,6 @@ class QuestionsController < ApplicationController
   end
 
   private
-
-    def all_questions
-      @questions = Question.all
-      @questions = @questions.sort_by { |q| q.count_votes }.reverse!
-    end
 
   	def question_params
   		params.require(:question).permit(:title, :content, :up_votes, :down_votes)

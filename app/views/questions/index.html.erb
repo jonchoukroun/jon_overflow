@@ -2,11 +2,14 @@
 
 <div class="quote">
 	<blockquote>
-		<%= QuoteAPI.get_quote %>
+		<!-- <%= QuoteAPI.get_quote %> -->
 	</blockquote>
 </div>
 
-<p><%= link_to 'New Question', new_question_path %></p>
+<p><%= link_to 'New Question', new_question_path, remote: true %></p>
+
+<!-- Hidden new question form -->
+<div id="question-form" style="display:none">Fuck</div>
 
 <div class="questions_table">
 	<table>

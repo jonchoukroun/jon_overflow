@@ -6,7 +6,11 @@
 	</blockquote>
 </div>
 
-<p><%= link_to 'New Question', new_question_path %></p>
+<p><%= link_to 'New Question', '#', class: 'new_question' %></p>
+
+<div id="new_question_form" class="hidden">
+	<%= render '/questions/form' %>
+</div>
 
 <div class="questions_table">
 	<table>

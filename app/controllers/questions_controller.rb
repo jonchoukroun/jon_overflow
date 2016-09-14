@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def index
   	@questions = Question.all
+    @questions = @questions.sort_by { |q| q.count_votes }.reverse!
   end
 
   def show

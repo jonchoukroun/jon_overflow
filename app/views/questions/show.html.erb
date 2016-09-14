@@ -11,7 +11,7 @@
 
 <div class="answers">
 	<h2>Answers:</h2>
-	<%= render @question.answers %>
+	<%= render @question.answers.sort_by { |a| a.count_votes}.reverse! %>
 </div>
 
 <div class="new_answer">

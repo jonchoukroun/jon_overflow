@@ -1,28 +1,28 @@
 <%= form_for :question, url: form_action(@question), method: form_method(@question) do |f| %>
-	<% if @question.errors.any? %>
-		<div id="error_explanation">
-			<h2>
-				<%= pluralize(@question.errors.count, "error") %> prohibited this question from saving.
-			</h2>
-			<ul>
-				<% @question.errors.full_messages.each do |msg| %>
-					<li><%= msg %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@question.errors.count, "error") %> prohibited this question from saving:
+      </h2>
+      <ul>
+        <% @question.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %><!-- error messages -->
 
-	<p>
-		<%= f.label :title %><br>
-		<%= f.text_field :title %>
-	</p>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
 
-	<p>
-		<%= f.label :content %><br>
-		<%= f.text_area :content %>
-	</p>
+  <div>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
 
-	<p>
-		<%= f.submit %>
-	</p>
+  <div>
+    <%= f.submit %>
+  </div>
 <% end %>

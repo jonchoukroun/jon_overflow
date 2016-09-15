@@ -1,13 +1,26 @@
 <%= form_for ([@question, @question.answers.build]) do |f| %>
-	<div>
-		<%= f.label :title %><br>
-		<%= f.text_field :title %>
-	</div>
-	<div>
-		<%= f.label :content %><br>
-		<%= f.text_area :content %>
-	</div>
-	<div>
-		<%= f.submit %>
-	</div>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@question.errors.count, "error") %> prohibited this question from saving.
+      </h2>
+      <ul>
+        <% @question.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %><!-- error messages -->
+
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
 <% end %>

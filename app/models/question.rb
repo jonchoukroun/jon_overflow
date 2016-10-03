@@ -1,10 +1,11 @@
 class Question < ActiveRecord::Base
-  has_many :answers, dependent: :destroy
-
-  validates_presence_of :title, :content
+  belongs_to :user
+  has_many :answers
   validates_associated :answers
 
+  validates_presence_of :title, :content
+
   def count_votes
-    self.up_votes + self.down_votes
+    self.up_votes - self.down_votes
   end
 end

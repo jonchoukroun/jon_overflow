@@ -8,4 +8,9 @@ class Question < ActiveRecord::Base
   def count_votes
     self.up_votes - self.down_votes
   end
+
+  # Return 1st 3 words of content and ellipsis
+  def preview
+    self.content.split(' ')[0...3].join(' ') + '...'
+  end
 end

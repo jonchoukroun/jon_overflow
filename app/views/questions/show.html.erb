@@ -1,22 +1,45 @@
-<h1><%= @question.title %></h1>
+<%# TODO %>
+<%# 1. Partial out new answer form %>
+<%# 2. Add edit/delete options to answers %>
 
-<article><%= @question.content %></article>
+<div class="container full-question">
+  <div class="row question-heading">
+    <div class="col-sm-2 vote-group">
+      <%= button_to 'Up', up_vote_question_path(@question), method: :patch %>
+      <p class="vote-count"><%= @question.count_votes %></p>
+      <%= button_to 'Down', down_vote_question_path(@question), method: :patch %>
+    </div><!-- col-sm-2 vote-group -->
 
-<p>
-	<%= link_to 'Edit', edit_question_path(@question) %>
-	<%= link_to 'Delete', question_path(@question),
-			method: :delete,
-			data: { confirm: "Are you sure you want to delete: #{@question.title}?"} %>
-</p>
+    <div class="col-sm-10 question-title">
+      <h1><%= @question.title %></h1>
+    </div><!-- col-sm-10 question-title -->
+  </div><!-- row question-heading -->
 
-<div class="answers">
-	<h2>Answers:</h2>
-	<%= render @question.answers.sort_by { |a| a.count_votes}.reverse! %>
+  <div class="row question-content">
+    <div class="col-sm-10 col-sm-offset-2">
+      <article><%= @question.content %></article>
+    </div><!-- col-sm-10 col-sm-offset-2 -->
+
+    <div class="row question-options">
+      <div class="col-sm-1 col-sm-offset-10">
+        <%= link_to 'Edit', edit_question_path(@question) %>
+      </div><!-- col-sm-1 col-sm-offset-10 -->
+      <div class="col-sm-1">
+        <%= link_to 'Delete', question_path(@question),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete: #{@question.title}?"} %>
+      </div><!-- col-sm-1 -->
+    </div><!-- row question-options -->
+  </div><!-- row question-content -->
+</div><!-- container full-question -->
+
+<div class="container answers-index">
+  <%= render @question.answers.sort_by { |a| a.count_votes}.reverse! %>
 </div>
 
 <div class="new_answer">
 	<h3>Add an answer:</h3>
-	<%= render 'answers/form' %>
+  <%= render 'answers/form' %>
 </div>
 
 <%= link_to 'Back', questions_path %>

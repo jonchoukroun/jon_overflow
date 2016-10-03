@@ -9,13 +9,20 @@
   )
 end
 
+6.times do
+  Category.create(
+    name: Faker::Beer.name
+  )
+end
+
 24.times do
   Question.create(
     title: Faker::ChuckNorris.fact,
     content: Faker::Company.catch_phrase + ". " + Faker::Company.catch_phrase,
     up_votes: rand(0..25),
     down_votes: rand(0..25),
-    user_id: rand(1..12)
+    user_id: rand(1..12),
+    category_id: rand(1..6)
   )
 end
 

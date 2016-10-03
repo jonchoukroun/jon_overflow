@@ -1,0 +1,17 @@
+$heading-font: 'Raleway', sans-serif;
+$text-font: 'Open Sans', sans-serif;
+$primary-color: #666;
+
+body {
+  background: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  color: $primary-color;
+}
+
+p {
+  font-family: $text-font;
+  color: $primary-color;
+}

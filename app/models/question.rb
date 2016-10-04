@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
   belongs_to :user
-  has_many :answers
+  has_many :answers, dependent: :destroy
   validates_associated :answers
 
   validates_presence_of :title, :content

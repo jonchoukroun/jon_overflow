@@ -9,9 +9,9 @@ class QuestionsController < ApplicationController
     @question = Question.new
 
     # Return categories for new question dropdown menu
-    @category = Category.all.map { |c| c.name, c.id }
+    @category = Category.all.map { |c| [c.name, c.id] }
     # User is temporary until sessions logic
-    @user = User.all.map { |u| u.name, u.id }
+    @user = User.all.map { |u| [u.name, u.id] }
   end
 
   def show

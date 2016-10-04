@@ -1,3 +1,6 @@
-$('form#new_question').remove();
-$('a.new-question').show();
-$('.questions-index').prepend('<%= @question %>')
+var container = $('#content.container');
+$(container).empty().html(
+  $(" <%= escape_javascript(render @question) %> ")
+);
+$('<a class="btn btn-default" href="/">').text('Back to questions').appendTo(container);
+

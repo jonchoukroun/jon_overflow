@@ -1,28 +1,18 @@
-<%= form_for :question, url: form_action(@question), method: form_method(@question) do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@question.errors.count, "error") %> prohibited this question from saving:
-      </h2>
-      <ul>
-        <% @question.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %><!-- error messages -->
+<%# Refactor useing QuestionsHelper %>
+<%= form_for(:question, url: questions_path, html: {class: 'hidden'}, remote: true) do |f| %>
+  <p><%= f.label :title %>
+  <%= f.text_field :title %>
+  </p>
+  <p>
+  <%= f.label :content %><br>
+  <%= f.text_area :content %>
+  </p>
+  <p>
+  <%= select(:question, :user_id, @user) %>
+  <%= select(:question, :category_id, @category) %>
+  </p>
+  <p>
+  <%= f.submit 'Create', class: 'submit-question' %>
+  </p>
 
-  <div>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-
-  <div>
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-
-  <div>
-    <%= f.submit %>
-  </div>
 <% end %>

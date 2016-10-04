@@ -28,12 +28,10 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        flash[:notice] = "#{@question.title} saved successfully."
         format.html { redirect_to @question, notice: 'Question created successfully' }
         format.json { render json: @question, status: :created, location: @question }
         format.js
       else
-        flash[:notice] = "Save failed: #{@question.errors.full_messages.join('; ')}"
         format.html { render action: 'index' }
         format.json { render json: @question.errors, status: :unprocessable_entity }
         format.js
@@ -62,14 +60,20 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.increment!(:up_votes)
 
-    redirect_to questions_path
+    respond_to do |format|
+      format.html
+      format.json
+      format.js
+    end
   end
 
   def down_vote
     @question = Question.find(params[:id])
     @question.increment!(:down_votes)
 
-    redirect_to questions_path
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

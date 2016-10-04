@@ -1,39 +1,12 @@
 <div class="container full-question">
-  <div class="row question-heading">
-    <div class="col-sm-2 vote-group">
-      <%= button_to 'Up', up_vote_question_path(@question), method: :patch %>
-      <h5 class="vote-count"><%= @question.count_votes %></h5>
-      <%= button_to 'Down', down_vote_question_path(@question), method: :patch %>
-    </div><!-- col-sm-2 vote-group -->
-
-    <div class="col-sm-10 question-title">
-      <h1><%= @question.title %></h1>
-    </div><!-- col-sm-10 question-title -->
-  </div><!-- row question-heading -->
-
-  <div class="row question-content">
-    <div class="col-sm-10 col-sm-offset-2">
-      <p><%= @question.content %></p>
-    </div><!-- col-sm-10 col-sm-offset-2 -->
-
-    <div class="row question-options">
-      <div class="col-sm-1 col-sm-offset-10">
-        <%= link_to 'Edit', edit_question_path(@question) %>
-      </div><!-- col-sm-1 col-sm-offset-10 -->
-      <div class="col-sm-1">
-        <%= link_to 'Delete', question_path(@question),
-            method: :delete,
-            data: { confirm: "Are you sure you want to delete: #{@question.title}?"} %>
-      </div><!-- col-sm-1 -->
-    </div><!-- row question-options -->
-  </div><!-- row question-content -->
+  <%= render 'questions/full_question' %>
 </div><!-- container full-question -->
 
 <div class="container answers-index">
   <%= render @question.answers.sort_by { |a| a.count_votes}.reverse! %>
 </div>
 
-<div class="new_answer">
+<div class="container new-answer">
 	<h3>Add an answer:</h3>
   <%= render 'answers/form' %>
 </div>

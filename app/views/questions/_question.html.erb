@@ -1,8 +1,6 @@
 <div class="row question-heading">
   <div class="col-sm-2 vote-group">
-    <%= button_to 'Up', up_vote_question_path(@question), method: :patch %>
-    <h5 class="vote-count"><%= @question.count_votes %></h5>
-    <%= button_to 'Down', down_vote_question_path(@question), method: :patch %>
+    <%= render 'questions/vote_group', question: question %>
   </div><!-- col-sm-2 vote-group -->
 
   <div class="col-sm-10 question-title">

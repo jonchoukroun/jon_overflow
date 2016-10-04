@@ -1,0 +1,15 @@
+<%= link_to raw("<span class=\"glyphicon glyphicon-triangle-top\">"),
+    up_vote_question_path(question),
+    class: 'btn btn-default btn-sm vote',
+    id: 'up',
+    method: :patch,
+    remote: true %>
+
+<h4 class="vote-count"><%= question.count_votes %></h4>
+
+<%= link_to raw("<span class=\"glyphicon glyphicon-triangle-bottom\">"),
+    down_vote_question_path(question),
+    class: 'btn btn-default btn-sm vote',
+    id: 'down',
+    method: :patch,
+    remote: true %>

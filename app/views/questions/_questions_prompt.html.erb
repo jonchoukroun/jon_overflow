@@ -1,9 +1,7 @@
 <div class="container-fluid question-prompt">
   <div class="row question-heading">
     <div class="col-sm-3 vote-group">
-      <%= button_to 'Up', up_vote_question_path(question), method: :patch %>
-      <p class="vote-count"><%= question.count_votes %></p>
-      <%= button_to 'Down', down_vote_question_path(question), method: :patch %>
+      <%= render '/questions/vote_group', question: question %>
     </div><!-- col-sm-3 vote-group -->
 
     <div class="col-sm-9 question-title">

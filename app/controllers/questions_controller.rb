@@ -27,14 +27,11 @@ class QuestionsController < ApplicationController
   	@question = Question.create(question_params)
 
     respond_to do |format|
-      if @question.save
-        format.html { redirect_to @question, notice: 'Question created successfully' }
-        format.json { render json: @question, status: :created, location: @question }
+      if @result = @question.save
         format.js
       else
-        format.html { render action: 'index' }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-        format.js
+        @message = @question.errors.full_messages
+        format.js { render 'error.js.erb' }
       end
     end
   end

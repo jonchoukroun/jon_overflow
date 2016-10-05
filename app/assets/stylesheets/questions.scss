@@ -1,3 +1,22 @@
 .hidden {
   display: none;
 }
+
+// Questions List
+.question-prompt {
+  padding: 1em 0;
+  border-bottom: 1px solid #eee;
+}
+.vote-group {
+  text-align: center;
+}
+
+.vote-group .vote-count {
+  padding-right: 0.5em;
+  font-weight: bold;
+}
+
+// Full question
+.full-question {
+  @extend .question-prompt;
+}

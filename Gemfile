@@ -19,8 +19,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'capybara'
 
-gem 'httparty'
-
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'

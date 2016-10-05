@@ -2,6 +2,8 @@ class Answer < ActiveRecord::Base
   belongs_to :user
   belongs_to :question
 
+  validates_associated :user
+  validates_associated :question
   validates_presence_of :content
 
   def count_votes

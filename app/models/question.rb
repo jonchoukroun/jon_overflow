@@ -1,9 +1,10 @@
 class Question < ActiveRecord::Base
   belongs_to :user
   has_many :answers, dependent: :destroy
-  validates_associated :user
+  # this doesn't work
+  # validates_associated :user
 
-  validates_presence_of :title, :content
+  validates_presence_of :title, :content, :user_id
 
   # Eventually count array of user_ids
   def count_votes

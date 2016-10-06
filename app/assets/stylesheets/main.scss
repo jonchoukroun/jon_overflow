@@ -6,12 +6,17 @@
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+
 $heading_font: 'Raleway', sans-serif;
 $text_font: 'Open Sans', sans-serif;
 $primary_color: #666;
 
 body {
   background: white;
+}
+
+#content {
+  padding-top: 50px;
 }
 
 h1, h2, h3, h4, h5, h6 {

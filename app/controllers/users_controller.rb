@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        # sessions[:current_user] = @user
+        log_in @user
         format.js {render js: "window.location.href = ('#{user_path(@user)}');"}
       else
         @message = @user.errors.full_messages

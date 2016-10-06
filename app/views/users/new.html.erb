@@ -1,0 +1,23 @@
+<h1 class="form-title">Sign Up</h1>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 signup-form">
+    <%= form_for(@user, url: '/users', remote: true) do |f| %>
+      <div class="error-messages"></div>
+      <%= f.label :name, 'Display name' %>
+      <%= f.text_field :name, autofocus: true %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, 'Confirm Password' %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit 'Create account', class: 'btn btn-primary' %>
+
+    <% end %>
+  </div><!-- col-sm-6 col-sm-offset-3 signup-form -->
+</div><!-- row -->

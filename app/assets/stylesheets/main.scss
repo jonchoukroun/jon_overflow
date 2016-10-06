@@ -6,22 +6,43 @@
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
-$heading-font: 'Raleway', sans-serif;
-$text-font: 'Open Sans', sans-serif;
-$primary-color: #666;
+$heading_font: 'Raleway', sans-serif;
+$text_font: 'Open Sans', sans-serif;
+$primary_color: #666;
 
 body {
   background: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $heading-font;
-  color: $primary-color;
+  font-family: $heading_font;
+  color: $primary_color;
 }
 
 p {
-  font-family: $text-font;
-  color: $primary-color;
+  font-family: $text_font;
+  color: $primary_color;
+}
+
+// Forms
+.form-title {
+  text-align: center;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-bottom: 1em;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+label {
+  font-family: $text_font;
+  color: $primary_color;
 }
 
 

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Login/logout routes
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
   
   # Questions resource that allows for voting up/down
   resources :questions do 

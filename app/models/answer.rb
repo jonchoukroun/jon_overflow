@@ -7,7 +7,4 @@ class Answer < ActiveRecord::Base
   # validates_associated :question
   validates_presence_of :content, :user_id, :question_id
 
-  def count_votes
-    self.up_votes - self.down_votes
-  end
 end

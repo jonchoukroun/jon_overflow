@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :users
-
   # Signup routes
   get '/signup' => 'users#new'
   # post '/users/' => 'users#create'
@@ -10,6 +8,10 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+
+  resources :users
+  resources :categories
+
   
   # Questions resource that allows for voting up/down
   resources :questions do 
@@ -27,7 +29,7 @@ Rails.application.routes.draw do
     end
   end
   
-  root 'questions#index'
+  root 'categories#index'
 
 
 end

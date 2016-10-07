@@ -6,21 +6,22 @@ class AnswersController < ApplicationController
 
   end
 
-  def up_vote
-    @question = Question.find(params[:question_id])
-    @answer = @question.answers.find(params[:id])
-    @answer.increment!(:up_votes)
+  # Implement act_as_votes below
+  # def up_vote
+    # @question = Question.find(params[:question_id])
+    # @answer = @question.answers.find(params[:id])
+    # @answer.increment!(:up_votes)
 
-    redirect_to @question
-  end
+    # redirect_to @question
+  # end
 
-  def down_vote
-    @question = Question.find(params[:question_id])
-    @answer = @question.answers.find(params[:id])
-    @answer.increment!(:down_votes, by = -1)
+  # def down_vote
+    # @question = Question.find(params[:question_id])
+    # @answer = @question.answers.find(params[:id])
+    # @answer.increment!(:down_votes, by = -1)
 
-    redirect_to @question
-  end
+    # redirect_to @question
+  # end
 
   private
     def answer_params

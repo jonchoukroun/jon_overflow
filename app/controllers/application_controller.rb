@@ -9,4 +9,13 @@ class ApplicationController < ActionController::Base
     def require_login
       sessions[:user_id]
     end
+
+    def authorize
+      # respond_to do |format|
+      unless current_user
+        @message = [ "You must be logged in to ask a new question." ]
+        render js: "window.location.href = ('#{login_path}');"
+      end
+      # end
+    end
 end

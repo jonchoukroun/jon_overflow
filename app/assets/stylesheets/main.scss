@@ -11,7 +11,16 @@ $heading_font: 'Raleway', sans-serif;
 $text_font: 'Open Sans', sans-serif;
 $primary_color: #666;
 
+html {
+  height: 100%;
+  box-sizing: box_sizing;
+}
+
 body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
   background: white;
 }
 
@@ -47,11 +56,3 @@ label {
 }
 
 
-// Debugging
-.debug-dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}

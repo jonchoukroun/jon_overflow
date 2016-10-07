@@ -6,9 +6,6 @@
   <%= f.label :content %>
   <%= f.text_area :content %>
   
-  <%= f.label :user_id, "User" %>
-  <%= select(:question, :user_id, @user) %>
-  
   <%= f.submit 'Ask Question', class: 'btn btn-primary submit-question' %>
   <%= link_to 'Cancel', '#', class: 'btn btn-default cancel-question' %>
 

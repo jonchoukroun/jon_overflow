@@ -1,15 +1,14 @@
 class QuestionsController < ApplicationController
   helper QuestionsHelper
+  before_action :authorize, except: [:index, :show]
 
   def index
     @questions = Question.all
-    @questions = @questions.sort_by { |q| q.count_votes }.reverse!
+    # Sort by # of answer votes
+    # @questions = @questions.sort_by { |q| q.count_votes }.reverse!
 
     # New question form is on index
     @question = Question.new
-
-    # User is temporary until sessions imlemented
-    @user = User.all.map { |u| [u.name, u.id] }
   end
 
   def show
@@ -23,6 +22,7 @@ class QuestionsController < ApplicationController
 
   def create
   	@question = Question.create(question_params)
+    @question.user_id = current_user.id
 
     respond_to do |format|
       if @question.save
@@ -51,29 +51,29 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
 
-  def up_vote
-    @question = Question.find(params[:id])
-    @question.increment!(:up_votes)
+  # def up_vote
+    # @question = Question.find(params[:id])
+    # @question.increment!(:up_votes)
 
-    respond_to do |format|
-      format.html
-      format.json
-      format.js
-    end
-  end
+    # respond_to do |format|
+      # format.html
+      # format.json
+      # format.js
+    # end
+  # end
 
-  def down_vote
-    @question = Question.find(params[:id])
-    @question.increment!(:down_votes)
+  # def down_vote
+    # @question = Question.find(params[:id])
+    # @question.increment!(:down_votes)
 
-    respond_to do |format|
-      format.js
-    end
-  end
+    # respond_to do |format|
+      # format.js
+    # end
+  # end
 
   private
 
   	def question_params
-  		params.require(:question).permit(:title, :content, :user_id)
+  		params.require(:question).permit(:title, :content)
   	end
 end

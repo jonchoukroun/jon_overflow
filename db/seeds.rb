@@ -9,22 +9,18 @@
   )
 end
 
-24.times do
+12.times do
   Question.create(
     title: Faker::ChuckNorris.fact,
     content: Faker::Company.catch_phrase + ". " + Faker::Company.catch_phrase,
-    up_votes: rand(0..25),
-    down_votes: rand(0..25),
-    # user_id: rand(1..12),
+    # user_id: rand(1..6)
   )
 end
 
-100.times do 
+24.times do 
   Answer.create(
     content: Faker::Hacker.say_something_smart + ".  " + Faker::Hacker.say_something_smart,
-    up_votes: rand(0..25),
-    down_votes: rand(0..25),
-    # user_id: rand(1..12),
-    # question_id: rand(1..24)
+    # user_id: rand(1..6),
+    # question_id: rand(1..12)
   )
 end

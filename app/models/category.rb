@@ -3,11 +3,7 @@ class Category < ActiveRecord::Base
   # May not work
   validates_associated :questions
 
-  def get_questions
-    Category.joins(:questions)
-  end
-
   def count_questions
-    get_questions.count
+    p self.questions.count
   end
 end

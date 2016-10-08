@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
   def index
-    @questions = Question.all
+    @questions = Question.where("category_id = ?", params[:category_id])
 
     # New question form is on index
     @question = Question.new

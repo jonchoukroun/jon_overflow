@@ -1,9 +1,5 @@
-<h1>Categories</h1>
+<div id="category-menu" class="container">
+<%= render 'categories/categories_menu' %>
+</div><!-- #category-menu.container -->
 
-<div class="container categories-table">
-  <table class="table">
-    <% @categories.each do |category| %>
-      <%= render 'categories/categories_table', category: category %>
-    <% end %>
-  </table>
-</div><!-- container categories-table -->
+<%= render '/categories/main_content' %>

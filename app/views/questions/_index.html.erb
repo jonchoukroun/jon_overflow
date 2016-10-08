@@ -1,0 +1,5 @@
+<div class="container questions-index">
+  <% @questions.each do |question| %>
+    <%= render '/questions/questions_prompt', question: question %>
+  <% end %>
+</div><!-- container questions-container -->

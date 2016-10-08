@@ -1,0 +1,5 @@
+<div id="main-content" class="container">
+  <% @categories.each do |category| %>
+    <%= render 'categories/categories_table', category: category %>
+  <% end %>
+</div><!-- container categories-table -->

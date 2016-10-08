@@ -1,8 +1,9 @@
-<%= link_to 'Categories <span class="caret"></span>'.html_safe, '#',
-  class: 'dropdown-toggle', 'data-toggle': 'dropdown', role: 'button' %>
-<ul class="dropdown-menu">
+<ul class="nav nav-tabs category-nav">
+  <li role="presentation", class="active">
+    <%= link_to 'All Categories', categories_path, remote: true %>
+  </li>
   <% @categories.each do |category| %>
-    <li><%= link_to category.name, category_path(category) %></li>
+    <li role="presentation">
+      <%= link_to category.name, category_questions_path(category), remote: true %></li>
   <% end %>
-</ul><!-- dropdown-menu -->
-
+</ul>

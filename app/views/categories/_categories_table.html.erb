@@ -1,5 +1,15 @@
-<tr class="category-row">
-  <td><h2><%= category.name %></h2></td>
-  <td><p><%= category.description %></p></td>
-  <td><p>Active questions: <strong><%= category.count_questions %></strong></p></td>
-</tr>
+<div class="row category-row">
+  <div class="col-sm-4 category-name">
+    <h3><%= link_to category.name, category_questions_path(category), remote: true %></h3>
+  </div><!-- col-sm-4 category-name -->
+  <div class="col-sm-5 category-description">
+    <h4><%= category.description %></h4>
+  </div><!-- col-sm-5 category-description -->
+  <div class="col-sm-3 active-questions">
+    <p>Active Questions: <strong><%= category.count_questions %></strong></p>
+    <%= link_to 'Show questions',
+      category_questions_path(category),
+      class: 'btn btn-default',
+      remote: true %>
+  </div><!-- col-sm-3 active-questions -->
+</div><!-- row category-row -->

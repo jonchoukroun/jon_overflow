@@ -4,8 +4,6 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
-    # Sort by # of answer votes
-    # @questions = @questions.sort_by { |q| q.count_votes }.reverse!
 
     # New question form is on index
     @question = Question.new

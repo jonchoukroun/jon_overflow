@@ -10,22 +10,12 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   resources :users
-  resources :categories
 
-  
-  # Questions resource that allows for voting up/down
-  resources :questions do 
-  	member do
-  		patch 'up_vote'
-  		patch 'down_vote'
-  	end
-  	
-  # Questions resource that allows for voting up/down
-    resources :answers do
-			member do
-	  		patch 'up_vote'
-				patch 'down_vote'
-	  	end
+  shallow do
+    resources :categories do
+      resources :questions do
+        resources :answers
+      end
     end
   end
   

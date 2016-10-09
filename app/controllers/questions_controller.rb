@@ -10,11 +10,12 @@ class QuestionsController < ApplicationController
 
   def show
   	@question = Question.find(params[:id])
+    @category = Category.find_by(id: @question.category_id)
+    # @user = get_username(@question)
   end
 
-  # def new
-    # @question = Question.new
-  # end
+  def new
+  end
 
   def edit
     @question = Question.find(params[:id]) 
@@ -72,7 +73,6 @@ class QuestionsController < ApplicationController
   # end
 
   private
-
   	def question_params
   		params.require(:question).permit(:title, :content)
   	end

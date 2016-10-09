@@ -14,4 +14,13 @@ class Question < ActiveRecord::Base
   def preview
     self.content.split(' ')[0...3].join(' ') + '...'
   end
+
+  def publish_date
+    self.created_at.to_formatted_s(:long)
+  end
+
+  def publish_time
+    # self.created_at.to_s.split(' ')[1]
+  end
+
 end

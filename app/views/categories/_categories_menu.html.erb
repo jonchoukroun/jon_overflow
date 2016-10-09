@@ -2,6 +2,7 @@
   <li role="presentation", class="active">
     <%= link_to 'All Categories', categories_path, remote: true %>
   </li>
+
   <% @categories.each do |category| %>
     <li role="presentation">
       <%= link_to category.name, category_questions_path(category), remote: true %></li>

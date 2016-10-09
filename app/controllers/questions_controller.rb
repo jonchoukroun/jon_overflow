@@ -4,8 +4,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.where("category_id = ?", params[:category_id])
-
-    # New question form is on index
+    @category = Category.find(params[:category_id])
     @question = Question.new
   end
 
@@ -13,6 +12,9 @@ class QuestionsController < ApplicationController
   	@question = Question.find(params[:id])
   end
 
+  # def new
+    # @question = Question.new
+  # end
 
   def edit
     @question = Question.find(params[:id]) 

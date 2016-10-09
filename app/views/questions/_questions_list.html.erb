@@ -1,4 +1,8 @@
 <div class="container questions-index">
+  <%= render '/questions/form' %>
+
+  <%= link_to 'Ask a Question', '#', class: 'btn btn-primary new-question' %>
+
   <% @questions.each do |question| %>
     <%= render '/questions/questions_prompt', question: question %>
   <% end %>

@@ -12,7 +12,7 @@
 <div class="row user-info">
   <div class="col-sm-4 col-sm-offset-8 user-name">
     <p>Asked by: <%= @user_name %></p>
-    <p>On: <%= question.publish_date %><br>at <%= question.publish_time %></p>
+    <p><%= local_time_ago(question.created_at) %></p>
   </div><!-- col-sm-4 col-sm-offset-8 user-name -->
 </div><!-- row user-info -->
 

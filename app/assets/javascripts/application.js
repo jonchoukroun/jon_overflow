@@ -1,5 +1,5 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require localtime
+//= require local_time
 //= require_tree .

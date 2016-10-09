@@ -2,7 +2,10 @@
              url: category_questions_path,
              html: {class: 'hidden'}, 
              remote: true) do |f| %>
+
+  <h3>Ask a question</h3>
   <div class="error-messages"></div>
+
   <%= f.label :title %>
   <%= f.text_field :title %>
   

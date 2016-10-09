@@ -6,6 +6,7 @@ var NewQuestion = {
 
   toggleQuestionForm: function(e) {
     e.preventDefault();
+    console.log('fuck');
     $('form#new_question').toggleClass('hidden');
     $('a.new-question').toggleClass('hidden');
     $('.container.error-messages').empty();
@@ -15,4 +16,4 @@ var NewQuestion = {
 
 $(document).ready(function() {
   NewQuestion.bindListeners();
-})
+});

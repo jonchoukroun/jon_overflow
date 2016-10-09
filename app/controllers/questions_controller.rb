@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
   def show
   	@question = Question.find(params[:id])
     @category = Category.find_by(id: @question.category_id)
-    # @user = get_username(@question)
+    @user_name = User.find_by(id: @question.user_id).name
   end
 
   def new

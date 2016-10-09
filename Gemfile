@@ -19,6 +19,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'acts_as_votable', '~> 0.10.0'
 
+gem 'local_time'
+
 gem 'capybara'
 
 group :development, :test do

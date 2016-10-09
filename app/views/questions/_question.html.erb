@@ -9,6 +9,13 @@
   </div><!-- col-sm-10 question-title -->
 </div><!-- row question-heading -->
 
+<div class="row user-info">
+  <div class="col-sm-4 col-sm-offset-8 user-name">
+    <p>Asked by: <%= @user_name %></p>
+    <p>On: <%= question.publish_date %><br>at <%= question.publish_time %></p>
+  </div><!-- col-sm-4 col-sm-offset-8 user-name -->
+</div><!-- row user-info -->
+
 <div class="row question-content">
   <div class="col-sm-10 col-sm-offset-2">
     <p><%= question.content %></p>

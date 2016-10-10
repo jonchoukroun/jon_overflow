@@ -4,6 +4,6 @@ class Category < ActiveRecord::Base
   validates_associated :questions
 
   def count_questions
-    p self.questions.count
+    self.questions.count
   end
 end

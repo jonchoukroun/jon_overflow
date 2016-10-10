@@ -1,0 +1,14 @@
+toggleForm = function() {
+}
+
+$('a.question-edit').bind('ajax:success', function() {
+  $('.full-question').append(
+    "<%= j(render 'questions/form') %>"
+  );
+  $('form.question-form').toggleClass('hidden');
+});
+
+$('#main-content').on('click', '.full-question a.cancel-question', function(e) {
+  e.preventDefault();
+  $(this).closest('form.question-form').fadeOut();
+});

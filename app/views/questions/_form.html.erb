@@ -11,6 +11,13 @@
   
   <%= f.label :content %>
   <%= f.text_area :content %>
+
+  <%= f.label :category %>
+  <%= f.collection_select :category_id,
+    Category.all,
+    :id,
+    :name,
+    selected: params[:category_id] %>
   
   <%= f.submit 'Ask Question', class: 'btn btn-primary submit-question' %>
   <%= link_to 'Cancel', '#', class: 'btn btn-default cancel-question' %>

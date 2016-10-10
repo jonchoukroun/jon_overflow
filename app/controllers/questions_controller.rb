@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
     @questions = Question.where("category_id = ?", params[:category_id])
     @category = Category.find(params[:category_id])
 
-    # Load with question prompt as destination of hidden form
+    # New action loads hidden menu on questions index
     @question = Question.new
   end
 

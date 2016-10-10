@@ -1,7 +1,6 @@
 <div class="row question-heading">
   <div class="col-sm-2 question-rating">
-    <%# Id as placeholder, later count associated questions %>
-    <h2 class="vote-count"><%= question.id %></h2>
+    <h2 class="vote-count"><%= question.count_answers %></h2>
   </div><!-- col-sm-2 question-rating -->
 
   <div class="col-sm-10 question-title">
@@ -16,7 +15,7 @@
 </div><!-- row question-content -->
 
 <div class="row">
-  <div class="col-sm-4 col-sm-offset-8 user-action">
+  <div class="col-sm-4 col-sm-offset-8 asker-info">
     <% if current_user && current_user.id == question.user_id %>
       <%= link_to 'Edit',
         edit_question_path(question),
@@ -33,8 +32,8 @@
         remote: true %>
 
     <% else %>
-      <p>Asked by: <%= @user_name %></p>
+      <p>Asked by: <%= @asker %></p>
       <p><%= local_time_ago(question.created_at) %></p>
     <% end %>
   </div><!-- col-sm-4 col-sm-offset-8 -->
-</div><!-- row user-info -->
+</div><!-- row asker-info -->

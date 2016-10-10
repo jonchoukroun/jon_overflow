@@ -20,16 +20,19 @@
     <div class="col-sm-1 col-sm-offset-10 question-edit">
       <%= link_to 'Edit',
         edit_question_path(question),
+        class: 'btn btn-info question-edit',
         remote: true %>
     </div><!-- col-sm-1 col-sm-offset-10 -->
 
     <div class="col-sm-1 question-delete">
-      <%= link_to 'Delete', question_path(question),
-          method: :delete,
-          data: {
-            confirm: "Are you sure you want to delete: #{@question.title}?"
-          },
-          remote: true %>
+      <%= link_to 'Delete',
+        question_path(question),
+        class: 'btn btn-danger question-delete',
+        method: :delete,
+        data: {
+          confirm: "Are you sure you want to delete: #{@question.title}?"
+        },
+        remote: true %>
     </div><!-- col-sm-1 question-delete -->
   <% else %>
 

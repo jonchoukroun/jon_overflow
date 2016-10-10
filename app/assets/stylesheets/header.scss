@@ -1,6 +1,7 @@
 .page-header {
   margin: 0;
-  height: 15em;
+  margin-bottom: 2em;
+  height: 22em;
   background: asset-data-url("skyline.png");
   background-size: cover;
   -webkit-background-size: cover;
@@ -10,9 +11,10 @@
 
 .page-header h1 {
   margin-top: 0;
-  padding: 1.5em 0 0.5em 2em;
+  padding-top: 1.3em;
+  padding-left: 0.5em;
   font-weight: bold;
-  font-size: 3.5em;
+  font-size: 8em;
   color: white;
 }
 

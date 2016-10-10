@@ -1,22 +1,51 @@
-.hidden {
-  display: none;
+// Questions Index
+.questions-index {
+  width: 80%;
 }
-
-// Questions List
 .question-prompt {
   padding: 1em 0;
   border-bottom: 1px solid #eee;
 }
-.vote-group {
+
+.question-prompt .question-preview h4 {
+  font-style: italic;
+}
+
+.question-prompt .question-expand {
+  text-align: right;
+}
+
+.question-prompt .question-rating {
   text-align: center;
 }
 
-.vote-group .vote-count {
-  padding-right: 0.5em;
-  font-weight: bold;
+a.new-question {
+  margin: 1em;
+}
+
+form.question-form {
+  width: 75%;
+  height: 100%;
+  margin: 2em auto;
+}
+
+a.cancel-question {
+  @extend a.new-question;
+  margin-left: 0;
 }
 
 // Full question
 .full-question {
-  @extend .question-prompt;
+  width: 80%;
+}
+
+.full-question .user-action a {
+  margin: 0;
+  text-align: right;
+}
+
+.full-question .user-action p {
+  font-size: 0.8em;
+  font-style: italic;
+
 }

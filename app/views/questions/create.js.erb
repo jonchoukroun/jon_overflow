@@ -1,5 +1,3 @@
-var container = $('#content.container');
-$(container).empty().html(
-  $(" <%= j(render @question) %> ")
+$('.questions-index').empty().html(
+  "<%= j(render @question) %>"
 );
-$('<a class="btn btn-default" href="/">').text('Back to questions').appendTo(container);

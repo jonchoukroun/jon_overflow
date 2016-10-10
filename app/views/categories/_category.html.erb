@@ -4,6 +4,7 @@
   <li role="presentation", class="active">
     <%= link_to 'New Question', '#', remote: true, class: 'btn btn-primary new-question' %>
   </li>
+
   <% @categories.each do |category| %>
     <li role="presentation">
       <%= link_to category.name, category_path(category), remote: true %></li>

@@ -7,7 +7,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       respond_to do |format|
-        format.js { render js: "window.location.href = ('#{user_path(user)}')" }
+        format.js {
+          render js: "window.location.href = ('#{user_path(user)}')"
+        }
       end
     else
       respond_to do |format|
@@ -15,7 +17,10 @@ class SessionsController < ApplicationController
           @message = ["Incorrect username/password combination."]
           format.js
         else
-          format.js { render js: "window.location.href = ('#{signup_path}');" }
+          @message = ["This account does not exist yet."]
+          format.js {
+            render js: "window.location.href = ('#{signup_path}');"
+          }
         end
       end
     end

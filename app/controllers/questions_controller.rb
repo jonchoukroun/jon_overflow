@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-  	@question = Question.find(params[:id])
+    @question = Question.find(params[:id])
     @category = Category.find_by(id: @question.category_id)
     @user_name = User.find_by(id: @question.user_id).name
   end
@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-  	@question = Question.create(question_params)
+    @question = Question.create(question_params)
     @question.user_id = current_user.id
 
     respond_to do |format|
@@ -73,7 +73,7 @@ class QuestionsController < ApplicationController
   # end
 
   private
-  	def question_params
-  		params.require(:question).permit(:title, :content)
-  	end
+    def question_params
+      params.require(:question).permit(:title, :content)
+    end
 end

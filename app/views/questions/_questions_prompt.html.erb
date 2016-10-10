@@ -13,7 +13,9 @@
   </div><!-- row question-heading -->
 
   <div class="row question-preview">
-    <div class="col-sm-6 col-sm-offset-2"><h4><%= question.preview %></h4></div>
+    <div class="col-sm-6 col-sm-offset-2">
+      <h4><%= question.preview %></h4>
+    </div><!-- col-sm-6 col-sm-offset-2 -->
   </div><!-- row question-preview -->
 
   <div class="row question-options">
@@ -33,7 +35,9 @@
           question_path(question),
           class: 'btn btn-default question-option',
           method: :delete,
-          data: { confirm: "Are you sure you want to delete: #{question.title}?" },
+          data: {
+            confirm: "Are you sure you want to delete: #{question.title}?"
+          },
           remote: true %>
       <% end %>
     </div><!-- col-sm-4 col-sm-offset-8 question-options -->

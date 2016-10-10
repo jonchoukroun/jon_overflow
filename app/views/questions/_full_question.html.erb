@@ -6,7 +6,10 @@
 </div>
 
 <div class="container new-answer">
-	<h3>Add an answer:</h3>
+  <h3>Add an answer:</h3>
 </div>
 
-<%= link_to 'Back', category_questions_path(@category), class: 'btn btn-default', remote: true %>
+<%= link_to 'Back',
+  category_questions_path(@category),
+  class: 'btn btn-default',
+  remote: true %>

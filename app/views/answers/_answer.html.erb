@@ -1,20 +1,33 @@
 <div class="row answer">
-  <div class="col-sm-2 vote-group">
-    <%= button_to 'Up', up_vote_question_answer_path(@question, answer), method: :patch %>
-    <h5 class="vote-count"><%= answer.count_votes %></h5>
-    <%= button_to 'Down', down_vote_question_answer_path(@question, answer), method: :patch %>
-  </div><!-- col-sm-2 vote-group -->
-  <div class="col-sm-10 answer-content">
-    <div class="row">
-      <div class="col-sm-12"><p><%= answer.content %></p></div>
-    </div>
-    <div class="row">
-      <div class="col-sm-1 col-sm-offset-10">
-        <%= link_to 'Edit', questions_path %>
-      </div>
-      <div class="col-sm-1">
-        <%= link_to 'Delete', questions_path %>
-      </div>
-    </div>
-  </div><!-- col-sm-10 answer-content -->
+  <div class="col-sm-3 answer-rating">
+    <h2 class="vote-count">Placeholder</h2>
+  </div><!-- col-sm-3 answer-rating -->
+
+  <div class="col-sm-9 answer-content">
+    <h5><%= answer.content %></h5>
+  </div><!-- col-sm-9 answer-content -->
 </div><!-- row answer -->
+
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-8 user-action">
+    <% if current_user && current_user.id == answer.user_id %>
+      <%= link_to 'Edit',
+        edit_answer_path(answer),
+        class: 'btn btn-info answer-edit',
+        remote: true %>
+
+      <%= link_to 'Delete',
+        answer_path(answer),
+        class: 'btn btn-danger answer-delete',
+        method: :delete,
+        data: {
+          confirm: "Are you sure?"
+        },
+        remote: true %>
+
+    <% else %>
+      <p>Asked by: <%= answer.responder %></p>
+      <p><%= local_time_ago(answer.created_at) %></p>
+    <% end %>
+  </div><!-- col-sm-4 col-sm-offset-8 -->
+</div><!-- row user-action -->

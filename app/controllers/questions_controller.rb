@@ -47,29 +47,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-
-    redirect_to questions_path
   end
-
-  # def up_vote
-    # @question = Question.find(params[:id])
-    # @question.increment!(:up_votes)
-
-    # respond_to do |format|
-      # format.html
-      # format.json
-      # format.js
-    # end
-  # end
-
-  # def down_vote
-    # @question = Question.find(params[:id])
-    # @question.increment!(:down_votes)
-
-    # respond_to do |format|
-      # format.js
-    # end
-  # end
 
   private
     def question_params

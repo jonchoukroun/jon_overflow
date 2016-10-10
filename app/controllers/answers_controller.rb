@@ -1,27 +1,10 @@
 class AnswersController < ApplicationController
+  before_action :authorize, except: [:index]
+
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.create(answer_params)
-    redirect_to question_path(@question)
-
   end
-
-  # Implement act_as_votes below
-  # def up_vote
-    # @question = Question.find(params[:question_id])
-    # @answer = @question.answers.find(params[:id])
-    # @answer.increment!(:up_votes)
-
-    # redirect_to @question
-  # end
-
-  # def down_vote
-    # @question = Question.find(params[:question_id])
-    # @answer = @question.answers.find(params[:id])
-    # @answer.increment!(:down_votes, by = -1)
-
-    # redirect_to @question
-  # end
 
   private
     def answer_params

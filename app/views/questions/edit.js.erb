@@ -7,5 +7,5 @@ $('a.question-edit').bind('ajax:success', function() {
 
 $('#main-content').on('click', '.full-question a.cancel-question', function(e) {
   e.preventDefault();
-  $(this).closest('form.question-form').fadeOut();
+  $(this).closest('form.question-form').toggleClass('hidden');
 });

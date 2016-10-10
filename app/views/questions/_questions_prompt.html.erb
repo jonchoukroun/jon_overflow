@@ -13,33 +13,15 @@
   </div><!-- row question-heading -->
 
   <div class="row question-preview">
-    <div class="col-sm-6 col-sm-offset-2">
+    <div class="col-sm-8 col-sm-offset-2">
       <h4><%= question.preview %></h4>
-    </div><!-- col-sm-6 col-sm-offset-2 -->
-  </div><!-- row question-preview -->
+    </div><!-- col-sm-8 col-sm-offset-2 -->
 
-  <div class="row question-options">
-    <div class="col-sm-4 col-sm-offset-8 question-show">
-      <%= link_to 'Show',
+    <div class="col-sm-2 question-expand">
+      <%= link_to 'Expand',
         question_path(question),
-        class: 'btn btn-default question-show',
+        class: 'btn btn-default question-expand',
         remote: true %>
-
-      <% if current_user && current_user.id == question.user_id %>
-        <%= link_to 'Edit',
-          edit_question_path(question),
-          class: 'btn btn-info question-edit',
-          remote: true %>
-
-        <%= link_to 'Delete',
-          question_path(question),
-          class: 'btn btn-danger question-delete',
-          method: :delete,
-          data: {
-            confirm: "Are you sure you want to delete: #{question.title}?"
-          },
-          remote: true %>
-      <% end %>
-    </div><!-- col-sm-4 col-sm-offset-8 question-options -->
-  </div><!-- row question-option -->
+    </div><!-- col-sm-2 question-expand -->
+  </div><!-- row question-preview -->
 <% end %><!-- container-fluid question-prompt -->

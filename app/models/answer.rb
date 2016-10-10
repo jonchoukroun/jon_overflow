@@ -7,4 +7,8 @@ class Answer < ActiveRecord::Base
   # validates_associated :question
   validates_presence_of :content, :user_id, :question_id
 
+  def responder
+    User.find_by(id: self.user_id).name
+  end
+
 end

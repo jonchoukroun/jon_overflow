@@ -1,13 +1,13 @@
 <div class="container full-question">
   <%= render 'questions/question', question: @question %>
+
+  <div class="container answers-index">
+  </div>
+
+  <div class="container new-answer">
+    <h3>Add an answer:</h3>
+  </div>
 </div><!-- container full-question -->
-
-<div class="container answers-index">
-</div>
-
-<div class="container new-answer">
-  <h3>Add an answer:</h3>
-</div>
 
 <%= link_to 'Back',
   category_questions_path(@category),

@@ -13,7 +13,8 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @category = Category.find_by(id: @question.category_id)
-    @user_name = User.find_by(id: @question.user_id).name
+    @asker = User.find_by(id: @question.user_id).name
+    @answers = Answer.where("question_id = ?", @question.id)
   end
 
   def edit

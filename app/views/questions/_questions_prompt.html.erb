@@ -1,8 +1,7 @@
 <%= content_tag :div, class: 'container-fluid question-prompt', id: question.id do %>
   <div class="row question-heading">
     <div class="col-sm-2 question-rating">
-      <%# Id as placeholder, later count # associated questions %>
-      <h3 class="vote-count"><%= question.id %></h3>
+      <h3 class="vote-count"><%= question.count_answers %></h3>
     </div><!-- col-sm-2 question-rating -->
 
     <div class="col-sm-10 question-title">

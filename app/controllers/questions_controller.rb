@@ -5,6 +5,8 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.where("category_id = ?", params[:category_id])
     @category = Category.find(params[:category_id])
+
+    # Load with question prompt as destination of hidden form
     @question = Question.new
   end
 
@@ -12,9 +14,6 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @category = Category.find_by(id: @question.category_id)
     @user_name = User.find_by(id: @question.user_id).name
-  end
-
-  def new
   end
 
   def edit
@@ -74,6 +73,6 @@ class QuestionsController < ApplicationController
 
   private
     def question_params
-      params.require(:question).permit(:title, :content)
+      params.require(:question).permit(:title, :content, :category_id)
     end
 end

@@ -3,7 +3,7 @@ module QuestionsHelper
     if question.persisted?
       question_path(question)
     else
-      questions_path
+      category_questions_path
     end
   end
 

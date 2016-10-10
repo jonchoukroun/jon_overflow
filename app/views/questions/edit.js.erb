@@ -2,9 +2,6 @@ toggleForm = function() {
 }
 
 $('a.question-edit').bind('ajax:success', function() {
-  $('.full-question').append(
-    "<%= j(render 'questions/form') %>"
-  );
   $('form.question-form').toggleClass('hidden');
 });
 

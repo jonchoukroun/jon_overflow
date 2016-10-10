@@ -1,5 +1,6 @@
 <%= form_for(@question, 
-             url: category_questions_path,
+             url: form_action(@question),
+             method: form_method(@question),
              html: {class: 'hidden'}, 
              remote: true) do |f| %>
 

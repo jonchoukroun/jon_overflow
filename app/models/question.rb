@@ -1,8 +1,9 @@
 class Question < ActiveRecord::Base
   belongs_to :user
+  delegate :name, to: :user
   has_many :answers, dependent: :destroy
+  
   # validates_associated :user
-
   validates_presence_of :title, :content, :user_id
 
   # Return 1st 3 words of content and ellipsis

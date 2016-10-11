@@ -8,7 +8,6 @@ var AnswerVote = {
     e.preventDefault();
     var rating = $(this).parent().find('.vote-count');
     var num = parseInt(rating.text());
-    console.log(num);
     rating.text(num + 1);
   },
 
@@ -16,7 +15,6 @@ var AnswerVote = {
     e.preventDefault();
     var rating = $(this).parent().find('.vote-count');
     var num = parseInt(rating.text());
-    console.log(num);
     rating.text(num - 1);
   }
 }

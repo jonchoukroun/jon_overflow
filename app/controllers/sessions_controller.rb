@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       log_in user
       respond_to do |format|
         format.js {
-          render js: "window.location.href = ('#{user_path(user)}')"
+          render js: "window.location.href = ('/')"
         }
       end
     else

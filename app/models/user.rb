@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
 
+  acts_as_voter
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :name,     presence: true, length: { maximum: 50 },
                        uniqueness: true
@@ -14,4 +16,5 @@ class User < ActiveRecord::Base
 
   # Use bcrypt for authentication
   has_secure_password
+
 end

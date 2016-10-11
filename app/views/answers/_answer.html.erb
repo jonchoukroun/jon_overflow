@@ -1,7 +1,19 @@
 <div class="container-fluid full-answer">
   <div class="row answer">
     <div class="col-sm-3 answer-rating">
-      <h2 class="vote-count">Placeholder</h2>
+      <%= link_to agree_answer_path(answer), method: :put,
+        class: 'agree',
+        remote: true do %>
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+      <% end %>
+
+      <h4 class="vote-count"><%= answer.agreement_rating %></h4>
+
+      <%= link_to disagree_answer_path(answer), method: :put,
+        class: 'disagree',
+        remote: true do %>
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+      <% end %>
     </div><!-- col-sm-3 answer-rating -->
 
     <div class="col-sm-9 answer-content">

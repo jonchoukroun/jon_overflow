@@ -36,6 +36,16 @@ class AnswersController < ApplicationController
     @answer.destroy
   end
 
+  def upvote
+    @answer = Answer.find(params[:id])
+    @answer.upvote_by current_user
+  end
+
+  def downvote
+    @answer = Answer.find(params[:id])
+    @answer.downvote_by current_user
+  end
+
   private
     def answer_params
       params.require(:answer).permit(:title, :content)

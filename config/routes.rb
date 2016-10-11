@@ -14,7 +14,12 @@ Rails.application.routes.draw do
   shallow do
     resources :categories do
       resources :questions do
-        resources :answers
+        resources :answers do
+          member do
+            put "agree", to: "answers#upvote"
+            put "disagree", to: "answers#downvote"
+          end
+        end
       end
     end
   end

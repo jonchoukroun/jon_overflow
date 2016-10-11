@@ -1,33 +1,35 @@
-<div class="row answer">
-  <div class="col-sm-3 answer-rating">
-    <h2 class="vote-count">Placeholder</h2>
-  </div><!-- col-sm-3 answer-rating -->
+<div class="container-fluid full-answer">
+  <div class="row answer">
+    <div class="col-sm-3 answer-rating">
+      <h2 class="vote-count">Placeholder</h2>
+    </div><!-- col-sm-3 answer-rating -->
 
-  <div class="col-sm-9 answer-content">
-    <h5><%= answer.content %></h5>
-  </div><!-- col-sm-9 answer-content -->
-</div><!-- row answer -->
+    <div class="col-sm-9 answer-content">
+      <h5><%= answer.content %></h5>
+    </div><!-- col-sm-9 answer-content -->
+  </div><!-- row answer -->
 
-<div class="row">
-  <div class="col-sm-4 col-sm-offset-8 user-action">
-    <% if current_user && current_user.id == answer.user_id %>
-      <%= link_to 'Edit',
-        edit_answer_path(answer),
-        class: 'btn btn-info answer-edit',
-        remote: true %>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-8 user-action">
+      <% if current_user && current_user.id == answer.user_id %>
+        <%= link_to 'Edit',
+          edit_answer_path(answer),
+          class: 'btn btn-info answer-edit',
+          remote: true %>
 
-      <%= link_to 'Delete',
-        answer_path(answer),
-        class: 'btn btn-danger answer-delete',
-        method: :delete,
-        data: {
-          confirm: "Are you sure?"
-        },
-        remote: true %>
+        <%= link_to 'Delete',
+          answer_path(answer),
+          class: 'btn btn-danger answer-delete',
+          method: :delete,
+          data: {
+            confirm: "Are you sure?"
+          },
+          remote: true %>
 
-    <% else %>
-      <p>Answered by: <%= answer.responder %></p>
-      <p><%= local_time_ago(answer.created_at) %></p>
-    <% end %>
-  </div><!-- col-sm-4 col-sm-offset-8 -->
-</div><!-- row user-action -->
+      <% else %>
+        <p>Answered by: <%= answer.responder %></p>
+        <p><%= local_time_ago(answer.created_at) %></p>
+      <% end %>
+    </div><!-- col-sm-4 col-sm-offset-8 -->
+  </div><!-- row user-action -->
+</div><!-- container-fluid full-answer -->

@@ -33,13 +33,11 @@ class QuestionsController < ApplicationController
     @question = Question.create(question_params)
     @question.user_id = current_user.id
 
-    respond_to do |format|
-      if @question.save
-        format.js
-      else
-        @message = @question.errors.full_messages
-        format.js { render 'error.js.erb' }
-      end
+    if @question.save
+      render 'create.js.erb'
+    else
+      @message = @question.errors.full_messages
+      render 'error.js.erb'
     end
   end
 

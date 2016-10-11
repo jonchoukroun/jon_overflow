@@ -18,13 +18,11 @@ class AnswersController < ApplicationController
     @answer = @question.answers.create(answer_params)
     @answer.user_id = current_user.id
 
-    respond_to do |format|
-      if @answer.save
-        format.js
-      else
-        @message = @answer.errors.full_messages
-        format.js { render 'error.js.erb' }
-      end
+    if @answer.save
+      render 'create.js.erb'
+    else
+      @message = @answer.errors.full_messages
+      render 'error.js.erb'
     end
   end
 

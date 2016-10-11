@@ -4,7 +4,7 @@
              html: {class: 'question-form hidden'}, 
              remote: true) do |f| %>
 
-  <h3>Ask a question</h3>
+  <h3>Ask a question:</h3>
   <div class="error-messages"></div>
 
   <%= f.label :title %>
@@ -20,7 +20,10 @@
     :name,
     selected: params[:category_id] %>
   
-  <%= f.submit 'Ask Question', class: 'btn btn-primary submit-question' %>
-  <%= link_to 'Cancel', '#', class: 'btn btn-default cancel-question' %>
+  <%= f.submit 'Ask Question',
+    class: 'btn btn-primary submit-question' %>
+
+  <%= link_to 'Cancel', '#',
+    class: 'btn btn-default cancel-question' %>
 
 <% end %>

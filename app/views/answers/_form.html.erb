@@ -1,1 +1,19 @@
-<p>Hey Nong Man</p>
+<%= form_for(@answer,
+            url: question_answers_path(@question.id),
+            method: :post,
+            html: {class: 'answer-form hidden'},
+            remote: true) do |f| %>
+
+  <h4>Answer this question:</h4>
+  <div class="error-messages"></div>
+
+  <%= f.label :content, "Your answer" %>
+  <%= f.text_area :content, autofocus: true %>
+
+  <%= f.submit 'Answer', 
+    class: 'btn btn-primary submit-answer' %>
+
+  <%= link_to 'Cancel', '#',
+    class: 'btn btn-default cancel-answer' %>
+  
+<% end %>

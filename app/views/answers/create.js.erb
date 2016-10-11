@@ -1,0 +1,5 @@
+$('.answers-index').prepend(
+  "<%=  j(render 'answers/answer', answer: @answer)  %>"
+);
+
+$('form.answer-form').toggleClass('hidden');

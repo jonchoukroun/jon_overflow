@@ -1,0 +1,8 @@
+$('a.new-answer').bind('ajax:success', function() {
+  $('form.answer-form').toggleClass('hidden');
+});
+
+$('#main-content').on('click', '.full-question a.cancel-answer', function(e) {
+  e.preventDefault();
+  $('form.answer-form').toggleClass('hidden');
+});

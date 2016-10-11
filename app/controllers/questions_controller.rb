@@ -15,6 +15,7 @@ class QuestionsController < ApplicationController
     @category = Category.find_by(id: @question.category_id)
     @asker = User.find_by(id: @question.user_id).name
     @answers = Answer.where("question_id = ?", @question.id)
+    @answer = Answer.new
   end
 
   def edit

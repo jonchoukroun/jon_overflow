@@ -1,4 +1,4 @@
-$('a.new-answer').bind('ajax:success', function() {
+$('a.new-answer').on('ajax:success', function() {
   $('form.answer-form').toggleClass('hidden');
 });
 

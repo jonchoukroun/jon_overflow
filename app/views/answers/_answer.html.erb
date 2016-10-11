@@ -1,7 +1,19 @@
 <div class="container-fluid full-answer">
   <div class="row answer">
     <div class="col-sm-3 answer-rating">
-      <h2 class="vote-count">Placeholder</h2>
+      <%= link_to agree_answer_path(answer), method: :put,
+        class: 'agree',
+        remote: true do %>
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+      <% end %>
+
+      <h4 class="vote-count"><%= answer.agreement_rating %></h4>
+
+      <%= link_to disagree_answer_path(answer), method: :put,
+        class: 'disagree',
+        remote: true do %>
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+      <% end %>
     </div><!-- col-sm-3 answer-rating -->
 
     <div class="col-sm-9 answer-content">
@@ -12,11 +24,6 @@
   <div class="row">
     <div class="col-sm-4 col-sm-offset-8 user-action">
       <% if current_user && current_user.id == answer.user_id %>
-        <%= link_to 'Edit',
-          edit_answer_path(answer),
-          class: 'btn btn-info answer-edit',
-          remote: true %>
-
         <%= link_to 'Delete',
           answer_path(answer),
           class: 'btn btn-danger answer-delete',
@@ -27,7 +34,7 @@
           remote: true %>
 
       <% else %>
-        <p>Answered by: <%= answer.responder %></p>
+        <p>Answered by: <%= answer.name %></p>
         <p><%= local_time_ago(answer.created_at) %></p>
       <% end %>
     </div><!-- col-sm-4 col-sm-offset-8 -->

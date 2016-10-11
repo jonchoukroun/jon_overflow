@@ -1,3 +1,5 @@
-$('.questions-index').empty().html(
-  "<%= j(render @question) %>"
+$('.questions-index').prepend(
+  "<%= j(render 'questions/questions_prompt', question: @question) %>"
 );
+
+$('form.question-form').toggleClass('hidden');

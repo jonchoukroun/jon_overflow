@@ -32,7 +32,7 @@
         remote: true %>
 
     <% else %>
-      <p>Asked by: <%= @asker %></p>
+      <p>Asked by: <%= question.name %></p>
       <p><%= local_time_ago(question.created_at) %></p>
     <% end %>
   </div><!-- col-sm-4 col-sm-offset-8 -->

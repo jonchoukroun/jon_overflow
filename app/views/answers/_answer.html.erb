@@ -39,7 +39,7 @@
           remote: true %>
 
       <% else %>
-        <p>Answered by: <%= answer.responder %></p>
+        <p>Answered by: <%= answer.name %></p>
         <p><%= local_time_ago(answer.created_at) %></p>
       <% end %>
     </div><!-- col-sm-4 col-sm-offset-8 -->

@@ -9,10 +9,6 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
 
-  def edit
-    @answer = Answer.find(params[:id])
-  end
-
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.create(answer_params)
@@ -24,9 +20,6 @@ class AnswersController < ApplicationController
       @message = @answer.errors.full_messages
       render 'error.js.erb'
     end
-  end
-
-  def update
   end
 
   def destroy

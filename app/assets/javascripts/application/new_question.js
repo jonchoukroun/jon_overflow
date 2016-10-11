@@ -8,7 +8,7 @@ var NewQuestion = {
     e.preventDefault();
     $('form#new_question').toggleClass('hidden');
     $('a.new-question').toggleClass('hidden');
-    $('.container.error-messages').empty();
+    $('.error-messages').empty();
   }
 
 }

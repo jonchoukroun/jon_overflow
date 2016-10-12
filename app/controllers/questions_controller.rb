@@ -45,6 +45,9 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
 
     if @question.update(question_params)
+      @answers = sort(
+        Answer.where("question_id = ?", @question.id), :agreement_rating
+      )
       render 'update.js.erb'
     else
       render 'error.js.erb'

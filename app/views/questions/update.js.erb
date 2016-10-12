@@ -1,3 +1,5 @@
-$('.full-question').empty(
-  "<%= j(render 'questions/full_question', question: @question) %>"
+$('.question').empty().html(
+  "<%= j(render 'questions/question', question: @question) %>"
 );
+
+$('form.question-form').toggleClass('hidden');

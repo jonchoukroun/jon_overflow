@@ -1,3 +1,1 @@
-$('a.answer-delete').on('ajax:success', function() {
-  $(this).closest('.full-answer').fadeOut();
-}):
+$('div#<%= dom_id(@answer) %>').fadeOut();

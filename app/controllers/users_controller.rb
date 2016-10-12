@@ -8,27 +8,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def edit
-  end
-
   def create
     @user = User.create(user_params)
 
-    respond_to do |format|
-      if @user.save
-        log_in @user
-        format.js {render js: "window.location.href = ('#{user_path(@user)}');"}
-      else
-        @message = @user.errors.full_messages
-        format.js {render 'error.js.erb'}
-      end
+    if @user.save
+      log_in @user
+    else
+      @message = @user.errors.full_messages
+      render 'error.js.erb'
     end
-  end
-
-  def update
-  end
-  
-  def destroy
   end
 
   private

@@ -1,8 +1,17 @@
 var index = $('.questions-index');
+
 $(index).prepend(
   "<%= j(render 'questions/questions_prompt', question: @question) %>"
 );
 
-$(index).find('.question-prompt').first().toggleClass('new-question');
+locateQuestion = function() {
+  var target = $(index).find('.question-prompt').first()
+  
+  // Allow unique styling
+  $(target).toggleClass('top-question');
 
-$('form.question-form').toggleClass('hidden');
+  //Get rid of form at bottom of page
+  $('form.question-form').toggleClass('hidden');
+};
+
+locateQuestion();

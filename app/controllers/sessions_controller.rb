@@ -6,23 +6,12 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
-      respond_to do |format|
-        format.js {
-          render js: "window.location.href = ('/')"
-        }
-      end
+    elsif user
+      @message = ["Incorrect username/password combination."]
     else
-      respond_to do |format|
-        if user
-          @message = ["Incorrect username/password combination."]
-          format.js
-        else
-          @message = ["This account does not exist yet."]
-          format.js {
-            render js: "window.location.href = ('#{signup_path}');"
-          }
-        end
-      end
+      @message = ["This account does not exist yet. Redirecting to signup..."]
+      p @message
+      render 'redirect.js.erb'
     end
   end
 

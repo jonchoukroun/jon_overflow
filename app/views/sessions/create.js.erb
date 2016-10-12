@@ -1,3 +1,7 @@
-$('.error-messages').html(
-  "<%= j(render 'shared/errors', message: @message) %>"
-);
+<% if @message %>
+  $('.error-messages').html(
+    "<%= j(render 'shared/errors', message: @message) %>"
+  );
+<% else %>
+    $(window.location.replace('/'));
+<% end %>

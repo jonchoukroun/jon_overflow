@@ -1,5 +1,8 @@
-$('.questions-index').prepend(
+var index = $('.questions-index');
+$(index).prepend(
   "<%= j(render 'questions/questions_prompt', question: @question) %>"
 );
+
+$(index).find('.question-prompt').first().toggleClass('new-question');
 
 $('form.question-form').toggleClass('hidden');

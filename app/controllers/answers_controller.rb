@@ -1,12 +1,9 @@
 class AnswersController < ApplicationController
   before_action :authorize, except: [:index]
 
-  def show
-    @answer = Answer.find(params[:id])
-  end
-
   def new
     @answer = Answer.new
+    render 'new.js.erb'
   end
 
   def create

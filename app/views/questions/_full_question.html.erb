@@ -11,10 +11,13 @@
     <% end %>
   </div><!-- answers-index -->
 
+
   <%= render 'answers/form' %>
 
-  <%= link_to 'Answer Question', '#',
-    class: 'btn btn-default new-answer' %>
+  <%= link_to 'Answer Question',
+    new_question_answer_path(@question),
+    class: 'btn btn-default new-answer',
+    remote: true %>
 
   <%= link_to 'Back',
     category_questions_path(@category),

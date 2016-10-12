@@ -13,5 +13,5 @@ var NewAnswer = {
 }
 
 $(document).ready(function() {
-  NewAnswer.bindListeners();
+  // NewAnswer.bindListeners();
 });

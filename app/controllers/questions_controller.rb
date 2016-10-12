@@ -45,9 +45,9 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
 
     if @question.update(question_params)
-      render 'create.js.erb'
+      render 'update.js.erb'
     else
-      render 'edit'
+      render 'error.js.erb'
     end
   end
 

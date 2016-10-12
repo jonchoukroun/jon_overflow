@@ -1,42 +1,39 @@
-<div class="container-fluid full-answer">
-  <div class="row answer">
-    <div class="col-sm-3 answer-rating">
-      <%= link_to agree_answer_path(answer), method: :put,
-        class: 'agree',
-        remote: true do %>
-        <span class="glyphicon glyphicon-thumbs-up"></span>
-      <% end %>
+<%= content_tag :div, id: answer.id, class: 'row full-answer' do %>
 
-      <h4 class="vote-count"><%= answer.agreement_rating %></h4>
+  <div class="col-sm-2 answer-rating">
+    <%= link_to agree_answer_path(answer), method: :put,
+      class: 'agree',
+      remote: true do %>
+      <span class="glyphicon glyphicon-thumbs-up"></span>
+    <% end %>
 
-      <%= link_to disagree_answer_path(answer), method: :put,
-        class: 'disagree',
-        remote: true do %>
-        <span class="glyphicon glyphicon-thumbs-down"></span>
-      <% end %>
-    </div><!-- col-sm-3 answer-rating -->
+    <h4 class="vote-count"><%= answer.agreement_rating %></h4>
 
-    <div class="col-sm-9 answer-content">
-      <h5><%= answer.content %></h5>
-    </div><!-- col-sm-9 answer-content -->
-  </div><!-- row answer -->
+    <%= link_to disagree_answer_path(answer), method: :put,
+      class: 'disagree',
+      remote: true do %>
+      <span class="glyphicon glyphicon-thumbs-down"></span>
+    <% end %>
+  </div><!-- col-sm-2 answer-rating -->
 
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-8 user-action">
-      <% if current_user && current_user.id == answer.user_id %>
-        <%= link_to 'Delete',
-          answer_path(answer),
-          class: 'btn btn-danger answer-delete',
-          method: :delete,
-          data: {
-            confirm: "Are you sure?"
-          },
-          remote: true %>
+  <div class="col-sm-7 answer-content">
+    <h5><%= answer.content %></h5>
+  </div><!-- col-sm-7 answer-content -->
 
-      <% else %>
-        <p>Answered by: <%= answer.name %></p>
-        <p><%= local_time_ago(answer.created_at) %></p>
-      <% end %>
-    </div><!-- col-sm-4 col-sm-offset-8 -->
-  </div><!-- row user-action -->
-</div><!-- container-fluid full-answer -->
+  <div class="col-sm-3 user-action">
+    <% if current_user && current_user.id == answer.user_id %>
+      <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe,
+        answer_path(answer),
+        class: 'answer-delete',
+        method: :delete,
+        data: {
+          confirm: "Are you sure?"
+        },
+        remote: true %>
+
+    <% else %>
+      <p>Answered by: <%= answer.name %></p>
+      <p><%= local_time_ago(answer.created_at) %></p>
+    <% end %>
+  </div><!-- col-sm-3 -->
+<% end %><!-- row answer -->

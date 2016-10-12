@@ -1,3 +1,3 @@
-$('a.question-delete').on('ajax:success', function() {
-  $(this).closest('.full-question').fadeOut();
-});
+var back = $('a.back').toggleClass('return').text('Return to questions');
+$('.full-question').children().not(back).fadeOut();
+

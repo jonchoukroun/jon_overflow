@@ -7,10 +7,11 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
     elsif user
-      @message = ["Incorrect username/password combination."]
+      p @message = ["Incorrect username/password combination."]
+    elsif params[:session][:email] == ''
+      p @message = ["Enter your email and password, or create a new account."]
     else
-      @message = ["This account does not exist yet. Redirecting to signup..."]
-      p @message
+      p @message = ["This account does not exist yet. Redirecting to signup..."]
       render 'redirect.js.erb'
     end
   end

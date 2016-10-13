@@ -18,8 +18,8 @@ a.cancel-question {
 // Questions Index
 .question-prompt {
   padding: 1.5em 1em;
-  border-bottom: 1px solid #eee;
-  border-radius: 1em;
+  border-bottom: $border;
+  border-radius: $radius;
   @include transition(all);
 
   .btn.btn-default {
@@ -29,7 +29,6 @@ a.cancel-question {
   }
 
   &:hover {
-    background: #c2d1dd;
     @include shadow;
 
     .btn.btn-default {

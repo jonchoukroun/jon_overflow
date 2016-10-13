@@ -1,17 +1,18 @@
 @mixin shadow {
-  box-shadow: 3px 2px 4px 2px #ccc;
-  -webkit-box-shadow: 3px 2px 4px 2px #ccc;
-  -moz-box-shadow: 3px 2px 4px 2px #ccc;
-  -ms-box-shadow: 3px 2px 4px 2px #ccc;
+  box-shadow: 2px 3px 4px 2px #ccc;
+  -webkit-box-shadow: 2px 3px 4px 2px #ccc;
+  -moz-box-shadow: 2px 3px 4px 2px #ccc;
+  -ms-box-shadow: 2px 3px 4px 2px #ccc;
 }
 
 @mixin transition($element) {
-  transition: $element 0.3s ease-in;
-  -webkit-transition: $element 0.3s ease-in;
-  -moz-transition: $element 0.3s ease-in;
+  transition: $element 0.2s ease-in;
+  -webkit-transition: $element 0.2s ease-in;
+  -moz-transition: $element 0.2s ease-in;
 }
 
 $border: 1px solid #ddd;
+$radius: 0.5em;
 
 #main-content {
   width: 80%;
@@ -22,7 +23,7 @@ $border: 1px solid #ddd;
   align-items: center;
   padding: 3em;
   border-bottom: $border;
-  border-radius: 1em;
+  border-radius: $radius;
   @include transition(all);
 
   .btn.btn-default {
@@ -32,8 +33,11 @@ $border: 1px solid #ddd;
   }
 
   &:hover {
-    background: #c2d1dd;
     @include shadow;
+
+    h3, h4, p {
+      color: #61819b;
+    }
 
     .btn.btn-default {
       background: #ffdaa8;

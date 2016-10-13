@@ -23,8 +23,8 @@
       Category.all,
       :id,
       :name,
-      selected: params[:category_id],
-      class: 'input-lg' %>
+      { selected: params[:category_id] },
+      { class: 'input-lg' } %>
   </div> 
   
   <div class="form-group">

@@ -31,10 +31,23 @@ a.cancel-question {
   &:hover {
     @include shadow;
 
+    h3, h4 {
+      color: $dark_blue;
+    }
     .btn.btn-default {
       background: #ffdaa8;
       font-weight: bold;
     }
+  }
+}
+
+.question-title {
+  a:hover {
+    text-decoration: none;
+  }
+
+  h3:hover {
+    font-weight: bold;
   }
 }
 

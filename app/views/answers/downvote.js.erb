@@ -4,10 +4,10 @@ var downButton = target.parent().find('a.disagree');
 var num = parseInt(target.text());
 
 upButton.removeClass('voted');
-downButton.addClass('voted')
 
-<% if @upvoted %>
-  target.text(num - 2);
-<% else %>
+<% if @answer.vote_registered? %>
+  downButton.addClass('voted')
   target.text(num - 1);
+<% else %>
+  downButton.addClass('voted')
 <% end %>

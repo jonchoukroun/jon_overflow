@@ -26,28 +26,14 @@ class AnswersController < ApplicationController
 
   def upvote
     @answer = Answer.find(params[:id])
-    @downvoted = current_user.voted_down_on? @answer
     @answer.upvote_by current_user 
-
-    if @answer.vote_registered?
-      render 'upvote.js.erb'
-    else
-      @increment = false
-      render 'undo_vote.js.erb'
-    end
+    render 'upvote.js.erb'
   end
 
   def downvote
     @answer = Answer.find(params[:id])
-    @upvoted = current_user.voted_up_on? @answer
     @answer.downvote_by current_user
-
-    if @answer.vote_registered?
-      render 'downvote.js.erb'
-    else
-      @increment = true
-      render 'undo_vote.js.erb'
-    end
+    render 'downvote.js.erb'
   end
 
   private

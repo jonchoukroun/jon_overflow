@@ -3,21 +3,21 @@
     <%= render 'questions/question', question: @question %>
   </div><!-- question -->
 
+  <%# Submits to questions#update %>
   <%= render 'questions/form' %>
+
+  <%# Submits to answers#create %>
+  <%= render 'answers/form' %>
+
+  <%# Handled in assets pipeline %>
+  <%= link_to 'Answer this question', '#',
+    class: 'btn btn-primary new-answer' %>
 
   <div class="answers-index">
     <% @answers.each do |answer| %>
       <%= render 'answers/answer', answer: answer %>
     <% end %>
   </div><!-- answers-index -->
-
-
-  <%= render 'answers/form' %>
-
-  <%= link_to 'Answer Question',
-    new_question_answer_path(@question),
-    class: 'btn btn-default new-answer',
-    remote: true %>
 
   <%= link_to 'Back',
     category_questions_path(@category),

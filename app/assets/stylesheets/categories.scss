@@ -1,9 +1,17 @@
-$border: 1px solid #ddd;
+@mixin shadow {
+  box-shadow: 3px 2px 4px 2px #ccc;
+  -webkit-box-shadow: 3px 2px 4px 2px #ccc;
+  -moz-box-shadow: 3px 2px 4px 2px #ccc;
+  -ms-box-shadow: 3px 2px 4px 2px #ccc;
+}
+
 @mixin transition($element) {
   transition: $element 0.3s ease-in;
   -webkit-transition: $element 0.3s ease-in;
   -moz-transition: $element 0.3s ease-in;
 }
+
+$border: 1px solid #ddd;
 
 #main-content {
   width: 80%;
@@ -14,36 +22,39 @@ $border: 1px solid #ddd;
   align-items: center;
   padding: 3em;
   border-bottom: $border;
-  border-right: $border;
-  border-radius: 3em;
+  border-radius: 1em;
   @include transition(all);
 
   .btn.btn-default {
+    background: #c2d1dd;
     color: #666;
     @include transition(all);
   }
-}
 
-.category-row:hover {
-  background: #c2d1dd;
+  &:hover {
+    background: #c2d1dd;
+    @include shadow;
 
-  .btn.btn-default {
-    background: #ffdaa8;
+    .btn.btn-default {
+      background: #ffdaa8;
+      font-weight: bold;
+    }
   }
 }
 
 .category-name {
   padding-right: 3.5em;
   text-align: center;
-}
 
-.category-name a:hover {
-  text-decoration: none;
-}
+  a:hover {
+    text-decoration: none;
+  }
 
-.category-name h3:hover {
-  font-weight: bold;
+  h3:hover {
+    font-weight: bold;
+  }
 }
 
 .category-description {
+  font-style: italic;
 }

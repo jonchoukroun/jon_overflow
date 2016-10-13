@@ -1,23 +1,8 @@
-// Questions Index
-.question-prompt {
-  padding: 1em 0;
-  border-bottom: 1px solid #eee;
-}
+@import 'categories';
 
-.question-prompt .question-preview h4 {
-  font-style: italic;
-}
-
-.question-prompt .question-expand {
-  text-align: right;
-}
-
-.question-prompt .question-rating {
-  text-align: center;
-}
-
+// New Question Form
 a.new-question {
-  margin: 1em;
+  margin: 3em;
 }
 
 form.question-form {
@@ -27,8 +12,49 @@ form.question-form {
 }
 
 a.cancel-question {
-  @extend a.new-question;
-  margin-left: 0;
+  margin: 0.5em 0;
+}
+
+// Questions Index
+.question-prompt {
+  padding: 1.5em 1em;
+  border-bottom: 1px solid #eee;
+  border-radius: 1em;
+  @include transition(all);
+
+  .btn.btn-default {
+    background: #c2d1dd;
+    color: #666;
+    @include transition(all);
+  }
+
+  &:hover {
+    background: #c2d1dd;
+    @include shadow;
+
+    .btn.btn-default {
+      background: #ffdaa8;
+      font-weight: bold;
+    }
+  }
+}
+
+.question-preview {
+  display: flex;
+  align-items: center;
+  padding-top: 1em;
+  
+  h4 {
+    font-style: italic;
+  }
+}
+
+.question-expand {
+  text-align: right;
+}
+
+.question-rating {
+  text-align: center;
 }
 
 // Full question
@@ -36,14 +62,15 @@ a.cancel-question {
   width: 80%;
 }
 
-.full-question .user-action a {
-  margin: 0;
-  text-align: right;
-}
+.user-action{
+  a {
+    margin: 0;
+    text-align: right;
+  }
 
-.full-question .user-action p {
-  font-size: 0.8em;
-  font-style: italic;
-  text-align: right;
-
+  p {
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: right;
+  }
 }

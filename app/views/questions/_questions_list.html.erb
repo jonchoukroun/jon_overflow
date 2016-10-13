@@ -1,4 +1,4 @@
-<div class="container questions-index">
+<div class="container-fluid questions-index">
 
   <%# Submits to questions#create %>
   <%= render '/questions/form' %>
@@ -10,4 +10,4 @@
   <% @questions.each do |question| %>
     <%= render '/questions/questions_prompt', question: question %>
   <% end %>
-</div><!-- container questions-container -->
+</div><!-- container-fluid questions-container -->

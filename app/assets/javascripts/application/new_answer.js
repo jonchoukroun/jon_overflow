@@ -9,9 +9,13 @@ var NewAnswer = {
     $('form#new_answer').toggleClass('hidden');
     $('a.new-answer').toggleClass('hidden');
     $('.error-messages').empty();
+    $('body').animate({
+      scrollTop: $('form#new_answer').offset().top
+    }, 700);
+    return false;
   }
 }
 
 $(document).ready(function() {
-  // NewAnswer.bindListeners();
+  NewAnswer.bindListeners();
 });

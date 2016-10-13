@@ -1,0 +1,13 @@
+var target = $('.full-answer#<%= @answer.id %>').find('.vote-count');
+var upButton = target.parent().find('a.agree');
+var downButton = target.parent().find('a.disagree');
+var num = parseInt(target.text());
+
+upButton.addClass('voted');
+downButton.removeClass('voted')
+
+<% if @downvoted %>
+  target.text(num + 2);
+<% else %>
+  target.text(num + 1);
+<% end %>

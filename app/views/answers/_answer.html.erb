@@ -2,15 +2,15 @@
 
   <div class="col-sm-2 answer-rating">
     <%= link_to agree_answer_path(answer), method: :put,
-      class: 'agree',
+      class: "agree " + (current_user && current_user.voted_up_on?(answer) ? "voted" : ""),
       remote: true do %>
       <span class="glyphicon glyphicon-thumbs-up"></span>
     <% end %>
 
-    <h4 class="vote-count"><%= answer.agreement_rating %></h4>
+    <h4 class="vote-count"><%= answer.vote_score %></h4>
 
     <%= link_to disagree_answer_path(answer), method: :put,
-      class: 'disagree',
+      class: "disagree " + (current_user && current_user.voted_down_on?(answer) ? "voted" : ""),
       remote: true do %>
       <span class="glyphicon glyphicon-thumbs-down"></span>
     <% end %>

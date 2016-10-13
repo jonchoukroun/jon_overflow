@@ -3,7 +3,7 @@ class Answer < ActiveRecord::Base
   delegate :name, to: :user
 
   belongs_to :question
-  delegate :agreement_rating, to: :question
+  delegate :vote_score, to: :question
 
   acts_as_votable
 
@@ -12,7 +12,7 @@ class Answer < ActiveRecord::Base
   # validates_associated :question
   validates_presence_of :content, :user_id, :question_id
 
-  def agreement_rating
+  def vote_score
     self.get_upvotes.size - self.get_downvotes.size
   end
 

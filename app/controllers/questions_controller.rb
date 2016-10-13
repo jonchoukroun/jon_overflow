@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
     @category = Category.find_by(id: @question.category_id)
 
     @answers = sort(
-      Answer.where("question_id = ?", @question.id), :agreement_rating
+      Answer.where("question_id = ?", @question.id), :vote_score
     )
 
     # Renders new answer form
@@ -46,7 +46,7 @@ class QuestionsController < ApplicationController
 
     if @question.update(question_params)
       @answers = sort(
-        Answer.where("question_id = ?", @question.id), :agreement_rating
+        Answer.where("question_id = ?", @question.id), :vote_score
       )
       render 'update.js.erb'
     else

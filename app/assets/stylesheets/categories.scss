@@ -13,6 +13,7 @@
 
 $border: 1px solid #ddd;
 $radius: 0.5em;
+$dark_blue: #61819b;
 
 #main-content {
   width: 80%;
@@ -36,7 +37,7 @@ $radius: 0.5em;
     @include shadow;
 
     h3, h4, p {
-      color: #61819b;
+      color: $dark_blue;
     }
 
     .btn.btn-default {

@@ -3,7 +3,6 @@ class AnswersController < ApplicationController
 
   def new
     @answer = Answer.new
-    render 'new.js.erb'
   end
 
   def create

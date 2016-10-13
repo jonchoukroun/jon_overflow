@@ -8,19 +8,29 @@
 
       <div class="error-messages"></div>
 
-      <%= f.label :name, 'Display name' %>
-      <%= f.text_field :name, autofocus: true %>
+      <div class="form-group">
+        <%= f.label :name, 'Display name' %>
+        <%= f.text_field :name, class: 'input-lg', autofocus: true %>
+      </div>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'input-lg' %>
+      </div>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'input-lg' %>
+      </div>
 
-      <%= f.label :password_confirmation, 'Confirm Password' %>
-      <%= f.password_field :password_confirmation %>
+      <div class="form-group">
+        <%= f.label :password_confirmation, 'Confirm Password' %>
+        <%= f.password_field :password_confirmation, class: 'input-lg' %>
+      </div>
 
-      <%= f.submit 'Create account', class: 'btn btn-primary' %>
+      <div class="form-group">
+        <%= f.submit 'Create account', class: 'btn btn-primary btn-lg' %>
+      </div>
 
     <% end %>
   </div><!-- col-sm-6 col-sm-offset-3 signup-form -->

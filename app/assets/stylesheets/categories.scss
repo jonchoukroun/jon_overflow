@@ -20,8 +20,7 @@ $dark_blue: #61819b;
 }
 
 .category-row {
-  display: flex;
-  align-items: center;
+  @include align('center');
   padding: 3em;
   border-bottom: $border;
   border-radius: $radius;
@@ -48,8 +47,8 @@ $dark_blue: #61819b;
 }
 
 .category-name {
+  @include align('center');
   padding-right: 3.5em;
-  text-align: center;
 
   a:hover {
     text-decoration: none;

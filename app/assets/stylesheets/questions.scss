@@ -1,5 +1,3 @@
-@import 'categories';
-
 // New Question Form
 a.new-question {
   margin: 3em;
@@ -41,7 +39,7 @@ a.cancel-question {
   }
 }
 
-.question-title {
+.question-prompt .question-title {
   a:hover {
     text-decoration: none;
   }
@@ -52,8 +50,7 @@ a.cancel-question {
 }
 
 .question-preview {
-  display: flex;
-  align-items: center;
+  @include align('center');
   padding-top: 1em;
   
   h4 {
@@ -62,27 +59,67 @@ a.cancel-question {
 }
 
 .question-expand {
-  text-align: right;
+  @include justify('right');
 }
 
 .question-rating {
-  text-align: center;
+  @include justify('center');
+}
+
+.top-question {
+  @include shadow;
+  background: #c2d1dd;
 }
 
 // Full question
 .full-question {
-  width: 80%;
-}
 
-.user-action{
-  a {
-    margin: 0;
-    text-align: right;
+  .question {
+    margin: 0.5em 0;
+    padding: 2em;
+    background: #c2d1dd;
+    @include shadow;
   }
 
   p {
+    font-size: 1.3em;
+  }
+}
+
+.question-heading {
+  margin-bottom: 1em;
+
+  .user-option {
+    @include justify('right');
+
+    .question-edit {
+      margin-right: 0.5em;
+      color: #61819b;
+    }
+
+    .question-delete {
+      color: #9c4c2a;
+    }
+  }
+}
+
+.user-info{
+  padding-top: 1em;
+
+  p {
+    margin: 0;
     font-size: 0.8em;
     font-style: italic;
-    text-align: right;
+    @include justify('right');
+  }
+}
+
+a.new-answer {
+  @extend a.new-question;
+}
+
+.question-content{
+  article {
+    margin-right: 1em;
   }
 }

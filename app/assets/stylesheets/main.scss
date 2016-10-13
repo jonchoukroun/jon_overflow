@@ -7,6 +7,24 @@
   box-sizing:         border-box;
 }
 
+@mixin justify($position) {
+  display: flex;
+  @if $position == 'center' {
+    justify-content: center;
+  } @else {
+    justify-content: flex-end;
+  }
+}
+
+@mixin align($position) {
+  display: flex;
+  @if $position == 'center' {
+    align-items: center;
+  } @else {
+    align-items: flex-start;
+  }
+}
+
 $heading_font: 'Sanchez', serif;
 $text_font: 'Raleway', sans-serif;
 $primary_color: #666;
@@ -35,8 +53,12 @@ p {
 }
 
 // Forms
+form {
+  margin-top: 1.5em;
+}
+
 .form-title {
-  text-align: center;
+  @include justify('center');
 }
 
 input, textarea, select, .uneditable-input {
@@ -55,4 +77,11 @@ label {
   color: $primary_color;
 }
 
+// Default buttons
+.btn.btn-primary {
+  background: #61819b;
 
+  &:hover {
+    background: #3d6281;
+  }
+}

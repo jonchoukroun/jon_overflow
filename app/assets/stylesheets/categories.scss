@@ -1,4 +1,49 @@
+$border: 1px solid #ddd;
+@mixin transition($element) {
+  transition: $element 0.3s ease-in;
+  -webkit-transition: $element 0.3s ease-in;
+  -moz-transition: $element 0.3s ease-in;
+}
+
+#main-content {
+  width: 80%;
+}
+
 .category-row {
-  padding: 2em;
-  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding: 3em;
+  border-bottom: $border;
+  border-right: $border;
+  border-radius: 3em;
+  @include transition(all);
+
+  .btn.btn-default {
+    color: #666;
+    @include transition(all);
+  }
+}
+
+.category-row:hover {
+  background: #c2d1dd;
+
+  .btn.btn-default {
+    background: #ffdaa8;
+  }
+}
+
+.category-name {
+  padding-right: 3.5em;
+  text-align: center;
+}
+
+.category-name a:hover {
+  text-decoration: none;
+}
+
+.category-name h3:hover {
+  font-weight: bold;
+}
+
+.category-description {
 }

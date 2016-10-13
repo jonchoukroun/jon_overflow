@@ -7,23 +7,32 @@
   <h3>Ask a question:</h3>
   <div class="error-messages"></div>
 
-  <%= f.label :title %>
-  <%= f.text_field :title, autofocus: true %>
-  
-  <%= f.label :content %>
-  <%= f.text_area :content %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'input-lg', autofocus: true %>
+  </div> 
 
-  <%= f.label :category %>
-  <%= f.collection_select :category_id,
-    Category.all,
-    :id,
-    :name,
-    selected: params[:category_id] %>
-  
-  <%= f.submit 'Ask Question',
-    class: 'btn btn-primary submit-question' %>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: 'input-lg' %>
+  </div> 
 
-  <%= link_to 'Cancel', '#',
-    class: 'btn btn-default cancel-question' %>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.collection_select :category_id,
+      Category.all,
+      :id,
+      :name,
+      selected: params[:category_id],
+      class: 'input-lg' %>
+  </div> 
+  
+  <div class="form-group">
+    <%= f.submit 'Ask Question',
+      class: 'btn btn-primary btn-lg submit-question' %>
+
+    <%= link_to 'Cancel', '#',
+      class: 'btn btn-default btn-lg btn-block cancel-question' %>
+  </div> 
 
 <% end %>

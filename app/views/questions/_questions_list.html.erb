@@ -1,6 +1,9 @@
 <div class="container questions-index">
+
+  <%# Submits to questions#create %>
   <%= render '/questions/form' %>
 
+  <%# Handled in assets pipeline %>
   <%= link_to 'Ask a Question', '#',
     class: 'btn btn-primary new-question' %>
 

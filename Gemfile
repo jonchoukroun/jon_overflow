@@ -31,6 +31,10 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
+  gem 'capistrano', '~> 3.6', '>= 3.6.1'
+  gem 'capistrano-rails', '~> 1.1', '>= 1.1.8'
+  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
 end
 
 group :test do

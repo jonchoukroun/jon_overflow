@@ -15,3 +15,6 @@
 # Ignore environment files
 /.env
 config/env/*.env
+
+config/database.yml
+config/secrets.yml

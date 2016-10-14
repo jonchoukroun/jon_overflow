@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: jon_overflow_production
-  username: jon_overflow
-  password: <%= ENV['JON_OVERFLOW_DATABASE_PASSWORD'] %>
+  database: socal_kin_production
+  username: socal_kin
+  password: <%= ENV['SOCAL_KIN_DATABASE_PASSWORD'] %>

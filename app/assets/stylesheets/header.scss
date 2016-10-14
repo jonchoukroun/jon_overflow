@@ -1,12 +1,16 @@
+@mixin background-cover {
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 .page-header {
   margin: 0;
   margin-bottom: 2em;
   height: 20em;
   background: asset-data-url("skyline.png");
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  @include background-cover;
 }
 
 .page-header h1 {

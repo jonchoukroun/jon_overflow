@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.6.1'
 
-set :application, 'socal_kin'
-set :repo_url, 'git@example.com:jonchoukroun/socal-kin.git'
+set :application, 'socal-kin'
+set :repo_url, 'git@github.com:jonchoukroun/socal-kin.git'
 set :rbenv_ruby, '2.3.1'
 
 # Default branch is :master

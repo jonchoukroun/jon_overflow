@@ -18,5 +18,5 @@ test:
 production:
   <<: *default
   database: socal_kin_production
-  username: socal_kin
-  password: <%= ENV['SOCAL_KIN_DATABASE_PASSWORD'] %>
+  username: deploy
+  password: password

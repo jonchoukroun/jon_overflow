@@ -28,13 +28,6 @@ group :development, :test do
   gem 'dotenv'
 end
 
-group :development do
-  gem 'capistrano', '~> 3.6', '>= 3.6.1'
-  gem 'capistrano-rails', '~> 1.1', '>= 1.1.8'
-  gem 'capistrano-rbenv', github: "capistrano/rbenv"
-  gem 'capistrano-passenger'
-end
-
 group :test do
 	gem 'shoulda-matchers', '~> 3.1'
 end

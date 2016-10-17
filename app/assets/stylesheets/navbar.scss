@@ -1,0 +1,54 @@
+$nav_color: #151716;
+$text_color: #ddd;
+$light_blue: #9bcbf3;
+
+@mixin hover_text {
+  color: $text-color;
+  font-weight: bold;
+}
+
+@mixin menu_dark {
+  background: $nav_color;
+  color: $text_color;
+
+  a:hover {
+    color: $light_blue;
+    font-weight: bold;
+  }
+}
+
+.navbar-default {
+  background: $nav_color;
+  border: none;
+  border-radius: none;
+
+  .navbar-brand {
+    color: $text_color;
+
+    &:hover {
+      @include hover_text;
+    }
+  }
+
+  .navbar-nav {
+    li a {
+      color: $text_color;
+
+      &:hover {
+        @include hover_text;
+      }
+    }
+
+    .navbar-greeting a {
+      color: $light_blue;
+    }
+
+    .open {
+      @include menu_dark;
+
+      .dropdown-menu {
+        @include menu_dark
+      }
+    }
+  }
+}

@@ -20,7 +20,7 @@ $light_blue: #9bcbf3;
 .navbar-default {
   background: $nav_color;
   border: none;
-  border-radius: none;
+  border-radius: 0;
 
   .navbar-brand {
     color: $text_color;

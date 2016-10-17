@@ -18,9 +18,13 @@
     <div class="collapse navbar-collapse" id="navigation-menu">
       <ul class="nav navbar-nav">
         <!-- Home link -->
-        <li class="active">
+        <li class="navbar-greeting">
           <a href="/">
-            Home<span class="sr-only">(current)</span>
+            <% if logged_in? %>
+              Hello, <%= current_user.name %>!
+            <% else %>
+              Home<span class="sr-only">(current)</span>
+            <% end %>
           </a>
         </li>
 
@@ -49,12 +53,12 @@
                   remote: true; %>
               </li>
             <% end %>
+            <li class="divider" role="separator"></li>
           </ul><!-- /.dropdown-menu -->
         </li><!-- /.dropdown -->
 
         <!-- User links -->
         <% if logged_in? %>
-          <li class="navbar-greeting">Hello, <%= current_user.name %>!</li>
           <li><%= link_to 'My Profile', current_user %></li>
           <li><%= link_to 'Logout', logout_path, method: :delete %></li>
         <% else %>

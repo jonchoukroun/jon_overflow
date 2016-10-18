@@ -24,6 +24,10 @@ a.cancel-question {
     background: #c2d1dd;
     color: #666;
     @include transition(all);
+
+    a {
+      border: 1px solid #ffdaa8;
+    }
   }
 
   &:hover {

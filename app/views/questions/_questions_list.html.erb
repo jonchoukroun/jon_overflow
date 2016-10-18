@@ -7,7 +7,22 @@
   <%= link_to 'Ask a Question', '#',
     class: 'btn btn-primary new-question' %>
 
+  <%# Return to categories list %>
+  <%= link_to 'Back to Categories', categories_path,
+    class: 'btn btn-default back',
+    remote: true %>
+
   <% @questions.each do |question| %>
     <%= render '/questions/questions_prompt', question: question %>
   <% end %>
-</div><!-- container-fluid questions-container -->
+
+  <%# Handled in assets pipeline %>
+  <%= link_to 'Ask a Question', '#',
+    class: 'btn btn-primary new-question' %>
+
+  <%# Return to categories list %>
+  <%= link_to 'Back to Categories', categories_path,
+    class: 'btn btn-default back',
+    remote: true %>
+
+</div><!-- /.container-fluid.questions-index -->

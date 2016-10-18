@@ -56,6 +56,11 @@ p {
   padding: 0;
 }
 
+#main-content {
+  width: 65%;
+  margin: 0 auto;
+}
+
 // Forms
 form {
   margin-top: 1.5em;
@@ -92,4 +97,10 @@ label {
 
 .btn.back {
   margin: 1em;
+}
+
+@media (max-width: 425px) {
+  #main-content {
+    width: 100%;
+  }
 }

@@ -1,6 +1,6 @@
 // New Question Form
 a.new-question {
-  margin: 3em;
+  margin: 3em 0;
 }
 
 form.question-form {
@@ -50,7 +50,7 @@ a.cancel-question {
 }
 
 .question-preview {
-  @include align('center');
+  // @include align('center');
   padding-top: 1em;
   
   h4 {
@@ -120,5 +120,24 @@ a.new-answer {
 .question-content{
   article {
     margin-right: 1em;
+  }
+}
+
+// Small screen adjustments
+@media (max-width: 425px) {
+  a.new-question {
+    margin: 1em 0;
+  }
+
+  .question-prompt h3 {
+    font-size: 1.5em;
+  }
+
+  .question-header {
+    margin-top: 0;
+  }
+
+  .question-preview {
+    padding-top: 0;
   }
 }

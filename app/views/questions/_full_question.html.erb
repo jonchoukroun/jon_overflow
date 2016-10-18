@@ -13,15 +13,30 @@
   <%= link_to 'Answer this question', '#',
     class: 'btn btn-primary new-answer' %>
 
+  <%# Return to list of questions %>
+  <%= link_to 'Back',
+    category_questions_path(@category),
+    class: 'btn btn-default back',
+    remote: true %>
+
+
   <div class="answers-index">
     <% @answers.each do |answer| %>
       <%= render 'answers/answer', answer: answer %>
     <% end %>
   </div><!-- answers-index -->
 
-  <%= link_to 'Back',
-    category_questions_path(@category),
-    class: 'btn btn-default back',
-    remote: true %>
+  <%# Only double nav buttons if necessary %>
+  <% if @answers.length > 3 %>
+    <%# Handled in assets pipeline %>
+    <%= link_to 'Answer this question', '#',
+      class: 'btn btn-primary new-answer' %>
+
+    <%# Return to list of questions %>
+    <%= link_to 'Back',
+      category_questions_path(@category),
+      class: 'btn btn-default back',
+      remote: true %>
+  <% end %>
 
 </div><!-- container-fluid full-question -->

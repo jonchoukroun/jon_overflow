@@ -15,12 +15,7 @@ $border: 1px solid #ddd;
 $radius: 0.5em;
 $dark_blue: #61819b;
 
-#main-content {
-  width: 85%;
-}
-
 .category-row {
-  @include align('center');
   padding: 3em;
   border-bottom: $border;
   border-radius: $radius;
@@ -61,4 +56,11 @@ $dark_blue: #61819b;
 
 .category-description {
   font-style: italic;
+}
+
+// Small screen adjustments
+@media (max-width: 425px) {
+  .category-row {
+    padding: 1em; 
+  }
 }

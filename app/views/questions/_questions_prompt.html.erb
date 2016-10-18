@@ -1,14 +1,14 @@
 <%= content_tag :div, class: 'container-fluid question-prompt', id: question.id do %>
   <div class="row question-heading">
-    <div class="col-sm-2 question-rating">
+    <div class="col-xs-2 question-rating">
       <h3 class="vote-count"><%= question.count_answers %></h3>
-    </div><!-- col-sm-2 question-rating -->
+    </div><!-- col-xs-2 question-rating -->
 
-    <div class="col-sm-10 question-title">
+    <div class="col-xs-10 question-title">
       <%= link_to "<h3>#{ question.title }</h3>".html_safe,
         question_path(question),
         remote: true %>
-    </div><!-- col-sm-10 question-title -->
+    </div><!-- col-xs-10 question-title -->
   </div><!-- row question-heading -->
 
   <div class="row question-preview">

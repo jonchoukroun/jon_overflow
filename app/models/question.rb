@@ -8,7 +8,7 @@ class Question < ActiveRecord::Base
 
   # Return 1st 3 words of content and ellipsis
   def preview
-    self.content.split(' ')[0...3].join(' ') + '...'
+    self.content.split(' ')[0...5].join(' ') + '...'
   end
 
   def count_answers

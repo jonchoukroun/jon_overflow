@@ -1,8 +1,8 @@
 @mixin shadow {
-  box-shadow: 2px 3px 4px 2px #ccc;
-  -webkit-box-shadow: 2px 3px 4px 2px #ccc;
-  -moz-box-shadow: 2px 3px 4px 2px #ccc;
-  -ms-box-shadow: 2px 3px 4px 2px #ccc;
+  box-shadow: 1px 2px 2px 1px #aaa;
+  -webkit-box-shadow: 1px 2px 2px 1px #aaa;
+  -moz-box-shadow: 1px 2px 2px 1px #aaa;
+  -ms-box-shadow: 1px 2px 2px 1px #aaa;
 }
 
 @mixin transition($element) {
@@ -11,33 +11,19 @@
   -moz-transition: $element 0.2s ease-in;
 }
 
-$border: 1px solid #ddd;
+$border: 4px solid #ddd;
 $radius: 0.5em;
 $dark_blue: #61819b;
 
 .category-row {
+  margin-top: 1.3em;
   padding: 3em;
-  border-bottom: $border;
+  background: rgba(0,0,0,0.3);
   border-radius: $radius;
   @include transition(all);
 
-  .btn.btn-default {
-    background: #c2d1dd;
-    color: #666;
-    @include transition(all);
-  }
-
   &:hover {
-    @include shadow;
-
-    h3, h4, p {
-      color: $dark_blue;
-    }
-
-    .btn.btn-default {
-      background: #ffdaa8;
-      font-weight: bold;
-    }
+    background: rgba(0,0,0,0.5);
   }
 }
 
@@ -49,7 +35,7 @@ $dark_blue: #61819b;
     text-decoration: none;
   }
 
-  h3:hover {
+  h1:hover {
     font-weight: bold;
   }
 }

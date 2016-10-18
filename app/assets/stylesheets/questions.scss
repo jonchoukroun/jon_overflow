@@ -15,32 +15,8 @@ a.cancel-question {
 
 // Questions Index
 .question-prompt {
+  @extend .category-row;
   padding: 1.5em 1em;
-  border-bottom: $border;
-  border-radius: $radius;
-  @include transition(all);
-
-  .btn.btn-default {
-    background: #c2d1dd;
-    color: #666;
-    @include transition(all);
-
-    a {
-      border: 1px solid #ffdaa8;
-    }
-  }
-
-  &:hover {
-    @include shadow;
-
-    h3, h4 {
-      color: $dark_blue;
-    }
-    .btn.btn-default {
-      background: #ffdaa8;
-      font-weight: bold;
-    }
-  }
 }
 
 .question-prompt .question-title {
@@ -54,7 +30,6 @@ a.cancel-question {
 }
 
 .question-preview {
-  // @include align('center');
   padding-top: 1em;
   
   h4 {
@@ -79,13 +54,14 @@ a.cancel-question {
 .full-question {
 
   .question {
-    margin: 0.5em 0;
-    padding: 2em;
-    @include shadow;
+    @extend .category-row;
+    background: rgba(0,0,0,0.5);
+    // margin: 2em 0;
+    // padding: 2em;
   }
 
   p {
-    font-size: 1.3em;
+    font-size: 2em;
   }
 }
 
@@ -111,7 +87,7 @@ a.cancel-question {
 
   p {
     margin: 0;
-    font-size: 0.8em;
+    font-size: 1.5em;
     font-style: italic;
     @include justify('right');
   }

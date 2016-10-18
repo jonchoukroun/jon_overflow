@@ -8,12 +8,12 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <%= google_webfonts_init({
-      google: ['Abril Fatface', 'Sanchez', 'Raleway']
+      google: ['Montserrat', 'Raleway']
   }) %>
   <title>SoCal Kin</title>
 </head>
 <body>
-  <%= render 'layouts/header' %>
+  <%# render 'layouts/header' %>
 
   <div id="content" class="container-fluid">
     <%= yield %>

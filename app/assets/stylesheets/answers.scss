@@ -1,6 +1,6 @@
 .full-answer {
+  @extend .category-row;
   padding: 2em 1em;
-  border-bottom: $border;
 }
 
 .user-action {
@@ -40,13 +40,8 @@
 }
 
 .answer-info {
+  @extend .user-info;
   text-align: right;
-
-  p {
-    margin: 0;
-    font-size: 0.8em;
-    font-style: italic;
-  }
 }
 
 .top-answer {

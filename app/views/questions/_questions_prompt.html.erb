@@ -1,26 +1,26 @@
 <%= content_tag :div, class: 'container-fluid question-prompt', id: question.id do %>
   <div class="row question-heading">
     <div class="col-xs-2 question-rating">
-      <h3 class="vote-count"><%= question.count_answers %></h3>
-    </div><!-- col-xs-2 question-rating -->
+      <h2 class="vote-count"><%= question.count_answers %></h2>
+    </div><!-- /.col-xs-2.question-rating -->
 
     <div class="col-xs-10 question-title">
-      <%= link_to "<h3>#{ question.title }</h3>".html_safe,
+      <%= link_to "<h2>#{ question.title }</h2>".html_safe,
         question_path(question),
         remote: true %>
-    </div><!-- col-xs-10 question-title -->
-  </div><!-- row question-heading -->
+    </div><!-- /.col-xs-10.question-title -->
+  </div><!-- /.row.question-heading -->
 
   <div class="row question-preview">
     <div class="col-sm-8 col-sm-offset-2">
       <h4><%= question.preview %></h4>
-    </div><!-- col-sm-8 col-sm-offset-2 -->
+    </div><!-- /.col-sm-8.col-sm-offset-2 -->
 
     <div class="col-sm-2 question-expand">
       <%= link_to 'Expand',
         question_path(question),
         class: 'btn btn-default question-expand',
         remote: true %>
-    </div><!-- col-sm-2 question-expand -->
-  </div><!-- row question-preview -->
-<% end %><!-- container-fluid question-prompt -->
+    </div><!-- /.col-sm-2.question-expand -->
+  </div><!-- /.row.question-preview -->
+<% end %><!-- /.container-fluid.question-prompt -->

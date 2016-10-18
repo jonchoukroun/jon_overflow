@@ -1,12 +1,8 @@
-footer {
-  position: absolute;
-  margin-top: 2em;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 1em;
-  background: #333333;
+.footer {
   font-family: $text_font;
-  color: #ddd;
   text-align: center;
+
+  p {
+    color: #666;
+  }
 }

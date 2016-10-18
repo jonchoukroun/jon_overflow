@@ -1,16 +1,16 @@
 <div class="row category-row">
-  <div class="col-sm-4 category-name">
-    <%= link_to "<h3>#{category.name}</h3>".html_safe,
+  <div class="col-sm-5 category-name">
+    <%= link_to "<h1>#{category.name}</h1>".html_safe,
       category_questions_path(category),
       remote: true %>
-  </div><!-- col-sm-4 category-name -->
+    </div><!-- /.col-sm-5.category-name -->
 
-  <div class="col-sm-5 category-description">
+  <div class="col-sm-4 category-description">
     <h4><%= category.description %></h4>
-  </div><!-- col-sm-5 category-description -->
+  </div><!-- /.col-sm-4.category-description -->
 
   <div class="col-sm-3 active-questions">
-    <p>Active Questions: <strong><%= category.count_questions %></strong></p>
+    <h5>Active Questions: <strong><%= category.count_questions %></strong></h5>
     <%= link_to 'Show questions',
       category_questions_path(category),
       class: 'btn btn-default',

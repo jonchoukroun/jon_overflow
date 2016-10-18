@@ -1,7 +1,15 @@
 .full-answer {
-  @include align('top');
   padding: 2em 1em;
   border-bottom: $border;
+}
+
+.user-action {
+  text-align: right;
+  margin-top: 1em;
+
+  .answer-delete {
+    color: #9c4c2a;
+  }
 }
 
 .answer-rating {
@@ -31,17 +39,13 @@
   }
 }
 
-.user-action {
-  @include justify('right');
+.answer-info {
+  text-align: right;
 
   p {
     margin: 0;
     font-size: 0.8em;
     font-style: italic;
-  }
-
-  .answer-delete {
-    color: #9c4c2a;
   }
 }
 

@@ -1,41 +1,47 @@
-<%= content_tag :div, id: answer.id, class: 'row full-answer' do %>
+<%= content_tag :div, id: answer.id, class: 'full-answer' do %>
+  <div class="row">
+    <div class="col-sm-3 col-sm-offset-9 user-action">
+      <% if current_user && current_user.id == answer.user_id %>
+        <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe,
+          answer_path(answer),
+          class: 'answer-delete',
+          method: :delete,
+          data: {
+            confirm: "Are you sure?"
+          },
+          remote: true %>
+      <% end %>
+    </div><!-- /.col-sm-3 -->
+  </div><!-- /.row -->
 
-  <div class="col-sm-2 answer-rating">
-    <%= link_to agree_answer_path(answer), method: :put,
-      class: "agree " + (current_user && current_user.voted_up_on?(answer) ? "voted" : ""),
-      remote: true do %>
-      <span class="glyphicon glyphicon-thumbs-up"></span>
-    <% end %>
+  <div class="row">
+    <div class="col-xs-2 answer-rating">
+      <%= link_to agree_answer_path(answer), method: :put,
+        class: "agree " + (current_user && current_user.voted_up_on?(answer) ? "voted" : ""),
+        remote: true do %>
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+      <% end %>
 
-    <h4 class="vote-count"><%= answer.vote_score %></h4>
+      <h4 class="vote-count"><%= answer.vote_score %></h4>
 
-    <%= link_to disagree_answer_path(answer), method: :put,
-      class: "disagree " + (current_user && current_user.voted_down_on?(answer) ? "voted" : ""),
-      remote: true do %>
-      <span class="glyphicon glyphicon-thumbs-down"></span>
-    <% end %>
-  </div><!-- col-sm-2 answer-rating -->
+      <%= link_to disagree_answer_path(answer), method: :put,
+        class: "disagree " + (current_user && current_user.voted_down_on?(answer) ? "voted" : ""),
+        remote: true do %>
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+      <% end %>
+    </div><!-- /.col-xs-2.answer-rating -->
 
-  <div class="col-sm-7 answer-content">
-    <article>
-      <p><%= answer.content %></h5>
-    </article>
-  </div><!-- col-sm-7 answer-content -->
+    <div class="col-xs-10 answer-content">
+      <article>
+        <p><%= answer.content %></h5>
+      </article>
+    </div><!-- /.col-xs-6.answer-content -->
 
-  <div class="col-sm-3 user-action">
-    <% if current_user && current_user.id == answer.user_id %>
-      <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe,
-        answer_path(answer),
-        class: 'answer-delete',
-        method: :delete,
-        data: {
-          confirm: "Are you sure?"
-        },
-        remote: true %>
-
-    <% else %>
+    <div class="col-sm-4 col-sm-offset-8 answer-info">
       <p>Answered by: <%= answer.name %></p>
       <p><%= local_time_ago(answer.created_at) %></p>
-    <% end %>
-  </div><!-- col-sm-3 -->
-<% end %><!-- row answer -->
+    </div><!-- /.col-sm-4 -->
+
+  </div><!-- /.row -->
+<% end %><!-- /.full-answer -->
+

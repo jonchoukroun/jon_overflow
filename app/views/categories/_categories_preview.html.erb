@@ -1,0 +1,20 @@
+<div class="col-sm-4">
+  <div class="category-box">
+    <div class="category-name">
+      <%= link_to "<h2>#{category.name}</h2>".html_safe,
+        category_questions_path(category),
+        remote: true %>
+    </div><!-- /.category-name -->
+
+    <div class="category-description">
+      <h4><%= category.description %></h4>
+    </div><!-- /.category-description -->
+
+    <div class="button">
+      <%= link_to 'Show questions',
+        category_questions_path(category),
+        class: 'btn btn-default',
+        remote: true %>
+    </div><!-- button -->
+  </div><!-- /.category-box -->
+</div><!-- /.col-sm-4 -->

@@ -15,7 +15,15 @@ a.cancel-question {
 
 // Questions Index
 .question-prompt {
-  @extend .category-row;
+  margin-top: 1.3em;
+  padding: 3em;
+  background: rgba(0,0,0,0.3);
+  border-radius: $radius;
+  @include transition(all);
+
+  &:hover {
+    background: rgba(0,0,0,0.5);
+  }
   padding: 1.5em 1em;
 }
 
@@ -46,7 +54,7 @@ a.cancel-question {
 }
 
 .top-question {
-  @extend .category-row;
+  @extend .question-prompt;
   @include shadow;
 }
 
@@ -54,7 +62,7 @@ a.cancel-question {
 .full-question {
 
   .question {
-    @extend .category-row;
+    @extend .question-prompt;
     background: rgba(0,0,0,0.5);
   }
 

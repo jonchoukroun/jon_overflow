@@ -2,15 +2,8 @@
 
 <div class="container category-preview">
   <div class="row">
-    <% @categories[0..2].each do |category| %>
+    <% @categories.each do |category| %>
       <%= render 'categories/categories_preview', category: category %>
     <% end %>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-2"></div>
-    <% @categories[3..5].each do |category| %>
-      <%= render 'categories/categories_preview', category: category %>
-    <% end %>
-  </div>
+  </div><!-- /.row -->
 </div><!-- /.container-fluid.category-preview -->

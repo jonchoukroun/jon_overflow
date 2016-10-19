@@ -59,10 +59,6 @@ $dark_blue: #61819b;
   font-style: italic;
 }
 
-.button {
-  // vertical-align: flex-end;
-}
-
 // Small screen adjustments
 @media (max-width: 425px) {
   .title {
@@ -74,6 +70,8 @@ $dark_blue: #61819b;
 
   }
   .category-preview {
+    padding: 0;
+
     .row {
       margin: 0;
     }

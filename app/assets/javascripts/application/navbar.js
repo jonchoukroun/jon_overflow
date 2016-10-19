@@ -3,7 +3,7 @@ $(document).ready(function() {
   var closeLinks = $('#navigation-menu a').not('a.dropdown-toggle');
 
   // Collapse navbar on link click (bypass Bootstrap default)
-  $(closeLinks).on('click', function() {
+  $(closeLinks).click(function() {
     $('.navbar-collapse').collapse('hide');
     $('li.dropdown').toggleClass('open');
   });

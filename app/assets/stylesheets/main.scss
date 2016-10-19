@@ -125,11 +125,11 @@ label {
 
 .btn.cancel-question {
   @extend .btn.back;
-  margin: 0;
+  margin: 1em 0;
 }
 
 .btn.cancel-answer {
-  @extend .btn.back
+  @extend .btn.cancel-question;
 }
 
 @media (max-width: 425px) {

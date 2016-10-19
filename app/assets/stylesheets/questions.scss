@@ -46,8 +46,8 @@ a.cancel-question {
 }
 
 .top-question {
+  @extend .category-row;
   @include shadow;
-  background: #c2d1dd;
 }
 
 // Full question
@@ -56,8 +56,6 @@ a.cancel-question {
   .question {
     @extend .category-row;
     background: rgba(0,0,0,0.5);
-    // margin: 2em 0;
-    // padding: 2em;
   }
 
   p {
@@ -84,12 +82,12 @@ a.cancel-question {
 
 .user-info{
   padding-top: 1em;
+  text-align: right;
 
   p {
     margin: 0;
     font-size: 1.5em;
     font-style: italic;
-    @include justify('right');
   }
 }
 

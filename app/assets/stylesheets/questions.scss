@@ -4,9 +4,13 @@ a.new-question {
 }
 
 form.question-form {
-  width: 75%;
+  width: 45%;
   height: 100%;
   margin: 2em auto;
+
+  label {
+    font-size: 2em;
+  }
 }
 
 a.cancel-question {
@@ -115,6 +119,10 @@ a.new-answer {
     margin: 1em 0;
   }
 
+  form.question-form {
+    width: 100%;
+  }
+
   .question-prompt h3 {
     font-size: 1.5em;
   }
@@ -130,8 +138,8 @@ a.new-answer {
   .question-title {
     padding: 0;
 
-    h3 {
-      font-size: 1.5em;
+    h2 {
+      font-size: 2em;
     }
   }
 }

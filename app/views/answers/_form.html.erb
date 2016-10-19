@@ -1,13 +1,13 @@
 <%= form_for(@answer,
             url: question_answers_path(@question.id),
             method: :post,
-            html: {class: 'answer-form form-inline hidden'},
+            html: {class: 'answer-form hidden'},
             remote: true) do |f| %>
 
+  <div class="form-title"><h1>Your answer</h1></div>
   <div class="error-messages"></div>
 
   <div class="form-group">
-  <%= f.label :content, "Your answer" %>
   <%= f.text_area :content, class: 'input-lg', autofocus: true %>
   </div>
 
@@ -18,7 +18,7 @@
 
   <div class="form-group">
   <%= link_to 'Cancel', '#',
-    class: 'btn btn-default btn-lg cancel-answer',
+    class: 'btn btn-default btn-lg btn-block cancel-answer',
     remote: true %>
   </div>
   

@@ -130,12 +130,6 @@ label {
   @extend .btn.cancel-question;
 }
 
-@media (max-width: 425px) {
-  #main-content {
-    width: 100%;
-  }
-}
-
 // Icons
 .glyphicon {
   font-size: 2.5em;
@@ -147,3 +141,10 @@ label {
     border-radius: 2.5em;
   }
 }
+
+@media (max-width: 425px) {
+  #main-content {
+    width: 100%;
+  }
+}
+

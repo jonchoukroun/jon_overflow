@@ -3,6 +3,10 @@
   padding: 2em 1em;
 }
 
+form.answer-form {
+  @extend form.question-form;
+}
+
 .user-action {
   text-align: right;
   margin-top: 1em;

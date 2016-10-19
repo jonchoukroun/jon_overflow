@@ -45,7 +45,7 @@ body {
   padding-top: 70px;
   padding-bottom: 70px;
   min-height: 100%;
-  background: asset-data-url("background.jpg");
+  background: asset-data-url("background.png");
   @include background-cover;
   background-attachment: fixed;
 }

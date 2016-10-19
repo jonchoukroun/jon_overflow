@@ -1,16 +1,27 @@
 <div class="container-fluid questions-index">
+  <div class="category-title">
+    <h1><%= @category.name %></h1>
+  </div>
 
   <%# Submits to questions#create %>
   <%= render '/questions/form' %>
 
-  <%# Handled in assets pipeline %>
-  <%= link_to 'Ask a Question', '#',
-    class: 'btn btn-primary new-question' %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <%# Handled in assets pipeline %>
+        <%= link_to 'Ask a Question', '#',
+          class: 'btn btn-primary new-question' %>
+      </div><!-- /.col-sm-3 -->
+      <div class="col-sm-3">
+        <%# Return to categories list %>
+        <%= link_to 'Back to Categories', categories_path,
+          class: 'btn btn-default back',
+          remote: true %>
+      </div><!-- /.col-sm-3 -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
 
-  <%# Return to categories list %>
-  <%= link_to 'Back to Categories', categories_path,
-    class: 'btn btn-default back',
-    remote: true %>
 
   <% @questions.each do |question| %>
     <%= render '/questions/questions_prompt', question: question %>
@@ -18,14 +29,21 @@
 
   <%# Only double nav buttons if necessary %>
   <% if @questions.length > 3 %>
-    <%# Handled in assets pipeline %>
-    <%= link_to 'Ask a Question', '#',
-      class: 'btn btn-primary new-question' %>
-
-    <%# Return to categories list %>
-    <%= link_to 'Back to Categories', categories_path,
-      class: 'btn btn-default back',
-      remote: true %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <%# Handled in assets pipeline %>
+          <%= link_to 'Ask a Question', '#',
+            class: 'btn btn-primary new-question' %>
+        </div><!-- /.col-sm-3 -->
+        <div class="col-sm-3">
+          <%# Return to categories list %>
+          <%= link_to 'Back to Categories', categories_path,
+            class: 'btn btn-default back',
+            remote: true %>
+        </div><!-- /.col-sm-3 -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
   <% end %>
 
 </div><!-- /.container-fluid.questions-index -->

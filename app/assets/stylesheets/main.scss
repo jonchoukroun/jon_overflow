@@ -111,18 +111,18 @@ label {
 .btn.btn-primary {
   @extend .btn.btn-default;
   @include transition(all);
+  margin-top: 1em;
   background: rgba(0,0,0,0.2);
   border: 4px solid #ffdaa8;
 }
 
-.btn.back {
+.btn-default.back {
   @extend .btn.btn-primary;
-  margin: 1em;
   border: 4px solid #ccc;
 }
 
 .btn.cancel-question {
-  @extend .btn.back;
+  @extend .btn-default.back;
   margin: 1em 0;
 }
 

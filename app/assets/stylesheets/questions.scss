@@ -1,6 +1,10 @@
 // New Question Form
-a.new-question {
-  margin: 3em 0;
+.category-title {
+  @extend .title;
+
+  h1 {
+    font-size: 6em;
+  }
 }
 
 form.question-form {
@@ -115,6 +119,14 @@ a.new-answer {
 
 // Small screen adjustments
 @media (max-width: 425px) {
+  .category-title {
+    padding: 1em;
+
+    h1 {
+      font-size: 4em;
+    }
+  }
+
   a.new-question {
     margin: 1em 0;
   }

@@ -9,15 +9,23 @@
   <%# Submits to answers#create %>
   <%= render 'answers/form' %>
 
-  <%# Handled in assets pipeline %>
-  <%= link_to 'Answer this question', '#',
-    class: 'btn btn-primary new-answer' %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <%# Handled in assets pipeline %>
+        <%= link_to 'Answer this question', '#',
+          class: 'btn btn-primary new-answer' %>
+      </div><!-- /.col-sm-3 -->
+      <div class="col-sm-3">
+        <%# Return to list of questions %>
+        <%= link_to 'Back',
+          category_questions_path(@category),
+          class: 'btn btn-default back',
+          remote: true %>
+      </div><!-- /.col-sm-3 -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
 
-  <%# Return to list of questions %>
-  <%= link_to 'Back',
-    category_questions_path(@category),
-    class: 'btn btn-default back',
-    remote: true %>
 
 
   <div class="answers-index">
@@ -28,15 +36,22 @@
 
   <%# Only double nav buttons if necessary %>
   <% if @answers.length > 3 %>
-    <%# Handled in assets pipeline %>
-    <%= link_to 'Answer this question', '#',
-      class: 'btn btn-primary new-answer' %>
-
-    <%# Return to list of questions %>
-    <%= link_to 'Back',
-      category_questions_path(@category),
-      class: 'btn btn-default back',
-      remote: true %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <%# Handled in assets pipeline %>
+          <%= link_to 'Answer this question', '#',
+            class: 'btn btn-primary new-answer' %>
+        </div><!-- /.col-sm-3 -->
+        <div class="col-sm-3">
+          <%# Return to list of questions %>
+          <%= link_to 'Back',
+            category_questions_path(@category),
+            class: 'btn btn-default back',
+            remote: true %>
+        </div><!-- /.col-sm-3 -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
   <% end %>
 
 </div><!-- container-fluid full-question -->

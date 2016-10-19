@@ -16,11 +16,11 @@ $radius: 0.5em;
 $dark_blue: #61819b;
 
 .title {
-  margin: 2em;
+  padding: 3em;
   text-align: center;
 
   h1 {
-    font-size: 9em;
+    font-size: 11em;
   }
 }
 
@@ -34,7 +34,6 @@ $dark_blue: #61819b;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 22em;
   padding: 2em;
   background: rgba(0,0,0,0.3);
   border-radius: $radius;
@@ -66,14 +65,18 @@ $dark_blue: #61819b;
 
 // Small screen adjustments
 @media (max-width: 425px) {
+  .title {
+    padding: 1em;
+
+    h1 {
+      font-size: 5em;
+    }
+
+  }
   .category-preview {
     .row {
       margin: 0;
     }
-  }
-
-  .title h1 {
-    font-size: 5em;
   }
 
   .category-box {

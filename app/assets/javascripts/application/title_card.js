@@ -8,4 +8,11 @@ $(document).ready(function() {
 
   // Set main content min height to full browser height
   $('#main-content').css('min-height', windowHeight);
+
+  $('.title-card').on('click', '.scroll-button', function() {
+    $('html, body').animate({
+      scrollTop: $('#main-content').offset().top
+    }, 700);
+  });
+
 });

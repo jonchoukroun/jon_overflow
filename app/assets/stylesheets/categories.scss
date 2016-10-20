@@ -1,10 +1,22 @@
 /* Title card */
 .title-card {
-  // padding: 3em;
+  padding-top: 10%;
   text-align: center;
 
   h1 {
     font-size: 11em;
+  }
+
+  span {
+    margin-top: 10%;
+    color: $primary_color;
+    opacity: 0.3;
+    font-size: 4em;
+    @include transition('opacity');
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 

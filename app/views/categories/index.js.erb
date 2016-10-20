@@ -1,3 +1,7 @@
 $('#main-content').empty().html(
   "<%= j(render '/categories/main_content') %>"
 );
+
+// Pad for navbar when rendering at top of page
+$('html, body').scrollTop($('#main-content').offset()
+  .top - $('nav.navbar-default').height());

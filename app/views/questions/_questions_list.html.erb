@@ -9,9 +9,17 @@
   <%# Buttons for forms, back, and search %>
   <%= render '/questions/questions_nav' %>
 
-  <% @questions.each do |question| %>
-    <%= render '/questions/questions_prompt', question: question %>
+  <% if @questions.any? %>
+    <% @questions.each do |question| %>
+      <%= render '/questions/questions_prompt', question: question %>
+    <% end %>
+  <% else %>
+    <h3>No questions matched your search.</h3>
+    <h4>Try asking the community:</h4>
+    <%= link_to 'Ask a Question', '#',
+      class: 'btn btn-default new-question' %>
   <% end %>
+
 
   <%# Only double nav buttons if necessary %>
   <% if @questions.length > 3 %>

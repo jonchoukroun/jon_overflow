@@ -3,11 +3,19 @@ class QuestionsController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
   def index
-    @questions = sort(
-      Question.where("category_id = ?", params[:category_id]), :count_answers
-    )
-
     @category = Category.find(params[:category_id])
+    
+    if params[:search]
+      @questions = sort(
+        Question.search(params[:search], @category.id), :count_answers
+      )
+    else
+      @questions = sort(
+        Question.where("category_id = ?", params[:category_id]), :count_answers
+      )
+    end
+
+
 
     # Renders new question form
     @question = Question.new

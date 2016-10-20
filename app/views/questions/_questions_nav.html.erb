@@ -13,10 +13,22 @@
   </div><!-- /.col-sm-2 -->
 
   <div class="col-sm-3 input-group question-search">
-    <input class="form-control" type="text" placeholder="Search feature coming soon...">
-    <span class="input-group-btn">
-      <button class="btn btn-default search" type="button" disabled="disabled">Find</button>
-    </span>
+    <%= form_tag category_questions_path(@category),
+      method: :get,
+      class: 'form-horizontal',
+      remote: true do %>
+        <div class="form-group">
+          <%= search_field_tag :search, params[:search],
+            placeholder: "Search questions",
+            class: 'form-control'%>
+          <%= submit_tag 'Find', name: nil,
+            class: 'btn btn-default search' %>
+        </div>
+    <% end %>
+    <%# <input class="form-control" type="text" placeholder="Search feature coming soon..."> %>
+    <%# <span class="input-group-btn"> %>
+      <%# <button class="btn btn-default search" type="button" disabled="disabled">Find</button> %>
+    <%# </span> %>
   </div><!-- /.col-sm-4.input-group.question-search -->
 
 </div><!-- /.row.questions-nav -->

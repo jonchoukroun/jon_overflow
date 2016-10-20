@@ -55,7 +55,7 @@
 $heading_font: 'Montserrat', sans-serif;
 $text_font: 'Raleway', sans-serif;
 $primary_color: white;
-$border: 4px solid #fff;
+$border: 3px solid #fff;
 $radius: 0.5em;
 $dark_blue: #61819b;
 
@@ -117,11 +117,10 @@ label {
 .btn.btn-default {
   background: none;
   border-radius: 3em;
-  border: 4px solid #ddd;
+  border: 3px solid #ddd;
   color: $primary_color;
 
   &:hover {
-    background: #3d6281;
     border: 4px solid white;
     color: white;
   }
@@ -132,12 +131,12 @@ label {
   @include transition(all);
   margin-top: 1em;
   background: rgba(0,0,0,0.2);
-  border: 4px solid #ffdaa8;
+  border: 3px solid #ffdaa8;
 }
 
 .btn-default.back {
   @extend .btn.btn-primary;
-  border: 4px solid #ccc;
+  border: 3px solid #ddd;
 }
 
 .btn.cancel-question {

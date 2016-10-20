@@ -1,4 +1,4 @@
-// Mixins & Variables
+/* All mixins */
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -30,20 +30,35 @@
   -o-background-size: cover;
 }
 
+@mixin shadow {
+  box-shadow: 1px 2px 2px 1px #aaa;
+  -webkit-box-shadow: 1px 2px 2px 1px #aaa;
+  -moz-box-shadow: 1px 2px 2px 1px #aaa;
+  -ms-box-shadow: 1px 2px 2px 1px #aaa;
+}
+
+@mixin transition($element) {
+  transition: $element 0.2s ease-in;
+  -webkit-transition: $element 0.2s ease-in;
+  -moz-transition: $element 0.2s ease-in;
+}
+
+/* All variables */
 $heading_font: 'Montserrat', sans-serif;
 $text_font: 'Raleway', sans-serif;
 $primary_color: white;
+$border: 4px solid #fff;
+$radius: 0.5em;
+$dark_blue: #61819b;
 
+/* General layout */
 html {
   height: 100%;
   box-sizing: box_sizing;
 }
 
 body {
-  position: relative;
-  margin: 0;
-  padding-top: 70px;
-  padding-bottom: 70px;
+  margin: 50px 0;
   min-height: 100%;
   background: asset-data-url("background.png");
   @include background-cover;
@@ -65,10 +80,9 @@ p {
 }
 
 #main-content {
-  @extend html;
 }
 
-// Forms
+/* All forms */
 form {
   margin-top: 1.5em;
   padding-top: 50px;
@@ -94,7 +108,7 @@ label {
   color: $primary_color;
 }
 
-// Buttons
+/* All buttons */
 .btn.btn-default {
   background: none;
   border-radius: 3em;
@@ -130,7 +144,7 @@ label {
   @extend .btn.cancel-question;
 }
 
-// Icons
+/* Icons */
 .glyphicon {
   font-size: 2.3em;
   @include transition(all);
@@ -142,6 +156,7 @@ label {
   }
 }
 
+/* Small screens */
 @media (max-width: 425px) {
   #main-content {
     width: 100%;

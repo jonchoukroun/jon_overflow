@@ -1,21 +1,22 @@
-<div class="container questions-nav">
-  <div class="row">
-    <div class="col-sm-2 col-sm-offset-4">
-      <%# Handled in assets pipeline %>
-      <%= link_to 'Ask a Question', '#',
-        class: 'btn btn-default new-question' %>
-    </div><!-- /.col-sm-2.col-sm-offset-4 -->
+<div class="row questions-nav">
+  <div class="col-sm-2 col-sm-offset-5">
+    <%# Handled in assets pipeline %>
+    <%= link_to 'Ask a Question', '#',
+      class: 'btn btn-default new-question' %>
+  </div><!-- /.col-sm-2.col-sm-offset-4 -->
 
-    <div class="col-sm-2">
-      <%# Return to categories list %>
-      <%= link_to 'Back to Categories', categories_path,
-        class: 'btn btn-default back',
-        remote: true %>
-    </div><!-- /.col-sm-2 -->
+  <div class="col-sm-2">
+    <%# Return to categories list %>
+    <%= link_to 'Back to Categories', categories_path,
+      class: 'btn btn-default back',
+      remote: true %>
+  </div><!-- /.col-sm-2 -->
 
-    <div class="col-sm-4">
-      <h5>Search feature coming soon</h5>
-    </div><!-- /.col-sm-4.search-form -->
+  <div class="col-sm-3 input-group question-search">
+    <input class="form-control" type="text" placeholder="Search feature coming soon...">
+    <span class="input-group-btn">
+      <button class="btn btn-default search" type="button" disabled="disabled">Find</button>
+    </span>
+  </div><!-- /.col-sm-4.input-group.question-search -->
 
-  </div><!-- /.row -->
-</div><!-- /.container -->
+</div><!-- /.row.questions-nav -->

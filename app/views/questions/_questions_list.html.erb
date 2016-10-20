@@ -6,22 +6,8 @@
   <%# Submits to questions#create %>
   <%= render '/questions/form' %>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-        <%# Handled in assets pipeline %>
-        <%= link_to 'Ask a Question', '#',
-          class: 'btn btn-primary new-question' %>
-      </div><!-- /.col-sm-3 -->
-      <div class="col-sm-3">
-        <%# Return to categories list %>
-        <%= link_to 'Back to Categories', categories_path,
-          class: 'btn btn-default back',
-          remote: true %>
-      </div><!-- /.col-sm-3 -->
-    </div><!-- /.row -->
-  </div><!-- /.container -->
-
+  <%# Buttons for forms, back, and search %>
+  <%= render '/questions/questions_nav' %>
 
   <% @questions.each do |question| %>
     <%= render '/questions/questions_prompt', question: question %>
@@ -29,21 +15,7 @@
 
   <%# Only double nav buttons if necessary %>
   <% if @questions.length > 3 %>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <%# Handled in assets pipeline %>
-          <%= link_to 'Ask a Question', '#',
-            class: 'btn btn-primary new-question' %>
-        </div><!-- /.col-sm-3 -->
-        <div class="col-sm-3">
-          <%# Return to categories list %>
-          <%= link_to 'Back to Categories', categories_path,
-            class: 'btn btn-default back',
-            remote: true %>
-        </div><!-- /.col-sm-3 -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
+    <%= render '/questions/questions_nav' %>
   <% end %>
 
 </div><!-- /.container-fluid.questions-index -->

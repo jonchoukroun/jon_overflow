@@ -4,30 +4,36 @@
   text-align: center;
 
   h1 {
+    margin: 0;
     font-size: 11em;
   }
 
-  .intro-buttons {
-    margin-top: 10%;
+  h2 {
+    margin: 0;
+  }
 
-    .row {
-      display: flex;
-      align-items: center;
-    }
+  .intro-buttons {
+
+    margin-top: 1.5em;
 
     a {
-      padding: 2em;
-      font-size: 1.5em;
+      margin: 1em;
+      font-size: 1.3em;
       color: $primary_color;
+    }
+  }
+
+  .scroll-button {
+    margin-top: 12%;
+
+    span.glyphicon-chevron-down {
+      opacity: 0.3;
+      color: white;
       @include transition('opacity');
 
       &:hover {
-        @include intro_hover;
+        opacity: 1;
       }
-    }
-
-    span.glyphicon-chevron-down {
-      @extend a;
     }
   }
 }

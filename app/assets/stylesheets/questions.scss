@@ -1,9 +1,9 @@
 // New Question Form
 .category-title {
-  @extend .title;
+  @extend .title-card;
 
   h1 {
-    font-size: 6em;
+    font-size: 4em;
   }
 }
 
@@ -19,6 +19,15 @@ form.question-form {
 
 a.cancel-question {
   margin: 0.5em 0;
+}
+
+// Mini grid for question navigation
+.questions-nav {
+  margin-top: 2em;
+
+  .col-sm-2 {
+    padding-right: 0;
+  }
 }
 
 // Questions Index

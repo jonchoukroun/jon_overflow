@@ -3,10 +3,24 @@
 <div class="title-card">
   <h1>SoCal Kin</h1>
   <h2>Get answers to outdoor activities in your area.</h2>
-  <div class="scroll-button">
-    <span class="glyphicon glyphicon-chevron-down"></span>
-  </div><!-- /.scroll-button -->
-</div><!-- /.title -->
+  <div class="container intro-buttons">
+    <div class="row">
+      <div class="col-sm-2 col-sm-offset-3">
+        <%= link_to 'Login',
+          login_path,
+          class: 'intro-login' %>
+      </div><!-- /.col-sm-2 col-sm-offset-3 -->
+      <div class="col-sm-2">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </div><!-- /.col-sm-2 -->
+      <div class="col-sm-2">
+        <%= link_to 'Sign Up',
+          signup_path,
+          class: 'intro-signup' %>
+      </div><!-- /.col-sm-2 -->
+    </div><!-- /.row -->
+  </div><!-- /.container.intro-buttons -->
+</div><!-- /.title-card -->
 
 <div id="main-content" class="container">
   <%= render '/categories/main_content' %>

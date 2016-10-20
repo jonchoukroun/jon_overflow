@@ -43,6 +43,14 @@
   -moz-transition: $element 0.2s ease-in;
 }
 
+@mixin intro_hover {
+  @include transition(all);
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  text-decoration: none;
+  color: $primary_color;
+}
+
 /* All variables */
 $heading_font: 'Montserrat', sans-serif;
 $text_font: 'Raleway', sans-serif;

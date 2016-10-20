@@ -7,15 +7,27 @@
     font-size: 11em;
   }
 
-  span {
+  .intro-buttons {
     margin-top: 10%;
-    color: $primary_color;
-    opacity: 0.3;
-    font-size: 4em;
-    @include transition('opacity');
 
-    &:hover {
-      opacity: 1;
+    .row {
+      display: flex;
+      align-items: center;
+    }
+
+    a {
+      padding: 2em;
+      font-size: 1.5em;
+      color: $primary_color;
+      @include transition('opacity');
+
+      &:hover {
+        @include intro_hover;
+      }
+    }
+
+    span.glyphicon-chevron-down {
+      @extend a;
     }
   }
 }

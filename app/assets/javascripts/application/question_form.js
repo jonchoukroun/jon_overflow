@@ -15,7 +15,7 @@ var QuestionForm = {
     $('a.question-edit').toggleClass('hidden');
     $('.error-messages').empty();
     $('body').animate({
-      scrollTop: $('form.question-form').offset().top
+      scrollTop: $('form.question-form').offset().top - 50
     }, 700);
     return false;
   }

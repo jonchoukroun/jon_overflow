@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // Deduct body top+bottom margins from window height
-  var margins = $('body').css('margin').slice(0, 2) * 2;
-  var windowHeight = $(window).height() - margins;
+  var navMargins = $('body').css('margin').slice(0, 2) * 2;
+  var windowHeight = $(window).height() - navMargins;
 
   // Set title card to full browser height
   $('.title-card').height(windowHeight);

@@ -1,0 +1,21 @@
+<div class="container questions-nav">
+  <div class="row">
+    <div class="col-sm-2 col-sm-offset-4">
+      <%# Handled in assets pipeline %>
+      <%= link_to 'Ask a Question', '#',
+        class: 'btn btn-default new-question' %>
+    </div><!-- /.col-sm-2.col-sm-offset-4 -->
+
+    <div class="col-sm-2">
+      <%# Return to categories list %>
+      <%= link_to 'Back to Categories', categories_path,
+        class: 'btn btn-default back',
+        remote: true %>
+    </div><!-- /.col-sm-2 -->
+
+    <div class="col-sm-4">
+      <h5>Search feature coming soon</h5>
+    </div><!-- /.col-sm-4.search-form -->
+
+  </div><!-- /.row -->
+</div><!-- /.container -->

@@ -128,19 +128,13 @@ label {
 
 .btn.btn-primary {
   @extend .btn.btn-default;
-  @include transition(all);
   margin-top: 1em;
   background: rgba(0,0,0,0.2);
   border: 3px solid #ffdaa8;
 }
 
-.btn-default.back {
-  @extend .btn.btn-primary;
-  border: 3px solid #ddd;
-}
-
 .btn.cancel-question {
-  @extend .btn-default.back;
+  @extend .btn-default;
   margin: 1em 0;
 }
 

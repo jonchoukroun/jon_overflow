@@ -41,6 +41,11 @@ a.cancel-question {
   }
 }
 
+// Standardize full question navigation
+.full-question-nav {
+  @extend .questions-nav;
+}
+
 // Questions Index
 .question-prompt {
   margin-top: 1.3em;
@@ -84,6 +89,10 @@ a.cancel-question {
 .top-question {
   @extend .question-prompt;
   @include shadow;
+}
+
+a.top {
+  margin: 2em 0;
 }
 
 // Full question

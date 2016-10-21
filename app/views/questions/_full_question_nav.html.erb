@@ -1,0 +1,14 @@
+<div class="row full-question-nav">
+  <div class="col-sm-2 col-sm-offset-8">
+    <%# Handled in assets pipeline %>
+    <%= link_to 'Answer this question', '#',
+      class: 'btn btn-default new-answer' %>
+  </div><!-- /.col-sm-2.col-sm-offset-8 -->
+  <div class="col-sm-2">
+    <%# Return to list of questions %>
+    <%= link_to 'Back to questions',
+      category_questions_path(@category),
+      class: 'btn btn-default back',
+      remote: true %>
+  </div><!-- /.col-sm-2 -->
+</div><!-- /.row -->

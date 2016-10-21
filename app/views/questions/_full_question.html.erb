@@ -9,24 +9,8 @@
   <%# Submits to answers#create %>
   <%= render 'answers/form' %>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-        <%# Handled in assets pipeline %>
-        <%= link_to 'Answer this question', '#',
-          class: 'btn btn-primary new-answer' %>
-      </div><!-- /.col-sm-3 -->
-      <div class="col-sm-3">
-        <%# Return to list of questions %>
-        <%= link_to 'Back',
-          category_questions_path(@category),
-          class: 'btn btn-default back',
-          remote: true %>
-      </div><!-- /.col-sm-3 -->
-    </div><!-- /.row -->
-  </div><!-- /.container -->
-
-
+  <%# Buttons for new answer and back %>
+  <%= render 'questions/full_question_nav' %>
 
   <div class="answers-index">
     <% @answers.each do |answer| %>
@@ -36,22 +20,12 @@
 
   <%# Only double nav buttons if necessary %>
   <% if @answers.length > 3 %>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <%# Handled in assets pipeline %>
-          <%= link_to 'Answer this question', '#',
-            class: 'btn btn-primary new-answer' %>
-        </div><!-- /.col-sm-3 -->
-        <div class="col-sm-3">
-          <%# Return to list of questions %>
-          <%= link_to 'Back',
-            category_questions_path(@category),
-            class: 'btn btn-default back',
-            remote: true %>
-        </div><!-- /.col-sm-3 -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
+    <div class="row">
+      <div class="col-sm-2 col-sm-offset-10">
+        <%= link_to 'Back to top', '#',
+          class: 'btn btn-default top' %>
+      </div>
+    </div>
   <% end %>
 
 </div><!-- container-fluid full-question -->

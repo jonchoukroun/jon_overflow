@@ -6,7 +6,7 @@ var NewAnswer = {
   
   scrollBody: function(e) {
     var target = $(e.target).attr('class');
-    if (target === 'btn btn-primary new-answer hidden') {
+    if (target === 'btn btn-default new-answer hidden') {
       console.log('open');
       $('body').animate({
         scrollTop: $('form#new_answer').offset().top

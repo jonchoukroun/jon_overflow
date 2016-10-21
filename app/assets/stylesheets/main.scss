@@ -121,7 +121,7 @@ label {
   color: $primary_color;
 
   &:hover:not(.search) {
-    border: 4px solid white;
+    background: rgba(0,0,0,0.2);
     color: white;
   }
 }
@@ -129,7 +129,6 @@ label {
 .btn.btn-primary {
   @extend .btn.btn-default;
   margin-top: 1em;
-  background: rgba(0,0,0,0.2);
   border: 3px solid #ffdaa8;
 }
 

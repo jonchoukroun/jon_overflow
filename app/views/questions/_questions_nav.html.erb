@@ -12,18 +12,18 @@
       remote: true %>
   </div><!-- /.col-sm-2 -->
 
-  <div class="col-sm-3 input-group question-search">
+  <div class="col-sm-3 question-search">
     <%= form_tag category_questions_path(@category),
       method: :get,
-      class: 'form-horizontal',
+      class: 'input-group',
       remote: true do %>
-        <div class="form-group">
           <%= search_field_tag :search, params[:search],
             placeholder: "Search questions",
             class: 'form-control'%>
-          <%= submit_tag 'Find', name: nil,
-            class: 'btn btn-default search' %>
-        </div>
+          <span class="input-group-btn">
+            <%= submit_tag 'Find', name: nil,
+              class: 'btn btn-default search' %>
+          </span>
     <% end %>
     <%# <input class="form-control" type="text" placeholder="Search feature coming soon..."> %>
     <%# <span class="input-group-btn"> %>

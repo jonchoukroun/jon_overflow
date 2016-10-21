@@ -21,9 +21,14 @@
   <% end %>
 
 
-  <%# Only double nav buttons if necessary %>
+  <%# Quick scroll to top on longer pages %>
   <% if @questions.length > 3 %>
-    <%= render '/questions/questions_nav' %>
+    <div class="row">
+      <div class="col-sm-2 col-sm-offset-10">
+        <%= link_to 'Back to top', '#',
+          class: 'btn btn-default top' %>
+      </div>
+    </div>
   <% end %>
 
 </div><!-- /.container-fluid.questions-index -->

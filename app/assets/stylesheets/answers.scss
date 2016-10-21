@@ -1,6 +1,11 @@
+.answers-index {
+  width: 75%;
+  margin: 0 auto;
+}
+
 .full-answer {
   @extend .question-prompt;
-  padding: 2em 1em;
+  background: rgba(0,0,0,0.2);
 }
 
 form.answer-form {

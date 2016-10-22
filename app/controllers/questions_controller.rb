@@ -15,10 +15,11 @@ class QuestionsController < ApplicationController
       )
     end
 
-
-
     # Renders new question form
     @question = Question.new
+
+    # Allow new user
+    @user = User.new
   end
 
   def show
@@ -31,6 +32,9 @@ class QuestionsController < ApplicationController
 
     # Renders new answer form
     @answer = Answer.new
+    
+    # Allow new user
+    @user = User.new
   end
 
   def edit

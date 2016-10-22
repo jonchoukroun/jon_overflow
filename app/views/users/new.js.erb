@@ -1,0 +1,11 @@
+var userForm = "<%= j(render 'users/signup_form') %>";
+
+var lightbox =
+'<div id="lightbox">' +
+  '<a href="#" class="close-lightbox">' +
+    '<span class="glyphicon glyphicon-remove"></span>' +
+  '</a>' +
+  '<div id="container">'+userForm+'</div><!-- /.container -->'
+'</div><!-- /.#lightbox -->';
+
+$('#lightbox-container').append(lightbox);

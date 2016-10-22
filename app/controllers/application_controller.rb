@@ -11,11 +11,9 @@ class ApplicationController < ActionController::Base
     end
 
     def authorize
-      # respond_to do |format|
       unless current_user
-        @message = [ "You must be logged in to ask a new question." ]
-        render js: "window.location.href = ('#{login_path}');"
+        @message = [ "You must be logged in to do that." ]
+        render 'sessions/force_login.js.erb'
       end
-      # end
     end
 end

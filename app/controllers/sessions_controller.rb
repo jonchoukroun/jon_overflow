@@ -11,8 +11,7 @@ class SessionsController < ApplicationController
     elsif params[:session][:email] == ''
       @message = ["Enter your email and password, or create a new account."]
     else
-      @message = ["This account does not exist yet. Redirecting to signup..."]
-      render 'redirect.js.erb'
+      @message = ["This account does not exist yet. Create an account instead..."]
     end
   end
 

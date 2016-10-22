@@ -62,16 +62,21 @@
           <li>
             <%= link_to 'Logout',
               logout_path,
+              remote: true,
               method: :delete %>
           </li>
         <% else %>
           <li>
             <%= link_to 'Login',
-              login_path %>
+              login_path,
+              class: 'user-login',
+              remote: true %>
           </li>
           <li>
             <%= link_to 'Create account',
-              signup_path %>
+              signup_path,
+              class: 'user-signup',
+              remote: true %>
           </li>
         <% end %>
       </ul><!-- /.nav.navbar-nav -->

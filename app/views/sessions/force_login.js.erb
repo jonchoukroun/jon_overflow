@@ -1,0 +1,16 @@
+var userForm = "<%= j(render 'sessions/login_form') %>";
+
+var errors = "<%= j(render 'shared/errors', message: @message) %>";
+
+var lightbox =
+'<div id="lightbox">' +
+  '<a href="#" class="close-lightbox">' +
+    '<span class="glyphicon glyphicon-remove"></span>' +
+  '</a>' +
+  '<div id="container">'+userForm+'</div><!-- /.container -->'
+'</div><!-- /.#lightbox -->';
+
+$('#lightbox-container').append(lightbox).toggleClass('hidden');
+$('#lightbox-container .error-messages').append(errors);
+$('#content').toggleClass('hidden');
+

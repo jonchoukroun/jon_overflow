@@ -6,7 +6,6 @@ $(document).ready(function() {
   var containerMargin = (windowHeight / 2) - (containerHeight / 2);
 
   if (window.matchMedia('(min-width: 768px)').matches) {
-    console.log(containerMargin);
     $('.category-preview').css('padding-top', containerMargin)
   }
 });

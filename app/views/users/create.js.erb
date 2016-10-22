@@ -1,1 +1,9 @@
-$(window.location.replace('/'));
+<% if @message %>
+  $('.error-messages').html(
+    "<%= j(render 'shared/errors', message: @message) %>"
+  );
+<% else %>
+  alert('Welcome <%= @user.name %>! Your account was created successfully.')
+  $('#lightbox-container').empty().toggleClass('hidden');
+  $('#content').toggleClass('hidden');
+<% end %>

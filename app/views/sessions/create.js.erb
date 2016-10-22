@@ -3,7 +3,19 @@
     "<%= j(render 'shared/errors', message: @message) %>"
   );
 <% else %>
-  <%# $(window.location.replace('/')); %>
   $('#lightbox-container').empty().toggleClass('hidden');
   $('#content').toggleClass('hidden');
+
+  <%# Update navbar since AJAX doesn't reload %>
+  var greeting = '<a href="/"><%= "Hi, #{@user.name}" %></a>';
+  var logout =
+    '<li class="logout-link">' +
+      '<a data-remote="true" rel="nofollow" data-method="delete"' +
+      'href="/logout">Logout</a>' +
+    '</li>';
+
+  $('#navigation-menu').find('li.navbar-greeting').empty().html(greeting);
+  $('#navigation-menu').find('li.login-link').remove();
+  $('#navigation-menu').find('li.signup-link').remove();
+  $('#navigation-menu').find('ul.nav.navbar-nav').append(logout);
 <% end %>

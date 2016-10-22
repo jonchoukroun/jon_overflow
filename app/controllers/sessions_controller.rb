@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      log_in user
-    elsif user
+    @user = User.find_by(email: params[:session][:email].downcase)
+    if @user && @user.authenticate(params[:session][:password])
+      log_in @user
+    elsif @user
       @message = ["Incorrect username/password combination."]
     elsif params[:session][:email] == ''
       @message = ["Enter your email and password, or create a new account."]

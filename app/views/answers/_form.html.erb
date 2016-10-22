@@ -4,21 +4,26 @@
             html: {class: 'answer-form hidden'},
             remote: true) do |f| %>
 
-  <div class="form-title"><h1>Your answer</h1></div>
-  <div class="error-messages"></div>
+  <div class="form-title">
+    <h2>Your answer</h2>
+  </div><!-- /.form-title -->
+
+  <div class="error-messages"></div><!-- /.error-messages -->
 
   <div class="form-group">
-  <%= f.text_area :content, class: 'input-lg', autofocus: true %>
+    <%= f.text_area :content, class: 'input-lg',
+      placeholder: 'Be descriptive, what would you want to know?',
+      autofocus: true %>
   </div>
 
   <div class="form-group">
   <%= f.submit 'Answer', 
-    class: 'btn btn-primary btn-lg submit-answer' %>
+    class: 'btn btn-primary btn-lg submit submit-answer' %>
   </div>
 
   <div class="form-group">
   <%= link_to 'Cancel', '#',
-    class: 'btn btn-default btn-lg btn-block cancel-answer',
+    class: 'btn btn-primary btn-lg btn-block cancel cancel-answer',
     remote: true %>
   </div>
   

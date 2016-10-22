@@ -3,24 +3,27 @@
   remote: true do |f| %>
 
   <div class="form-title">
-    <h3>Create an Account</h3>
+    <h2>Create an Account</h2>
   </div><!-- /.form-title -->
 
-  <div class="error-messages"></div>
+  <div class="error-messages"></div><!-- /.error-messages -->
 
   <div class="form-group">
     <%= f.label :name, 'Display name' %>
-    <%= f.text_field :name, class: 'input-lg', autofocus: true %>
+    <%= f.text_field :name, class: 'input-lg',
+      placeholder: 'Your public name', autofocus: true %>
   </div>
 
   <div class="form-group">
     <%= f.label :email %>
-    <%= f.email_field :email, class: 'input-lg' %>
+    <%= f.email_field :email, class: 'input-lg',
+      placeholder: 'e.g. bob@hope.com (used only for login)' %>
   </div>
 
   <div class="form-group">
     <%= f.label :password %>
-    <%= f.password_field :password, class: 'input-lg' %>
+    <%= f.password_field :password, class: 'input-lg',
+      placeholder: '6 characters minimum...' %>
   </div>
 
   <div class="form-group">
@@ -29,19 +32,23 @@
   </div>
 
   <div class="form-group">
-    <%= f.submit 'Create account', class: 'btn btn-primary btn-lg' %>
+    <%= f.submit 'Create account', class: 'btn btn-primary btn-lg submit' %>
   </div>
 
   <%# Allow user to change form type %>
-  <div class="convert-form">
-    <h4>Existing User?</h4>
+  <div class="form-title">
+    <h3>Existing User?</h3>
+  </div><!-- /.form-title -->
+
+  <div class="form-group">
     <%= link_to 'Login',
       login_path,
-      class: 'btn btn-default btn-lg convert-form',
+      class: 'btn btn-primary btn-lg btn-block convert-form',
       remote: true %>
+  </div>
 
+  <div class="form-group">
     <%= link_to 'Cancel Login', '#',
-      class: 'btn btn-default btn-lg close-lightbox' %>
-  </div><!-- /.convert-form -->
-
+      class: 'btn btn-primary btn-lg btn-block close-lightbox' %>
+  </div>
 <% end %>

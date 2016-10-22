@@ -4,34 +4,42 @@
               remote: true) do |f| %>
             
   <div class="form-title">
-    <h3>Log in</h3>
+    <h2>Log in</h2>
   </div><!-- /.form-title -->
 
-  <div class="error-messages"></div>
+  <div class="error-messages"></div><!-- /.error-messages -->
 
   <div class="form-group">
     <%= f.label :email %>
-    <%= f.email_field :email, class: 'input-lg', autofocus: true %>
+    <%= f.email_field :email, class: 'input-lg',
+      placeholder: 'e.g. bob@hope.com', autofocus: true %>
   </div>
 
   <div class="form-group">
     <%= f.label :password %>
-    <%= f.password_field :password, class: 'input-lg' %>
+    <%= f.password_field :password, class: 'input-lg',
+      placeholder: '6 characters minimum...' %>
   </div>
 
   <div class="form-group">
-    <%= f.submit 'Log In', class: 'btn btn-primary btn-lg submit-login' %>
+    <%= f.submit 'Log In',
+      class: 'btn btn-primary btn-lg submit submit-login' %>
   </div>
 
   <%# Allow user to change form type %>
-  <div class="form-group">
+  <div class="form-title">
     <h3>New User?</h3>
+  </div><!-- /.form-title -->
+
+  <div class="form-group">
     <%= link_to 'Create Profile',
       signup_path,
-      class: 'btn btn-default btn-lg convert-form',
+      class: 'btn btn-primary btn-lg btn-block convert-form',
       remote: true %>
+  </div>
 
+  <div class="form-group">
     <%= link_to 'Cancel Login', '#',
-      class: 'btn btn-default btn-lg close-lightbox' %>
+      class: 'btn btn-primary btn-lg btn-block cancel close-lightbox' %>
   </div>
 <% end %>

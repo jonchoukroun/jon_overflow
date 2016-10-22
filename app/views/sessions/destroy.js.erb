@@ -1,0 +1,18 @@
+alert("You have logged out.");
+
+<%# Update navbar since AJAX doesn't reload %>
+var greeting = '<a href="/">Home</a>';
+var login =
+  '<li class="login-link">' +
+    '<a class="user-login" data-remote="true" href="/login">Login</a>' +
+  '</li>';
+
+var signup =
+  '<li class="signu-link">' +
+    '<a class="user-signup" data-remote="true" href="/signup">Create Account</a>' +
+  '</li>';
+
+$('#navigation-menu').find('li.navbar-greeting').empty().html(greeting);
+$('#navigation-menu').find('li.logout-link').remove();
+$('#navigation-menu').find('ul.nav.navbar-nav').append(login);
+$('#navigation-menu').find('ul.nav.navbar-nav').append(signup);

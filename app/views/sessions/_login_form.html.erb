@@ -24,11 +24,14 @@
   </div>
 
   <%# Allow user to change form type %>
-  <div class="convert-form">
-    <h4>New User?</h4>
+  <div class="form-group">
+    <h3>New User?</h3>
     <%= link_to 'Create Profile',
       signup_path,
       class: 'btn btn-default btn-lg convert-form',
       remote: true %>
-  </div><!-- /.convert-form -->
+
+    <%= link_to 'Cancel Login', '#',
+      class: 'btn btn-default btn-lg close-lightbox' %>
+  </div>
 <% end %>

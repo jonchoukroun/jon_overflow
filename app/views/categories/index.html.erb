@@ -7,10 +7,12 @@
   <div class="intro-buttons">
     <%= link_to 'Login',
       login_path,
-      class: 'btn btn-default intro-login' %>
+      class: 'btn btn-default user-login',
+      remote: true %>
     <%= link_to 'Sign Up',
       signup_path,
-      class: 'btn btn-default intro-signup' %>
+      class: 'btn btn-default user-signup',
+      remote: true %>
   </div><!-- /.intro-buttons -->
 
   <%# Scroll down to categories preview %>

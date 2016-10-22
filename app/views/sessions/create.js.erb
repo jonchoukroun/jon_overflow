@@ -3,5 +3,7 @@
     "<%= j(render 'shared/errors', message: @message) %>"
   );
 <% else %>
-    $(window.location.replace('/'));
+  <%# $(window.location.replace('/')); %>
+  $('#lightbox-container').empty().toggleClass('hidden');
+  $('#content').toggleClass('hidden');
 <% end %>

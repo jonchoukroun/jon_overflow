@@ -9,8 +9,11 @@ SoCal Kin allows users to pose questions, which are ranked by the number of answ
 ---
 ## Releases
 
-**Version 1.0** - Oct 15, 2016
+**Version 0.1** - Oct 15, 2016
 * Initial release
 
-**Version 1.1** - Oct 18, 2016
+**Version 0.2** - Oct 17, 2016
 * Responsive on mobile devices
+
+Version 1.0 - Oct  18, 2016
+* Redesigned entire look

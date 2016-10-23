@@ -1,5 +1,5 @@
 <div class="row questions-nav">
-  <div class="col-sm-2 col-sm-offset-5">
+  <div class="col-sm-2 col-sm-offset-4">
     <%# Handled in assets pipeline %>
     <%= link_to 'Ask a question', '#',
       class: 'btn btn-default new-question' %>
@@ -7,28 +7,24 @@
 
   <div class="col-sm-2">
     <%# Return to categories list %>
-    <%= link_to 'Back to categories', categories_path,
+    <%= link_to 'Back to counties', categories_path,
       class: 'btn btn-default back',
       remote: true %>
   </div><!-- /.col-sm-2 -->
 
-  <div class="col-sm-3 question-search">
+  <div class="col-sm-4 question-search">
     <%= form_tag category_questions_path(@category),
       method: :get,
       class: 'input-group',
       remote: true do %>
           <%= search_field_tag :search, params[:search],
-            placeholder: "Search questions",
+            placeholder: "e.g. best hiking, affordable sky-diving",
             class: 'form-control'%>
           <span class="input-group-btn">
             <%= submit_tag 'Find', name: nil,
               class: 'btn btn-default search' %>
           </span>
     <% end %>
-    <%# <input class="form-control" type="text" placeholder="Search feature coming soon..."> %>
-    <%# <span class="input-group-btn"> %>
-      <%# <button class="btn btn-default search" type="button" disabled="disabled">Find</button> %>
-    <%# </span> %>
   </div><!-- /.col-sm-4.input-group.question-search -->
 
 </div><!-- /.row.questions-nav -->

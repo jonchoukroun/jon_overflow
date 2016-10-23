@@ -3,18 +3,23 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
-  text-align: right;
-
+  background: $dark_background;
+  
   form {
     margin: 0 auto;
-    width: 60%;
+    background: none;
+    padding: 10px;
+    width: 45%;
+    text-align: left;
   }
 
   .close-lightbox {
-    padding: 2em 4em;
-    span {
-      color: red;
+    display: flex;
+    @include justify('right');
+    color: $red;
+
+    &:hover {
+      text-decoration: none;
     }
   }
 }

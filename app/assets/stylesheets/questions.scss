@@ -11,10 +11,6 @@ form.question-form {
   width: 45%;
   height: 100%;
   margin: 2em auto;
-
-  label {
-    font-size: 2em;
-  }
 }
 
 a.cancel-question {
@@ -32,7 +28,8 @@ a.cancel-question {
   .question-search {
     form {
       margin-top: 0;
-      padding-top: 0;
+      padding: 0;
+      background: none;
     }
 
     input {
@@ -50,12 +47,12 @@ a.cancel-question {
 .question-prompt {
   margin-top: 1.3em;
   padding: 3em;
-  background: rgba(0,0,0,0.3);
+  background: $light_background;
   border-radius: $radius;
   @include transition(all);
 
   &:hover {
-    background: rgba(0,0,0,0.5);
+    background: $medium_background;
     @include shadow;
   }
   padding: 1.5em 1em;
@@ -101,7 +98,7 @@ a.top {
 
   .question {
     @extend .question-prompt;
-    background: rgba(0,0,0,0.5);
+    background: $medium_background;
     @include shadow;
   }
 
@@ -118,11 +115,11 @@ a.top {
 
     .question-edit {
       margin-right: 0.5em;
-      color: #61819b;
+      color: $blue;
     }
 
     .question-delete {
-      color: #9c4c2a;
+      color: $red;
     }
   }
 }

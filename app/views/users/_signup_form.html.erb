@@ -1,6 +1,10 @@
-<%= form_for @user,
-  url: '/users',
-  remote: true do |f| %>
+<%= form_for(@user,
+             url: '/users',
+             remote: true) do |f| %>
+
+  <a href="#" class="close-lightbox">
+    <span class="glyphicon glyphicon-remove"></span>
+  </a>
 
   <div class="form-title">
     <h2>Create an Account</h2>
@@ -45,10 +49,5 @@
       login_path,
       class: 'btn btn-primary btn-lg btn-block convert-form',
       remote: true %>
-  </div>
-
-  <div class="form-group">
-    <%= link_to 'Cancel Login', '#',
-      class: 'btn btn-primary btn-lg btn-block close-lightbox' %>
   </div>
 <% end %>

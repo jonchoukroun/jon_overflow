@@ -40,13 +40,13 @@
 
 .category-box {
   padding: 2em 0;
-  background: rgba(0,0,0,0.3);
+  background: $light_background;
   border-radius: $radius;
   text-align: center;
   @include transition(all);
 
   &:hover {
-    background: rgba(0,0,0,0.5);
+    background: $medium_background;
   }
 }
 

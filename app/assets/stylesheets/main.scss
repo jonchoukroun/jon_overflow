@@ -31,10 +31,10 @@
 }
 
 @mixin shadow {
-  box-shadow: 2px 4px 6px 3px rgba(0,0,0,0.6);
-  -webkit-box-shadow: 2px 4px 6px 3px rgba(0,0,0,0.6);
-  -moz-box-shadow: 2px 4px 6px 3px rgba(0,0,0,0.6);
-  -ms-box-shadow: 2px 4px 6px 3px rgba(0,0,0,0.6);
+  box-shadow: 2px 4px 6px 3px $dark_background;
+  -webkit-box-shadow: 2px 4px 6px 3px $dark_background;
+  -moz-box-shadow: 2px 4px 6px 3px $dark_background;
+  -ms-box-shadow: 2px 4px 6px 3px $dark_background;
 }
 
 @mixin transition($element) {
@@ -45,19 +45,38 @@
 
 @mixin intro_hover {
   @include transition(all);
-  background: rgba(0,0,0,0.2);
+  background: $light_background;
   border-radius: 50%;
   text-decoration: none;
   color: $primary_color;
 }
 
 /* All variables */
+/* Layout */
+$nav_margin: 65px;
+
+/* Backgrounds */
+$light_background: rgba(0,0,0,0.2);
+$medium_background: rgba(0,0,0,0.4);
+$dark_background: rgba(0,0,0,0.6);
+
+/* Fonts & Borders */
 $heading_font: 'Montserrat', sans-serif;
 $text_font: 'Raleway', sans-serif;
-$primary_color: white;
-$border: 3px solid #fff;
+$border: 3px solid white;
 $radius: 0.5em;
-$dark_blue: #61819b;
+
+/* Colors */
+$primary_color: white;
+$grey: #ddd;
+$dark_grey: #666;
+$red: #e2433b;
+$blue: #6c99c5;
+$light_blue: #99bddf;
+$orange: #ffcc83;
+$light_yellow: #fff7d3;
+$nav_color: black;
+
 
 /* General layout */
 html {
@@ -66,7 +85,7 @@ html {
 }
 
 body {
-  margin: 50px 0;
+  margin: $nav_margin 0;
   min-height: 100%;
   background: asset-data-url("background.png");
   @include background-cover;
@@ -90,18 +109,19 @@ p {
 /* All forms */
 form {
   margin-top: 1.5em;
-  padding-top: 50px;
+  padding: $nav_margin;
+  background: $medium_background;
+  border-radius: $radius;
 }
 
 .form-title {
   @include justify('center');
 }
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #ddd;
-  width: 100%;
-  margin-bottom: 1em;
+input, email, textarea, select, .uneditable-input {
   @include box_sizing;
+  width: 100%;
+  border: 1px solid #ddd;
 }
 
 input {
@@ -110,6 +130,7 @@ input {
 
 label {
   font-family: $text_font;
+  font-size: 1.2em;
   color: $primary_color;
 }
 
@@ -121,7 +142,7 @@ label {
   color: $primary_color;
 
   &:hover:not(.search) {
-    background: rgba(0,0,0,0.2);
+    background: $light_background;
     color: white;
   }
 }
@@ -129,16 +150,19 @@ label {
 .btn.btn-primary {
   @extend .btn.btn-default;
   margin-top: 1em;
-  border: 3px solid #ffdaa8;
+
+  &:hover {
+  border-color: $blue;
+  }
 }
 
-.btn.cancel-question {
+.btn.cancel {
   @extend .btn-default;
   margin: 1em 0;
-}
 
-.btn.cancel-answer {
-  @extend .btn.cancel-question;
+  &:hover {
+    border-color: $red;
+  }
 }
 
 /* Icons */

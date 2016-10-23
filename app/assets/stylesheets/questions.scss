@@ -1,4 +1,4 @@
-// New Question Form
+/* New Question Form */
 .category-title {
   @extend .title-card;
 
@@ -13,11 +13,7 @@ form.question-form {
   margin: 2em auto;
 }
 
-a.cancel-question {
-  margin: 0.5em 0;
-}
-
-// Mini grid for question navigation
+/* Mini grid for question navigation */
 .questions-nav {
   margin: 2em 0;
 
@@ -44,6 +40,10 @@ a.cancel-question {
 }
 
 // Questions Index
+.questions-index {
+  margin-bottom: 2em;
+}
+
 .question-prompt {
   margin-top: 1.3em;
   padding: 3em;
@@ -105,6 +105,23 @@ a.top {
   p {
     font-size: 2em;
   }
+
+  .user-info{
+    padding-top: 1em;
+    text-align: right;
+
+    p {
+      margin: 0;
+      font-size: 1.3em;
+      font-style: italic;
+    }
+  }
+  
+  .question-content{
+    article {
+      margin-right: 1em;
+    }
+  }
 }
 
 .question-heading {
@@ -124,25 +141,8 @@ a.top {
   }
 }
 
-.user-info{
-  padding-top: 1em;
-  text-align: right;
-
-  p {
-    margin: 0;
-    font-size: 1.5em;
-    font-style: italic;
-  }
-}
-
 a.new-answer {
   @extend a.new-question;
-}
-
-.question-content{
-  article {
-    margin-right: 1em;
-  }
 }
 
 // Small screen adjustments

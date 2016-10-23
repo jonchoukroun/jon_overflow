@@ -1,3 +1,7 @@
+form.answer-form {
+  @extend form.question-form;
+}
+
 .answers-index {
   width: 75%;
   margin: 0 auto;
@@ -6,10 +10,12 @@
 .full-answer {
   @extend .question-prompt;
   background: $light_background;
-}
 
-form.answer-form {
-  @extend form.question-form;
+  .answer-content {
+    p {
+      font-size: 1.4em;
+    }
+  }
 }
 
 .user-action {
@@ -23,17 +29,9 @@ form.answer-form {
 
 .answer-rating {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 0.8em;
 
   .agree {
-    color: $grey;
-
-    &.voted {
-      color: $blue;
-    }
-  }
-
-  .disagree {
     color: $grey;
 
     &.voted {
@@ -41,14 +39,18 @@ form.answer-form {
     }
   }
 
-  .voted {
-    font-weight: bold;
+  .disagree {
+    @extend .agree;
   }
 }
 
 .answer-info {
   @extend .user-info;
   text-align: right;
+  
+  p {
+    font-size: 1.1em;
+  }
 }
 
 .top-answer {

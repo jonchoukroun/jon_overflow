@@ -66,13 +66,12 @@
 
 // Small screen adjustments
 @media (max-width: 425px) {
-  .title {
+  .title-card {
     padding: 1em;
 
     h1 {
       font-size: 5em;
     }
-
   }
   .category-preview {
     padding: 0;

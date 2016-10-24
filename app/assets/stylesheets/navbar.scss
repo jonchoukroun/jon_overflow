@@ -1,6 +1,6 @@
 @mixin hover_text {
-  color: $text-color;
   font-weight: bold;
+  color: $light_blue;
 }
 
 @mixin menu_dark {
@@ -17,8 +17,10 @@
   background: $nav_color;
   border: none;
   border-radius: 0;
+  font-size: 1.2em;
 
   .navbar-brand {
+    padding-top: 7px;
     color: $grey;
 
     &:hover {
@@ -32,6 +34,10 @@
 
       &:hover {
         @include hover_text;
+      }
+
+      &:visited {
+        color: $grey;
       }
     }
 

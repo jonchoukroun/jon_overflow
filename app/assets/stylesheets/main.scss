@@ -61,8 +61,8 @@ $medium_background: rgba(0,0,0,0.4);
 $dark_background: rgba(0,0,0,0.6);
 
 /* Fonts & Borders */
-$heading_font: 'Montserrat', sans-serif;
-$text_font: 'Raleway', sans-serif;
+$title_font: 'Bitter', serif;
+$body_font: 'Work Sans', sans-serif;
 $border: 3px solid white;
 $radius: 0.5em;
 
@@ -90,15 +90,7 @@ body {
   background: asset-data-url("background.png");
   @include background-cover;
   background-attachment: fixed;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $heading_font;
-  color: $primary_color;
-}
-
-p {
-  font-family: $text_font;
+  font-family: $body_font;
   color: $primary_color;
 }
 
@@ -129,7 +121,7 @@ input {
 }
 
 label {
-  font-family: $text_font;
+  // font-family: $text_font;
   font-size: 1.2em;
   color: $primary_color;
 }

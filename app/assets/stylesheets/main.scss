@@ -150,13 +150,13 @@ label {
 
 /* All buttons */
 .btn.btn-default {
-  background: none;
+  background: $light-background;
   border-radius: 3em;
   border: 3px solid #ddd;
   color: $primary_color;
 
   &:hover:not(.search) {
-    background: $light_background;
+    background: $medium_background;
     color: white;
   }
 }

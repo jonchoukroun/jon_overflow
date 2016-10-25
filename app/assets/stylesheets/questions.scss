@@ -1,9 +1,9 @@
 /* New Question Form */
-.category-title {
-  @extend .title-card;
 
+.category-title {
   h1 {
-    font-size: 4em;
+    font-size: 8em;
+    font-family: $title_font;
   }
 }
 
@@ -31,8 +31,8 @@ form.question-form {
     input {
       border: $border;
     }
-  }
-}
+  } /* .question-search */
+} /* /.question-nav */
 
 // Standardize full question navigation
 .full-question-nav {
@@ -42,31 +42,37 @@ form.question-form {
 // Questions Index
 .questions-index {
   margin-bottom: 2em;
+  padding: 0 10em;
 }
 
 .question-prompt {
+  width: 75%;
   margin-top: 1.3em;
   padding: 3em;
   background: $light_background;
   border-radius: $radius;
   @include transition(all);
+  color: $primary_color;
 
   &:hover {
     background: $medium_background;
     @include shadow;
   }
-  padding: 1.5em 1em;
-}
+} /* /.question-prompt */
 
-.question-prompt .question-title {
+.question-title {
   a:hover {
     text-decoration: none;
   }
 
-  h3:hover {
-    font-weight: bold;
+  h2 {
+    color: $primary_color;
+    
+    &:hover {
+      font-weight: bold;
+    }
   }
-}
+} /* /.question-title */
 
 .question-preview {
   padding-top: 1em;

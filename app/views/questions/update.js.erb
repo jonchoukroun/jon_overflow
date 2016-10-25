@@ -3,3 +3,7 @@ $('.question').empty().html(
 );
 
 $('form.question-form').toggleClass('hidden');
+
+$('html, body').animate({
+  scrollTop: $('#content').offset().top -50
+}, 500);

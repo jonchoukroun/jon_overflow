@@ -23,7 +23,7 @@
   }
 }
 
-@mixin background-cover {
+@mixin background_cover {
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -51,9 +51,13 @@
   color: $primary_color;
 }
 
+@mixin title_shadow {
+  text-shadow: 1px 2px 1px $dark_background;
+}
+
 /* All variables */
 /* Layout */
-$nav_margin: 65px;
+$nav_margin: 50px;
 
 /* Backgrounds */
 $light_background: rgba(0,0,0,0.2);
@@ -87,14 +91,16 @@ html {
 body {
   margin: $nav_margin 0;
   min-height: 100%;
-  background: asset-data-url("background.png");
-  @include background-cover;
   background-attachment: fixed;
   font-family: $body_font;
   color: $primary_color;
 }
 
 #content {
+  padding: 0;
+}
+
+#main-content {
   padding: 0;
 }
 
@@ -168,11 +174,6 @@ label {
 
 /* Small screens */
 @media (max-width: 425px) {
-  #main-content {
-    width: 100%;
-    padding: 0;
-  }
-
   .btn.btn-default {
     background: $medium_background;
   }

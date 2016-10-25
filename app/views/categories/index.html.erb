@@ -1,10 +1,10 @@
 <%= render 'categories/categories_menu' %>
 
 <div class="title-card">
-  <div class="container intro">
+  <div class="intro-title">
     <h1>TrueNorth</h1>
     <h2>Discover local adventure</h2>
-  </div><!-- /.intro -->
+  </div><!-- /.intro-title -->
 
   <div class="intro-buttons">
     <%= link_to 'Login',
@@ -18,11 +18,12 @@
   </div><!-- /.intro-buttons -->
 
   <%# Scroll down to categories preview %>
-  <div class="scroll-button">
+  <a class="scroll-down" href="#">
+    <h3>Select a county below</h3>
     <span class="glyphicon glyphicon-chevron-down"></span>
-  </div><!-- /.scroll-button -->
+  </a><!-- /.scroll-down -->
 </div><!-- /.title-card -->
 
-<div id="main-content" class="container">
+<div id="main-content" class="container-fluid">
   <%= render '/categories/main_content' %>
 </div><!-- /#main-content.container -->

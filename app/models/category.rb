@@ -6,4 +6,8 @@ class Category < ActiveRecord::Base
   def count_questions
     self.questions.count
   end
+
+  def image_name
+    self.name.downcase.tr(' ', '_').concat('.jpg')
+  end
 end

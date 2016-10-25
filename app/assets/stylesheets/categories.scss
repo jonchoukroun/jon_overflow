@@ -1,11 +1,9 @@
 /* Title card */
 .title-card {
+  background: asset-data-url("background.png");
+  @include background-cover;
   padding-top: 10%;
   text-align: center;
-
-  .intro {
-    padding: 0 8em;
-  }
 
   h1 {
     margin: 0;
@@ -16,8 +14,7 @@
   }
 
   h2 {
-    margin: -0.3em 4em;
-    text-align: left;
+    margin-top: -0.5em;
   }
 
   .intro-buttons {
@@ -31,8 +28,22 @@
     }
   }
 
-  .scroll-button {
-    margin-top: 12%;
+  a.scroll-down {
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    h3 {
+      margin-top: 10%;
+      text-align: center;
+      color: $primary_color;
+      opacity: 1;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
 
     span.glyphicon-chevron-down {
       opacity: 0.5;
@@ -43,19 +54,13 @@
         opacity: 1;
       }
     }
-  }
-}
+  } /* /a.scroll-down */
+} /* /.title-card */
 
 .category-box {
-  padding: 2em 0;
-  background: $light_background;
-  border-radius: $radius;
-  text-align: center;
+  @include background_cover;
   @include transition(all);
-
-  &:hover {
-    background: $medium_background;
-  }
+  padding: 2em;
 }
 
 .category-name {
@@ -63,41 +68,73 @@
     text-decoration: none;
   }
 
-  h1:hover {
+  h1 {
+    text-align: center;
+    font-family: $title_font;
+    font-size: 7em;
     font-weight: bold;
-  }
+    color: $primary_color;
+    @include title_shadow;
+
+    &:hover {
+      font-weight: bold;
+    }
+  } 
 }
 
-.category-description {
-  font-style: italic;
+.button {
+  text-align: right;
 }
 
-// Small screen adjustments
-@media (max-width: 425px) {
+/* Medium screen adjustments */
+@media (min-width: 500px) and (max-width: 768px) {
   .title-card {
-    padding: 1em;
-
     h1 {
-      font-size: 5em;
+      margin-top: 1em;
+      font-size: 7em;
     }
   }
+
+  .category-preview {
+    h1 {
+      font-size: 4em;
+    }
+  }
+} /* /med screen adjustments */
+
+/* Small screen adjustments */
+@media (max-width: 499px) {
+  .title-card {
+
+    .intro-title {
+      margin-top: 4em;
+      padding: 0;
+
+      h1 {
+        font-size: 4em;
+      }
+
+      h2 {
+        margin: 0;
+        text-align: center;
+        font-size: 1.8em;
+      }
+    } /* /.intro-title */
+
+    .intro-buttons {
+      margin-top: 2em;
+    }
+  } /* /.title-card */
+
   .category-preview {
     padding: 0;
-
-    .row {
-      margin: 0;
-    }
   }
 
   .category-box {
-    margin: 1em 0;
+    padding: 1em;
 
-    h2 {
+    h1 {
       font-size: 2.5em;
     }
-
-    h4 {
-      font-size: 1.5em;
-    }
   }
-}
+} /* /small screen adjustments */

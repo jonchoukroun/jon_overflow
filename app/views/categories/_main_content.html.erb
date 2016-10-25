@@ -1,8 +1,5 @@
-<div class="container category-preview">
-  <h2>Select a county, then search for your activity.</h2>
-  <div class="row">
-    <% @categories.each do |category| %>
-      <%= render 'categories/categories_preview', category: category %>
-    <% end %>
-  </div><!-- /.row -->
+<div class="category-preview">
+  <% @categories.each do |category| %>
+    <%= render 'categories/categories_preview', category: category %>
+  <% end %>
 </div><!-- /.container-fluid.category-preview -->

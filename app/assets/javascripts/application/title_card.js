@@ -2,6 +2,8 @@ $(document).ready(function() {
   // Deduct body top+bottom margins from window height
   var navMargins = $('body').css('margin').slice(0, 2) * 2;
   var windowHeight = $(window).height() - navMargins;
+  var windowWidth = $(window).width();
+  console.log(windowWidth);
 
   // Set title card to full browser height
   $('.title-card').height(windowHeight);
@@ -9,9 +11,11 @@ $(document).ready(function() {
   // Set main content min height to full browser height
   $('#main-content').css('min-height', windowHeight);
 
-  $('.title-card').on('click', '.scroll-button span', function() {
+  // Auto scroll to top of categories preview
+  $('.title-card').on('click', 'a.scroll-down', function(e) {
+    e.preventDefault();
     $('html, body').animate({
-      scrollTop: $('#main-content').offset().top
+      scrollTop: $('#main-content').offset().top - (navMargins / 2)
     }, 700);
   });
 });

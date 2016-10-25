@@ -9,7 +9,6 @@
     margin: 0 auto;
     background: none;
     padding: 10px;
-    width: 45%;
     text-align: left;
   }
 
@@ -22,4 +21,15 @@
       text-decoration: none;
     }
   }
-}
+} /* /#lightbox */
+
+/* Small screen adjustments */
+@media (max-width: 500px) {
+  #lightbox {
+    .form-title {
+      h2, h3 {
+        margin: 0;
+      }
+    }
+  }
+} /* /small screen adjustment */

@@ -1,18 +1,18 @@
 <div class="row questions-nav">
-  <div class="col-sm-2 col-sm-offset-4">
+  <div class="col-lg-2">
     <%# Handled in assets pipeline %>
     <%= link_to 'Ask a question', '#',
       class: 'btn btn-default new-question' %>
-  </div><!-- /.col-sm-2.col-sm-offset-4 -->
+  </div><!-- /.col-lg-2 -->
 
-  <div class="col-sm-2">
+  <div class="col-lg-2">
     <%# Return to categories list %>
     <%= link_to 'Back to counties', categories_path,
       class: 'btn btn-default back',
       remote: true %>
-  </div><!-- /.col-sm-2 -->
+  </div><!-- /.col-lg-2 -->
 
-  <div class="col-sm-4 question-search">
+  <div class="col-lg-8 question-search">
     <%= form_tag category_questions_path(@category),
       method: :get,
       class: 'input-group',
@@ -25,6 +25,6 @@
               class: 'btn btn-default search' %>
           </span>
     <% end %>
-  </div><!-- /.col-sm-4.input-group.question-search -->
+  </div><!-- /.col-lg-8.input-group.question-search -->
 
 </div><!-- /.row.questions-nav -->

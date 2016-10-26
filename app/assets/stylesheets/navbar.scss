@@ -53,4 +53,11 @@
       }
     }
   }
-}
+} /* /.navbar-default */
+
+/* small screen adjustment */
+@media (max-width: 768px) {
+  .navbar-default li {
+    font-size: 1.3em;
+  } /* /.navbar-default li */
+} /* /.small screens */

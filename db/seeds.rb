@@ -2,27 +2,21 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 Category.create!(
-  name: 'Dining & Night Life',
-  description: 'Enjoy Southern California\'s best restaurants, bars, and numerous watering holes...'
+  name: 'San Bernardino',
+  description: 'San Bernardino'
 )
 
 Category.create!(
-  name: 'Live Events',
-  description: 'Concerts, sporting events, festivals and other happenings...'
+  name: 'Los Angeles',
+  description: 'Los Angeles'
 )
 
 Category.create!(
-  name: 'Outdoor Activities',
-  description: 'Hiking, Rafting, Rowing, and other fresh-air, blood-pumping experiences...'
+  name: 'Orange County',
+  description: 'Orange County'
 )
 
 Category.create!(
-  name: 'Must See',
-  description: 'Things not to miss when visiting Southern California...',
+  name: 'San Diego',
+  description: 'San Diego',
 )
-
-Category.create!(
-  name: 'Shopping',
-  description: 'Where to spend that money burning a hole in your pocket.'
-)
-

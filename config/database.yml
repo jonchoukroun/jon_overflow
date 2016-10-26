@@ -17,6 +17,6 @@ test:
 
 production:
   <<: *default
-  database: socal_kin_production
-  username: socalkin
-  password: <%= ENV['SOCALKIN_DATABASE_PASSWORD'] %>
+  database: truenorth_production
+  username: truenorth
+  password: <%= ENV['TRUENORTH_DATABASE_PASSWORD'] %>

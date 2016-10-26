@@ -1,6 +1,6 @@
 <% if current_user && current_user.id == question.user_id %>
   <div class="row user-option">
-    <div class="col-sm-12">
+    <div class="col-xs-12">
       <%= link_to '<span class="glyphicon glyphicon-pencil"></san>'.html_safe,
         edit_question_path(question),
         class: 'question-edit',
@@ -14,8 +14,8 @@
           confirm: "Are you sure you want to delete: #{@question.title}?"
         },
         remote: true %>
-    </div>
-  </div><!-- /.col-sm-2.user-option -->
+    </div><!-- /.col-xs-12 -->
+  </div><!-- /.row.user-option -->
 <% end %>
 
 <div class="row question-heading">
@@ -30,15 +30,16 @@
 </div><!-- /.row.question-heading -->
 
 <div class="row question-content">
-  <div class="col-xs-11 col-xs-offset-1">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-11">
     <article>
       <p><%= question.content %></p>
     </article>
-  </div><!-- /.col-xs-11.col-xs-offset-1 -->
+  </div><!-- /.col-xs-11 -->
 </div><!-- /.row.question-content -->
 
 <div class="row">
-  <div class="col-sm-4 col-sm-offset-8 user-info">
+  <div class="col-xs-12 user-info">
     <p>Asked by: <%= question.name %></p>
     <p><%= local_time_ago(question.created_at) %></p>
   </div><!-- /.col-sm-4.col-sm-offset-8 -->

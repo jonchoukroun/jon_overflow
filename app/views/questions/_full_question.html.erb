@@ -1,4 +1,4 @@
-<div class="container-fluid full-question">
+<div class="full-question">
   <div class="container question">
     <%= render 'questions/question', question: @question %>
   </div><!-- question -->
@@ -16,16 +16,17 @@
     <% @answers.each do |answer| %>
       <%= render 'answers/answer', answer: answer %>
     <% end %>
-  </div><!-- answers-index -->
 
-  <%# Only double nav buttons if necessary %>
-  <% if @answers.length > 3 %>
-    <div class="row">
-      <div class="col-sm-2 col-sm-offset-10">
-        <%= link_to 'Back to top', '#',
-          class: 'btn btn-default top' %>
+    <%# Only double nav buttons if necessary %>
+    <% if @answers.length > 3 %>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2 col-sm-offset-10">
+            <%= link_to 'Back to top', '#',
+              class: 'btn btn-default top' %>
+          </div>
+        </div>
       </div>
-    </div>
-  <% end %>
-
-</div><!-- container-fluid full-question -->
+    <% end %>
+  </div><!-- answers-index -->
+</div><!-- /.full-question -->

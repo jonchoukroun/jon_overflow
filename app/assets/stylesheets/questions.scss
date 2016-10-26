@@ -43,7 +43,7 @@ form.question-form {
   @extend .questions-nav;
 
   .col-sm-2 {
-    margin-left: 1em;
+    padding-left: 1em;
   }
 }
 
@@ -126,7 +126,7 @@ form.question-form {
   .question {
     width: 75%;
     margin: 1em auto;
-    padding: 1em;
+    padding: 1.5em;
     background: $medium_background;
     border-radius: 1em;;
     @include shadow;
@@ -134,15 +134,16 @@ form.question-form {
 
   h2 {
     font-size: 2.2em;
+
     &:hover {
-      font-weight: none;
+      font-weight: normal;
     }
   }
 
   .user-option {
     font-size: 1em;
     
-    .col-sm-12 {
+    .col-xs-12 {
       @include justify('right');
     }
 
@@ -173,12 +174,13 @@ form.question-form {
       margin: 0;
       font-size: 1.3em;
       font-style: italic;
+      color: $grey;
     }
   }
   
   .question-content{
     article {
-      margin-right: 1em;
+      margin: 1em 3em;
 
       p {
         font-size: 1.8em;
@@ -223,12 +225,12 @@ form.question-form {
       margin: 0;
       padding: 0 0.25em;
 
-      .question-title {
-        padding: 0;
-
         h2 {
           font-size: 1.3em;
         }
+
+      .question-title {
+        padding: 0;
       } /* /.question-title */
     } /* /.question-heading */
 
@@ -249,31 +251,55 @@ form.question-form {
 
   .full-question {
     width: 90%;
+    margin: 1em auto;
+
+    .full-question-nav {
+      .col-sm-2 {
+        margin-bottom: 1em;
+        padding-right: 0;
+      }
+    }
 
     .question {
       width: 100%;
+      margin: 0 auto;
+
+      /* reduce padding to prevent collapse */
+      .col-xs-1 {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
 
       .user-option span {
-        font-size: 1em;
+        font-size: 1.1em;
       }
 
       .question-heading {
         margin-top: 0;
 
         h2 {
-          font-size: 1.7em;
+          font-size: 1.2em;
+        }
+
+        .question-title {
+          padding-left: 5px;
         }
       }
 
       .question-content {
-        article p {
-          font-size: 1.3em;
+        article {
+          margin: 0;
+
+          p {
+            font-size: 1.1em;
+          }
         }
       }
 
       .user-info {
         p {
-          font-size: 1.5em;
+          font-size: 1em;
+          color: $grey;
         }
       }
     } /* /.question */

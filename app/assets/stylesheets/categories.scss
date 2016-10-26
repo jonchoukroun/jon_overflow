@@ -17,17 +17,6 @@
     margin-top: -0.5em;
   }
 
-  .intro-buttons {
-
-    margin-top: 1.5em;
-
-    a {
-      margin: 1em;
-      font-size: 1.3em;
-      color: $primary_color;
-    }
-  }
-
   a.scroll-down {
 
     &:hover {
@@ -35,7 +24,7 @@
     }
 
     h3 {
-      margin-top: 10%;
+      margin-top: 15%;
       text-align: center;
       color: $primary_color;
       opacity: 1;

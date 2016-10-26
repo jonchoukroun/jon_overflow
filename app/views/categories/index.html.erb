@@ -6,19 +6,6 @@
     <h2>Discover local adventure</h2>
   </div><!-- /.intro-title -->
 
-  <% unless logged_in? %>
-    <div class="intro-buttons">
-      <%= link_to 'Login',
-        login_path,
-        class: 'btn btn-default user-login',
-        remote: true %>
-      <%= link_to 'Sign Up',
-        signup_path,
-        class: 'btn btn-default user-signup',
-        remote: true %>
-    </div><!-- /.intro-buttons -->
-  <% end %>
-
   <%# Scroll down to categories preview %>
   <a class="scroll-down" href="#">
     <h3>Select a county below</h3>

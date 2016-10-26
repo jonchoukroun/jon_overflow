@@ -12,6 +12,10 @@ locateQuestion = function() {
 
   //Get rid of form at bottom of page
   $('form.question-form').toggleClass('hidden');
+
+  $('html, body').animate({
+    scrollTop: $('#content').offset().top - 50
+  }, 500);
 };
 
 locateQuestion();

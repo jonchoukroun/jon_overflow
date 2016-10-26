@@ -1,6 +1,6 @@
-<%= content_tag :div, id: answer.id, class: 'full-answer' do %>
-  <div class="row">
-    <div class="col-sm-3 col-sm-offset-9 user-action">
+<%= content_tag :div, id: answer.id, class: 'container full-answer' do %>
+  <div class="row user-action">
+    <div class="col-xs-12">
       <% if current_user && current_user.id == answer.user_id %>
         <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe,
           answer_path(answer),
@@ -11,8 +11,8 @@
           },
           remote: true %>
       <% end %>
-    </div><!-- /.col-sm-3 -->
-  </div><!-- /.row -->
+    </div><!-- /.col-xs-12 -->
+  </div><!-- /.row.user-action -->
 
   <div class="row">
     <div class="col-xs-2 answer-rating">
@@ -32,16 +32,14 @@
     </div><!-- /.col-xs-2.answer-rating -->
 
     <div class="col-xs-10 answer-content">
-      <article>
-        <p><%= answer.content %></h5>
-      </article>
-    </div><!-- /.col-xs-6.answer-content -->
+      <p><%= answer.content %></h5>
+    </div><!-- /.col-xs-10.answer-content -->
+  </div><!-- /.row -->
 
-    <div class="col-sm-4 col-sm-offset-8 answer-info">
+  <div class="row answer-info">
+    <div class="col-xs-12">
       <p>Answered by: <%= answer.name %></p>
       <p><%= local_time_ago(answer.created_at) %></p>
-    </div><!-- /.col-sm-4 -->
-
-  </div><!-- /.row -->
-<% end %><!-- /.full-answer -->
-
+    </div><!-- /.col-xs-12 -->
+  </div><!-- /.row.answer-info -->
+<% end %><!-- /.container.full-answer -->

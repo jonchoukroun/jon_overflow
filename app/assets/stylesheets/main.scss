@@ -190,6 +190,10 @@ label {
 
 /* Small screens */
 @media (max-width: 425px) {
+  body {
+    padding-bottom: $nav_margin;
+  }
+
   .btn.btn-default {
     background: $medium_background;
   }

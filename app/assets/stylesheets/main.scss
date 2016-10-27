@@ -89,7 +89,7 @@ html {
 }
 
 body {
-  margin: $nav_margin 0;
+  margin: $nav_margin 0 0;
   min-height: 100%;
   background: asset-data-url("background.png");
   @include background-cover;

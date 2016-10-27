@@ -17,6 +17,7 @@ var UserLightbox = {
     $('#content').toggleClass('hidden');
     $('#lightbox-container').toggleClass('hidden');
     $('.intro-buttons').toggleClass('hidden');
+    $('.footer').toggleClass('hidden');
   },
 
   closeLightbox: function(e) {

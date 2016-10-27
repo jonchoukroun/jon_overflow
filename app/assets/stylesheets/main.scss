@@ -89,11 +89,9 @@ html {
 }
 
 body {
-  margin: $nav_margin 0 0;
+  margin: 0;
+  margin-top: $nav_margin;
   min-height: 100%;
-  background: asset-data-url("background.png");
-  @include background-cover;
-  background-attachment: fixed;
   font-family: $body_font;
   color: $primary_color;
 }
@@ -116,6 +114,9 @@ body {
 
 #main-content {
   padding: 0;
+  background: asset-data-url("background.png");
+  @include background-cover;
+  background-attachment: fixed;
 }
 
 /* All forms */
@@ -190,11 +191,6 @@ label {
 
 /* Small screens */
 @media (max-width: 425px) {
-  #content {
-    margin-bottom: $nav_margin;
-    padding-bottom: $nav_margin;
-  }
-
   .btn.btn-default {
     background: $medium_background;
   }
@@ -203,5 +199,4 @@ label {
     width: 100%;
     padding: 5px;
   }
-}
-
+} /* /small screens */

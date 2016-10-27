@@ -192,6 +192,7 @@ label {
 @media (max-width: 425px) {
   #content {
     margin-bottom: $nav_margin;
+    padding-bottom: $nav_margin;
   }
 
   .btn.btn-default {

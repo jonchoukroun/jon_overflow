@@ -202,8 +202,8 @@ label {
 } /* /small screens */
 
 /* Necessary padding for all screens under medium */
-@media (max-width 999px) {
-  body {
-    padding-bottom: 70px;
+@media (max-width 768px) {
+  html {
+    margin-bottom: 50px;
   }
 }

@@ -16,13 +16,13 @@ $(document).ready(function() {
   $('.title-card').height(windowHeight);
 
   // Set main content min height to full browser height
-  $('#main-content').css('min-height', countyHeights);
+  $('#main-content').css('min-height', countyHeights + navMargin);
 
   // Auto scroll to top of categories preview
   $('.title-card').on('click', 'a.scroll-down', function(e) {
     e.preventDefault();
     $('html, body').animate({
-      scrollTop: $('#main-content').offset().top - (navMargin)
+      scrollTop: $('#main-content').offset().top - navMargin
     }, 700);
   });
 });

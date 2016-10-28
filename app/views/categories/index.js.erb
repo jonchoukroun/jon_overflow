@@ -2,9 +2,11 @@ $('#main-content').empty().html(
   "<%= j(render '/categories/main_content') %>"
 );
 
+<%# Calculate total margin offset %>
 var navMargins = $('body').css('margin').slice(0, 2) * 2;
 var windowHeight = $(window).height() - navMargins;
 
+<%# Add padding to center in screen %>
 var containerHeight = $('.category-preview').height();
 var containerMargin = (windowHeight / 2) - (containerHeight / 2);
 

@@ -204,6 +204,7 @@ label {
 /* Necessary padding for all screens under medium */
 @media (max-width 999px) {
   body {
-    margin-bottom: $nav_margin;
+    padding-bottom: $nav_margin;
+    border: 1px solid white;
   }
 }

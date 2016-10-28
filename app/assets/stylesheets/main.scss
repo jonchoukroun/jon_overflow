@@ -205,9 +205,3 @@ label {
   }
 } /* /xsmall screens */
 
-/* small screens */
-@media (max-width: 768px) {
-  #main-content {
-    padding-bottom: $bottom_nav_margin;
-  }
-}

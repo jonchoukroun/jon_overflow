@@ -57,7 +57,8 @@
 
 /* All variables */
 /* Layout */
-$nav_margin: 50px;
+$top_nav_margin: 50px;
+$bottom_nav_margin: 56px;
 
 /* Backgrounds */
 $light_background: rgba(0,0,0,0.2);
@@ -90,14 +91,14 @@ html {
 
 body {
   margin: 0;
-  margin-top: $nav_margin;
-  padding-bottom: $nav_margin;
+  padding-top: $top_nav_margin;
   min-height: 100%;
   font-family: $body_font;
   color: $primary_color;
 }
 
 #content {
+  // margin-bottom: $bottom_nav_margin;
   padding: 0;
 
   a {
@@ -114,6 +115,7 @@ body {
 }
 
 #main-content {
+  margin-bottom: $bottom_nav_margin;
   padding: 0;
   min-height: 100%;
   background: asset-data-url("background.png");
@@ -125,7 +127,7 @@ body {
 form {
   margin-top: 1.5em;
   width: 45%;
-  padding: $nav_margin;
+  padding: $top_nav_margin;
   background: $medium_background;
   border-radius: $radius;
 }

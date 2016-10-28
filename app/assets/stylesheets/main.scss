@@ -91,7 +91,7 @@ html {
 body {
   margin: 0;
   margin-top: $nav_margin;
-  margin-bottom: $nav_margin;
+  padding-bottom: $nav_margin;
   min-height: 100%;
   font-family: $body_font;
   color: $primary_color;
@@ -115,6 +115,7 @@ body {
 
 #main-content {
   padding: 0;
+  min-height: 100%;
   background: asset-data-url("background.png");
   @include background-cover;
   background-attachment: fixed;

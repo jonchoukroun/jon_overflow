@@ -191,6 +191,9 @@ label {
 
 /* Small screens */
 @media (max-width: 425px) {
+  #content {
+    padding-bottom: $nav_margin;
+  }
   .btn.btn-default {
     background: $medium_background;
   }

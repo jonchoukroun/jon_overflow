@@ -191,9 +191,6 @@ label {
 
 /* Small screens */
 @media (max-width: 425px) {
-  #content {
-    padding-bottom: $nav_margin;
-  }
   .btn.btn-default {
     background: $medium_background;
   }
@@ -203,3 +200,10 @@ label {
     padding: 5px;
   }
 } /* /small screens */
+
+/* Necessary padding for all screens under medium */
+@media (max-width 999px) {
+  body {
+    margin-bottom: $nav_margin;
+  }
+}

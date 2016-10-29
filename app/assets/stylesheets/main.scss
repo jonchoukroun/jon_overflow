@@ -57,8 +57,8 @@
 
 /* All variables */
 /* Layout */
-$top_nav_margin: 50px;
-$bottom_nav_margin: 70px;
+$top_nav_height: 50px;
+$bottom_nav_height: 70px;
 
 /* Backgrounds */
 $light_background: rgba(0,0,0,0.2);
@@ -85,24 +85,19 @@ $nav_color: black;
 
 /* General layout */
 html {
-  position: relative;
-  // min-height: 100%;
   box-sizing: box_sizing;
 }
 
 body {
   margin: 0;
-  padding-top: $top_nav_margin;
-  padding-bottom: $bottom_nav_margin; // doesn't fix overlap
-  // margin-bottom: $bottom_nav_margin; doesn't fix overlap
-  // min-height: 100%; This may be the issue here
+  padding-top: $top_nav_height;
+  padding-bottom: $bottom_nav_height;
   font-family: $body_font;
   color: $primary_color;
 }
 
 #content {
   padding: 0;
-  // margin-bottom: $bottom_nav_margin;
 
   a {
     text-decoration: none;
@@ -118,7 +113,6 @@ body {
 }
 
 #main-content {
-  // margin-bottom: $bottom_nav_margin;
   padding: 0;
   min-height: 100%;
   background: asset-data-url("background.png");
@@ -130,7 +124,7 @@ body {
 form {
   margin-top: 1.5em;
   width: 45%;
-  padding: $top_nav_margin;
+  padding: $top_nav_height;
   background: $medium_background;
   border-radius: $radius;
 }

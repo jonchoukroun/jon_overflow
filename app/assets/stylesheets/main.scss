@@ -93,7 +93,8 @@ html {
 body {
   margin: 0;
   padding-top: $top_nav_margin;
-  padding-bottom: $bottom_nav_margin;
+  padding-bottom: $bottom_nav_margin; // doesn't fix overlap
+  // margin-bottom: $bottom_nav_margin;
   min-height: 100%;
   font-family: $body_font;
   color: $primary_color;

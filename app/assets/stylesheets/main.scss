@@ -86,14 +86,14 @@ $nav_color: black;
 /* General layout */
 html {
   position: relative;
-  min-height: 100%;
+  // min-height: 100%;
   box-sizing: box_sizing;
 }
 
 body {
   margin: 0;
-  margin-bottom: $bottom_nav_margin;
   padding-top: $top_nav_margin;
+  padding-bottom: $bottom_nav_margin;
   min-height: 100%;
   font-family: $body_font;
   color: $primary_color;
@@ -116,7 +116,7 @@ body {
 }
 
 #main-content {
-  margin-bottom: $bottom_nav_margin;
+  // margin-bottom: $bottom_nav_margin;
   padding: 0;
   min-height: 100%;
   background: asset-data-url("background.png");

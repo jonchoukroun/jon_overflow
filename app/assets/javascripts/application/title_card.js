@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  // Deduct body top+bottom margins from window height
-  var windowHeight = $(window).height();
-  var windowWidth = $(window).width();
+  var navTop = 50;
+  var navBottom = 56;
+  var windowHeight = parseInt($(window).height()) + navTop + navBottom;
 
   // Set title card to full browser height
   $('.title-card').height(windowHeight);

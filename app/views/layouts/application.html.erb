@@ -13,17 +13,13 @@
   <title>TrueNorth</title>
 </head>
 <body>
-  <%# render 'layouts/header' %>
 
   <%# Open lightbox with user login/signup %>
-  <%# Disable regular content while open %>
   <div id="lightbox-container" class="hidden"></div><!-- /.user-lightbox -->
 
   <div id="content" class="container-fluid">
     <%= yield %>
   </div><!-- /#content.container -->
 
-  <%= render 'layouts/footer' %>
-  
 </body>
 </html>

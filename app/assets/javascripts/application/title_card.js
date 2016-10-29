@@ -1,6 +1,5 @@
 $(document).ready(function() {
   // Deduct body top+bottom margins from window height
-  var navMargin = parseInt($('body').css('margin').slice(0, 2));
   var windowHeight = $(window).height();
   var windowWidth = $(window).width();
 
@@ -15,7 +14,7 @@ $(document).ready(function() {
     e.preventDefault();
 
     $('html, body').animate({
-      scrollTop: $('#main-content').offset().top - navMargin
+      scrollTop: $('#main-content').offset().top - 50
     }, 700);
   });
 });

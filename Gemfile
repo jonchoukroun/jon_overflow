@@ -15,6 +15,7 @@ gem 'faker'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-sass'
 
 gem 'acts_as_votable', '~> 0.10.0'
 

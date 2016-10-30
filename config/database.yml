@@ -15,5 +15,5 @@ test:
 production:
   <<: *default
   database: truenorth_production
-  username: truenorth
+  username: deploy
   password: <%= ENV['TRUENORTH_DATABASE_PASSWORD'] %>

@@ -14,4 +14,4 @@
 
 # Ignore environment files
 /.env
-config/env/*.env
+/config/env/*.env

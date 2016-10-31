@@ -23,7 +23,7 @@ gem 'local_time'
 
 gem 'capybara'
 
-gem 'dotenv-rails'
+gem 'dotenv', groups: [:development, :test]
 
 group :development, :test do
   gem 'byebug'

@@ -15,6 +15,3 @@
 # Ignore environment files
 /.env
 config/env/*.env
-
-# Ignore application configuration
-/config/application.yml

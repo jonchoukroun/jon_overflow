@@ -23,6 +23,8 @@ gem 'local_time'
 
 gem 'capybara'
 
+gem 'figaro'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'

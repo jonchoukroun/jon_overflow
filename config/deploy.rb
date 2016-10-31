@@ -29,8 +29,8 @@ set :puma_init_active_record, true
 # set :keep_releases, :5
 
 ## Linked Files & Directories (Default None):
-set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin env log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+# set :linked_files, %w{config/database.yml}
+# set :linked_dirs, %w{bin env log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :puma do
   desc 'Create directories for Puma pids and sockets'

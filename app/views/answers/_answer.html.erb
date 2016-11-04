@@ -1,4 +1,6 @@
-<%= content_tag :div, id: answer.id, class: 'container full-answer' do %>
+<%# style: "background: #{image_tag(answer.avatar.url)}" %>
+<div id="<%= answer.id %>" class="container full-answer"
+  style="background: url(<%= answer.avatar.url %>)">
   <div class="row user-action">
     <div class="col-xs-12">
       <% if current_user && current_user.id == answer.user_id %>
@@ -42,4 +44,4 @@
       <p><%= local_time_ago(answer.created_at) %></p>
     </div><!-- /.col-xs-12 -->
   </div><!-- /.row.answer-info -->
-<% end %><!-- /.container.full-answer -->
+</div><!-- /#<%= answer.id %>.container.full-answer -->

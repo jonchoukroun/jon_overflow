@@ -17,6 +17,17 @@
   </div>
 
   <div class="form-group">
+    <div class="photoPreview">
+      <%= icon('upload', '', class: 'photoUpload') %>
+      <p id="uploadClick">Press to Upload</p>
+    </div><!-- /.photoPreview -->
+    <%= file_field_tag :avatar,
+      accept: 'image/png,image/gif,image/jpg,image/jpeg',
+      id: 'uploadAvatar' %>
+    <p id="deletePhoto">Delete</p>
+  </div>
+
+  <div class="form-group">
   <%= f.submit 'Answer', 
     class: 'btn btn-primary btn-lg submit submit-answer' %>
   </div>

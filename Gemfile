@@ -23,8 +23,8 @@ gem 'local_time'
 
 gem 'capybara'
 
-gem 'carrierwave', '~> 0.10.0'
-gem 'mini_magick', '~> 4.3'
+gem 'paperclip', '~> 4.2'
+gem 'aws-sdk-v1'
 
 
 group :development, :test do

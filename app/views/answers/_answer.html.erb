@@ -1,6 +1,11 @@
 <%# style: "background: #{image_tag(answer.avatar.url)}" %>
 <div id="<%= answer.id %>" class="container full-answer"
-  style="background: url(<%= answer.avatar.url %>)">
+                           style="background: linear-gradient(
+                           rgba(0,0,0,0.7),
+                           rgba(0,0,0,0.7)
+                           ),
+                           url(<%= answer.avatar.url %>);
+                           background-size: cover;">
   <div class="row user-action">
     <div class="col-xs-12">
       <% if current_user && current_user.id == answer.user_id %>

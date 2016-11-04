@@ -111,7 +111,7 @@ body {
 #main-content {
   padding: 0;
   background: asset-data-url("background.png");
-  @include background-cover;
+  @include background_cover;
   background-attachment: fixed;
 }
 

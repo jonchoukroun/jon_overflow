@@ -23,8 +23,8 @@ gem 'local_time'
 
 gem 'capybara'
 
-gem 'paperclip', '~> 4.2'
-gem 'aws-sdk-v1'
+gem 'paperclip', '~> 5.0.0'
+gem 'aws-sdk', '~> 2'
 
 
 group :development, :test do

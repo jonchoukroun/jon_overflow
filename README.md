@@ -1,10 +1,10 @@
 # SoCal Kin
-### Community based questions to local answers
+### Share your experiences with local adventures
 # 
 
-Built using Ruby on Rails, this clone of Stack Overflow is my first complete web application. 
+TrueNorth is a platform for outdoors enthusiasts to share their experiences and advice with local activities - hiking, sailing, ski-diving, etc.
 # 
-SoCal Kin allows users to pose questions, which are ranked by the number of answers they receive. Users can also 'agree' or 'disagree' with answers, bumping those with greater net scores to the top of the page.
+Using a votable question/answer format, TrueNorth provides users with searchable information on specific activities by county. We're focused on Southern California for now, and will be expanding soon!
 
 ---
 ## Releases
@@ -13,7 +13,10 @@ SoCal Kin allows users to pose questions, which are ranked by the number of answ
 * Initial release
 
 **Version 0.2** - Oct 17, 2016
-* Responsive on mobile devices
+* Improved mobile responsiveness
 
-Version 1.0 - Oct  18, 2016
+**Version 1.0** - Oct  18, 2016
 * Redesigned entire look
+
+**Version 1.1** - Oct 30, 2016
+* Improved mobile responsiveness

@@ -12,6 +12,9 @@ class Answer < ActiveRecord::Base
   # validates_associated :question
   validates_presence_of :content, :user_id, :question_id
 
+  has_attached_file :avatar
+  validates_attachment_content_type :avatar, :content_type => /^image\/(png|gif|jpeg|jpg)/
+
   def vote_score
     self.get_upvotes.size - self.get_downvotes.size
   end

@@ -2,6 +2,8 @@
             url: question_answers_path(@question.id),
             method: :post,
             html: {class: 'answer-form hidden'},
+            multipart: true,
+            authenticity_token: true,
             remote: true) do |f| %>
 
   <div class="form-title">
@@ -20,7 +22,6 @@
     <%= f.label 'Add an image' %>
     <%= f.file_field :avatar,
       accept: 'image/png,image/gif,image/jpg,image/jpeg',
-      id: 'uploadAvatar',
       class: 'input-lg image-upload' %>
   </div>
 

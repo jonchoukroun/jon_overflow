@@ -24,7 +24,9 @@ gem 'local_time'
 gem 'capybara'
 
 gem 'paperclip', '~> 5.0.0'
-gem 'aws-sdk', '~> 2'
+#
+# Use S3 storage only in production
+gem 'aws-sdk', '~> 2', group: :production
 
 
 group :development, :test do

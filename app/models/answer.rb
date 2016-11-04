@@ -7,9 +7,6 @@ class Answer < ActiveRecord::Base
 
   acts_as_votable
 
-  # Based on questions, this won't work
-  # validates_associated :user
-  # validates_associated :question
   validates_presence_of :content, :user_id, :question_id
 
   has_attached_file :avatar

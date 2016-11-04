@@ -128,7 +128,7 @@ form {
   @include justify('center');
 }
 
-input, email, textarea, select, .uneditable-input {
+input, email, textarea, select, filefield, .uneditable-input {
   @include box_sizing;
   width: 100%;
   border: 1px solid #ddd;
@@ -140,7 +140,6 @@ input {
 }
 
 label {
-  // font-family: $text_font;
   font-size: 1.2em;
   color: $primary_color;
 }

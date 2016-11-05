@@ -40,6 +40,14 @@ form.answer-form {
   }
 } /* /.full-answer */
 
+/* Toggled on answer click */
+.view-image {
+  background: linear-gradient(
+    rgba(0,0,0,0),
+    rgba(0,0,0,0)
+  );
+}
+
 /* Small screen adjustments */
 @media (max-width: 425px) {
   .answers-index {

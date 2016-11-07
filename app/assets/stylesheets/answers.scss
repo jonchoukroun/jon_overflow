@@ -1,31 +1,17 @@
 form.answer-form {
   @extend .question-form;
 
-  #file-upload {
-    position: relative;
-    padding: 0.5em 0;
+  #file-upload .wrapper {
     border-radius: 3em;
     border: 3px solid #ddd;
     text-align: center;
-  }
 
-  #file-upload .wrapper {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    top: 0;
-    z-index: 2;
+    input {
+      border: none;
+      color: $primary_color;
+    }
   }
-
-  #file-upload button {
-    position: relative;
-    top: 0;
-    z-index: 1;
-    background: none;
-    border: none;
-    color: $primary_color;
-  }
-}
+} /* form.answer-form */
 
 .answers-index {
   width: 75%;
@@ -37,6 +23,10 @@ form.answer-form {
 
   .user-action {
     @extend .user-option;
+
+    .expand-image {
+      @extend .question-edit;
+    }
 
     .answer-delete {
       @extend .question-delete;

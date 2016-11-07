@@ -5,7 +5,9 @@
                             rgba(0, 0, 0, 0.7)
                            ),
                            url(<%= answer.avatar.url %>);
-                           background-size: cover;">
+                           background-size: cover;
+                           background-repeat: no-repeat;">
+                           
   <div class="row user-action">
     <div class="col-xs-12">
       <% if current_user && current_user.id == answer.user_id %>

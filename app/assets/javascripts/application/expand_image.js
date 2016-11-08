@@ -25,13 +25,18 @@ var ExpandImage = {
 
     var imageUrl = background[8].replace('url(', '');
 
+
     // Add image and close link to lightbox
-    lightbox.append('<img src=' +imageUrl+ '>')
     lightbox.append(
       '<a class="close-lightbox">' +
         '<span class="glyphicon glyphicon-remove-circle"></span>' +
       '</a>'
     )
+    lightbox.append('<img src=' +imageUrl+ '>')
+
+    // Set image size
+    var imageWidth = parseInt($(window).width()) - 20;
+    lightbox.find('img').width(imageWidth);
 
     // Scroll to lightbox
     ExpandImage.focusLightbox();

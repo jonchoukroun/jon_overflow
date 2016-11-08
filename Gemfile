@@ -29,7 +29,7 @@ gem 'paperclip', '~> 5.0.0'
 gem 'remotipart', '~> 1.2'
 
 # Use S3 storage only in production
-gem 'aws-sdk', '~> 2', group: :production
+gem 'aws-sdk-v1', group: :production
 
 
 group :development, :test do

@@ -195,3 +195,9 @@ label {
     padding: 5px;
   }
 } /* /xsmall screens */
+
+@media (max-width: 999px) and (min-width: 768px) {
+  .glyphicon {
+    font-size: 1em;
+  }
+}

@@ -8,14 +8,13 @@
                            background-repeat: no-repeat;">
                            
   <div class="row user-action">
-    <div class="col-xs-1 col-xs-offset-10">
+    <div class="col-xs-12">
       <% if answer.avatar_file_name.present? %>
         <%= link_to '<span class="glyphicon glyphicon-zoom-in"></span>'.html_safe,
           '#',
           class: 'expand-image' %>
       <% end %>
-    </div><!-- /.col-xs-1.col-xs-offset-10 -->
-    <div class="col-xs-1">
+
       <% if current_user && current_user.id == answer.user_id %>
         <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe,
           answer_path(answer),
@@ -26,7 +25,7 @@
           },
           remote: true %>
       <% end %>
-    </div><!-- /.col-xs-1 -->
+    </div><!-- /.col-xs-12 -->
   </div><!-- /.row.user-action -->
 
   <div class="row">

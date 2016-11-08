@@ -23,13 +23,13 @@ gem 'local_time'
 
 gem 'capybara'
 
-gem 'paperclip', '~> 5.0.0'
+gem 'paperclip'
 
 # Required for ajax file uploads
-gem 'remotipart', '~> 1.2'
+# gem 'remotipart', '~> 1.2'
 
 # Use S3 storage only in production
-gem 'aws-sdk-v1'
+gem 'aws-sdk', '~> 2.3'
 
 
 group :development, :test do

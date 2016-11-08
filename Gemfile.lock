@@ -43,9 +43,12 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.4.1.1)
       execjs
-    aws-sdk-v1 (1.66.0)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
+    aws-sdk (2.6.18)
+      aws-sdk-resources (= 2.6.18)
+    aws-sdk-core (2.6.18)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.6.18)
+      aws-sdk-core (= 2.6.18)
     bcrypt (3.1.11)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
@@ -106,6 +109,7 @@ GEM
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
+    jmespath (1.3.1)
     jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -174,7 +178,6 @@ GEM
     rake (11.3.0)
     rdoc (4.2.2)
       json (~> 1.4)
-    remotipart (1.3.1)
     rspec-core (3.5.3)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -229,7 +232,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
-  aws-sdk-v1
+  aws-sdk (~> 2.3)
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.6)
   byebug
@@ -247,12 +250,11 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   local_time
-  paperclip (~> 5.0.0)
+  paperclip
   pg (~> 0.15)
   puma
   rails (= 4.2.6)
   rails_12factor
-  remotipart (~> 1.2)
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

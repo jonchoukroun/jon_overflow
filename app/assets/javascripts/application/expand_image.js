@@ -28,15 +28,13 @@ var ExpandImage = {
 
     // Add image and close link to lightbox
     lightbox.append(
-      '<a class="close-lightbox">' +
-        '<span class="glyphicon glyphicon-remove-circle"></span>' +
-      '</a><br>'
+      '<div class="close-lightbox">' +
+        '<a class="close-lightbox">' +
+          '<span class="glyphicon glyphicon-remove-circle"></span>' +
+        '</a><br>' +
+      '</div><!-- /.close-lightbox -->'
     )
     lightbox.append('<img src=' +imageUrl+ '>')
-
-    // Set image size
-    var imageWidth = $(window).width() - 20;
-    lightbox.find('img').css('max-width', imageWidth);
 
     // Scroll to lightbox
     ExpandImage.focusLightbox();

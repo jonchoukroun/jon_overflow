@@ -55,13 +55,26 @@ form.answer-form {
   }
 } /* /.full-answer */
 
-/* Toggled on answer click */
-.view-image {
-  background: linear-gradient(
-    rgba(0,0,0,0),
-    rgba(0,0,0,0)
-  );
-}
+.imageLightbox {
+  max-width: 60%;
+  margin: 0 auto;
+  padding-bottom: 5em;
+  text-align: center;
+  
+  .close-lightbox {
+    text-align: right;
+
+    span {
+      color: $primary_color;
+    }
+  }
+
+  img {
+    width: 100%;
+    border-radius: 0.5em;
+    @include shadow;
+  }
+} /* /.imageLightbox */
 
 /* Small screen adjustments */
 @media (max-width: 425px) {
@@ -102,4 +115,13 @@ form.answer-form {
       font-size: 0.6em;
     }
   } /* /.full-answer */
+
+  .imageLightbox {
+    max-width: 100%;
+
+    img {
+      max-width: 95%;
+      margin: 0 auto;
+    }
+  }
 } /* /small screen adjustments */

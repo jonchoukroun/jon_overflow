@@ -1,39 +1,52 @@
-// Globals for background image settings
-var clear = 'rgba(0,0,0,0)';
-var dark = 'rgba(0,0,0,0.7)';
+var ExpandImage = {
+  bindListeners: function() {
+    $('#main-content').on('click', 'a.expand-image'
+      , this.buildLightbox);
+    $('#main-content').on('click', 'a.close-lightbox'
+      , this.closeLightbox);
+  },
 
-// lighten background filter and hide text
-showImage = function(answer, url) {
-    $(answer).css({
-      'background': 'linear-gradient('+clear+', '+clear+'),' +url,
-      'background-size': 'cover',
-      'background-repeat': 'no-repeat',
-      'color': clear
-    });
-};
+  focusLightbox: function() {
+    $('html, body').animate({
+      scrollTop: $('#main-content .imageLightbox').offset().top - 50
+    }, 700);
+  },
 
-// Return to default, obstruct image & show text
-darkenImage = function(answer, url) {
-    $(answer).css({
-      'background': 'linear-gradient('+dark+', '+dark+'),' +url,
-      'background-size': 'cover',
-      'background-repeat': 'no-repeat',
-      'color': 'white'
-    });
-};
+  toggleAnswers: function() {
+    $('#main-content').find('.answers-index').toggleClass('hidden');
+  },
+
+  buildLightbox: function(e) {
+    e.preventDefault();
+    // Find lightbox and answer background url
+    var lightbox = $('#main-content').find('.imageLightbox');
+    var background = $(this).closest('.full-answer')
+      .css('background-image').split(' ');
+
+    var imageUrl = background[8].replace('url(', '');
+
+    // Add image and close link to lightbox
+    lightbox.append('<img src=' +imageUrl+ '>')
+    lightbox.append(
+      '<a class="close-lightbox">' +
+        '<span class="glyphicon glyphicon-remove-circle"></span>' +
+      '</a>'
+    )
+
+    // Scroll to lightbox
+    ExpandImage.focusLightbox();
+
+    // Hide answers
+    ExpandImage.toggleAnswers();
+    return false;
+  },
+
+  closeLightbox: function(e) {
+    $('#main-content').find('.imageLightbox').empty();
+    ExpandImage.toggleAnswers();
+  }
+}
 
 $(document).ready(function() {
-  // Target full-answer
-  $('#main-content').on('click', '.full-answer', function(e) {
-    // Get background image url
-    var background = $(this).css('background').split(' ');
-    var url = background[20];
-
-    // Toggle image visibility
-    if (background[3] === '0),') {
-      darkenImage(this, url);
-    } else {
-      showImage(this, url);
-    }
-  });
+  ExpandImage.bindListeners();
 });

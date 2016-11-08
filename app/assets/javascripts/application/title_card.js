@@ -6,9 +6,6 @@ $(document).ready(function() {
   // Set title card to full browser height
   $('.title-card').height(windowHeight);
 
-  // Set main content min height to full window height
-  // $('#main-content').css('min-height', windowHeight);
-
   // Auto scroll to top of categories preview
   $('.title-card').on('click', 'a.scroll-down', function(e) {
     e.preventDefault();

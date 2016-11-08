@@ -12,6 +12,9 @@
   <%# Buttons for new answer and back %>
   <%= render 'questions/full_question_nav' %>
 
+  <%# Empty lightbox for image expand %>
+  <div class="imageLightbox"></div><!-- /.imageLightbox -->
+
   <div class="answers-index">
     <% @answers.each do |answer| %>
       <%= render 'answers/answer', answer: answer %>
